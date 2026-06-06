@@ -253,9 +253,9 @@ header.scrolled {
 .nav-actions { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
 
 .lang-switch { display: flex; align-items: center; gap: 6px; font-family: var(--font-d); font-size: 13px; font-weight: 600; }
-.lang-btn { background: none; border: none; padding: 4px 6px; border-radius: 6px; color: var(--muted); font-family: var(--font-d); font-size: 13px; font-weight: 600; transition: color .2s, background .2s; }
+.lang-btn { background: none; border: none; padding: 4px 6px; border-radius: 6px; color: var(--muted); font-family: var(--font-d); font-size: 13px; font-weight: 600; transition: color .2s, background .2s; text-decoration: none; cursor: pointer; display: inline-block; }
 .lang-btn.active { color: var(--headline); }
-.lang-btn:hover { background: var(--line); }
+.lang-btn:hover { background: var(--line); color: var(--text); }
 .lang-sep { color: var(--line-strong); }
 
 /* Burger */
