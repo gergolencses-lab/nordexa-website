@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Standardgeräte — Nordexa Industrial Solutions</title>
+<meta name="description" content="Aus dem Katalog konfigurierbare Verpackungs- und Dosiermaschinen mit geringer Anpassung und kurzen Lieferzeiten — auf bewährten, zuverlässigen Plattformen." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../../css/style.css" />
+<style>
+  .page-hero{padding:140px 0 80px;background:var(--bg);border-bottom:1px solid var(--line)}
+  .page-hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .breadcrumb{font-family:var(--font-d);font-size:13px;color:var(--muted-2);margin-bottom:20px;display:flex;align-items:center;gap:8px}
+  .breadcrumb a{color:var(--muted);transition:color .2s}.breadcrumb a:hover{color:var(--steel)}.breadcrumb-sep{color:var(--line-strong)}
+  .page-hero h1{font-size:clamp(32px,4vw,56px);font-weight:700;margin:16px 0 20px}
+  .page-hero .lead{font-size:18px;color:var(--muted);margin-bottom:28px;line-height:1.7}
+  .spec-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+  .spec-tag{font-family:var(--font-d);font-size:12.5px;font-weight:600;padding:7px 14px;border-radius:999px;border:1.5px solid var(--line-strong);color:var(--text);background:var(--surface)}
+  .spec-tag.accent{border-color:var(--accent);color:var(--accent);background:var(--accent-bg)}
+  .page-hero-img{border-radius:var(--radius-l);overflow:hidden;aspect-ratio:4/3;background:var(--bg-2)}
+  .page-hero-img img{width:100%;height:100%;object-fit:cover}
+  .key-facts{background:var(--headline);padding:0}
+  .key-facts-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+  .key-fact{padding:32px 28px;border-right:1px solid rgba(255,255,255,.08);text-align:center}
+  .key-fact:last-child{border-right:0}
+  .key-fact .val{font-family:var(--font-d);font-weight:700;font-size:32px;color:var(--accent);line-height:1;margin-bottom:8px}
+  .key-fact .lbl{font-size:13px;color:rgba(255,255,255,.55)}
+  .catalog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .catalog-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s}
+  .catalog-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(20,30,45,.10);border-color:var(--line-strong)}
+  .catalog-card-top{padding:28px;display:flex;align-items:center;gap:16px;border-bottom:1px solid var(--line)}
+  .catalog-ico{font-size:28px}
+  .catalog-card-top h3{font-size:18px;font-weight:700}
+  .catalog-card-body{padding:24px}
+  .catalog-card-body p{font-size:14px;color:var(--muted);margin-bottom:16px}
+  .catalog-spec{display:flex;justify-content:space-between;font-size:12.5px;padding:6px 0;border-bottom:1px solid var(--line)}
+  .catalog-spec:last-child{border-bottom:0}
+  .catalog-spec .k{color:var(--muted)}
+  .catalog-spec .v{font-family:var(--font-d);font-weight:600;color:var(--headline)}
+  .advantage-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .advantage-item{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;display:flex;gap:16px}
+  .advantage-ico{font-size:28px;flex-shrink:0}
+  .advantage-item h4{font-size:17px;font-weight:700;margin-bottom:8px}
+  .advantage-item p{font-size:14px;color:var(--muted)}
+  .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .related-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;transition:border-color .2s,box-shadow .2s;display:flex;flex-direction:column;gap:10px}
+  .related-card:hover{border-color:var(--steel);box-shadow:0 6px 24px rgba(20,30,45,.08)}
+  .related-card .r-ico{font-size:24px}
+  .related-card h4{font-size:17px;font-weight:700}
+  .related-card p{font-size:13.5px;color:var(--muted);flex:1}
+  .related-card .r-link{font-family:var(--font-d);font-size:13.5px;font-weight:600;color:var(--steel);display:flex;align-items:center;gap:6px;transition:gap .2s}
+  .related-card:hover .r-link{gap:10px}
+  @media(max-width:1024px){.page-hero-inner{grid-template-columns:1fr}.key-facts-grid{grid-template-columns:repeat(2,1fr)}.catalog-grid{grid-template-columns:1fr 1fr}.advantage-grid{grid-template-columns:1fr}.related-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:640px){.catalog-grid,.related-grid{grid-template-columns:1fr}.key-facts-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="container nav-wrap">
+    <a href="/de/" class="brand"><svg class="brand-logo" viewBox="0 0 48 48" fill="none"><rect x="2" y="2" width="44" height="44" rx="10" fill="#f4f0e8" stroke="#c4c0b2"/><path d="M14 34V14l9 12V14" stroke="#2b4560" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 14c4 4 4 12 0 16-2-3-2-9 0-16Z" fill="#c4511c"/></svg><span><span class="brand-name">NORDE<span>XA</span></span><span class="brand-sub">Industrial Solutions</span></span></a>
+    <nav class="main-nav" id="mainNav">
+      <div class="nav-item has-mega"><button class="nav-link active" aria-expanded="false">Lösungen <span class="chevron">▾</span></button><div class="mega-panel"><a href="/de/solutions/custom-dosing.html" class="mega-item"><span class="mega-item-ico">⚙️</span><span class="mega-item-title">Individuelle Dosieranlagen</span><span class="mega-item-desc">Vollständig maßgeschneidert</span></a><a href="/de/solutions/standard-equipment.html" class="mega-item"><span class="mega-item-ico">📦</span><span class="mega-item-title">Standardgeräte</span><span class="mega-item-desc">Aus dem Katalog</span></a><a href="/de/solutions/modular-systems.html" class="mega-item"><span class="mega-item-ico">🔩</span><span class="mega-item-title">Modulare Systeme</span><span class="mega-item-desc">Flexibel</span></a><a href="/de/solutions/service-lifecycle.html" class="mega-item"><span class="mega-item-ico">🛠</span><span class="mega-item-title">Service &amp; Lifecycle</span><span class="mega-item-desc">96 % Verfügbarkeit</span></a></div></div>
+      <div class="nav-item has-mega"><button class="nav-link" aria-expanded="false">Branchen <span class="chevron">▾</span></button><div class="mega-panel wide"><a href="/de/industries/chemical.html" class="mega-item"><span class="mega-item-ico">⚗️</span><span class="mega-item-title">Chemie</span><span class="mega-item-desc">Reaktive Stoffe</span></a><a href="/de/industries/cosmetics.html" class="mega-item"><span class="mega-item-ico">💄</span><span class="mega-item-title">Kosmetik</span><span class="mega-item-desc">Hygienisches Abfüllen</span></a><a href="/de/industries/food.html" class="mega-item"><span class="mega-item-ico">🫙</span><span class="mega-item-title">Premium-Lebensmittel</span><span class="mega-item-desc">Lebensmittelkonform</span></a><a href="/de/industries/small-batch.html" class="mega-item"><span class="mega-item-ico">🔄</span><span class="mega-item-title">Kleinserie</span><span class="mega-item-desc">Flexible Umrüstung</span></a></div></div>
+      <a href="/de/case-studies/" class="nav-link">Referenzen</a>
+      <a href="/de/service/" class="nav-link">Service</a>
+      <a href="/de/about/" class="nav-link">Über uns</a>
+      <a href="/de/contact/" class="nav-link">Kontakt</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="lang-switch">
+        <a href="/megoldasok/standard-berendezesek.html" class="lang-btn">HU</a><span class="lang-sep">|</span>
+        <a href="/en/solutions/standard-equipment.html" class="lang-btn">EN</a><span class="lang-sep">|</span>
+        <span class="lang-btn active">DE</span><span class="lang-sep">|</span>
+        <a href="/pl/solutions/standard-equipment.html" class="lang-btn">PL</a><span class="lang-sep">|</span>
+        <a href="/sk/solutions/standard-equipment.html" class="lang-btn">SK</a>
+      </div>
+      <a href="/de/contact/" class="btn btn-primary">Angebot anfordern <span class="arrow">→</span></a>
+      <button class="burger" id="burger" aria-label="Menü"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <div class="reveal">
+      <div class="breadcrumb">
+        <a href="/de/">Startseite</a><span class="breadcrumb-sep">›</span>
+        <a href="/de/solutions/">Lösungen</a><span class="breadcrumb-sep">›</span>
+        <span>Standardgeräte</span>
+      </div>
+      <span class="eyebrow">Lösung</span>
+      <h1>Standardgeräte</h1>
+      <p class="lead">Aus dem Katalog konfigurierbare Verpackungs- und Dosiermaschinen mit geringer Anpassung und kurzen Lieferzeiten. Wenn das Produkt zur Plattform passt — keine kostspielige Individualentwicklung nötig.</p>
+      <div class="spec-tags">
+        <span class="spec-tag accent">Schnellere Lieferung</span>
+        <span class="spec-tag">Bewährte Plattformen</span>
+        <span class="spec-tag">Geringere Investition</span>
+        <span class="spec-tag">Konfigurierbare Optionen</span>
+      </div>
+      <div class="hero-actions">
+        <a href="/de/contact/" class="btn btn-primary btn-lg">Jetzt konfigurieren <span class="arrow">→</span></a>
+        <a href="#katalog" class="btn btn-ghost">Katalog ansehen →</a>
+      </div>
+    </div>
+    <div class="page-hero-img reveal">
+      <img src="../../images/sol-standard.jpg" alt="Standard-Verpackungsmaschine"
+        onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\' style=\'height:100%\'><div class=\'img-placeholder-icon\'>📦</div><span>Standardgerät</span></div>'" />
+    </div>
+  </div>
+</section>
+
+<div class="key-facts">
+  <div class="container">
+    <div class="key-facts-grid">
+      <div class="key-fact reveal"><div class="val">4–16 Wo.</div><div class="lbl">typische Lieferzeit</div></div>
+      <div class="key-fact reveal"><div class="val">ab 50 T€</div><div class="lbl">Einstiegspreis je Konfiguration</div></div>
+      <div class="key-fact reveal"><div class="val">96%</div><div class="lbl">Verfügbarkeit garantiert</div></div>
+      <div class="key-fact reveal"><div class="val">24 Mon.</div><div class="lbl">Basisgarantie</div></div>
+    </div>
+  </div>
+</div>
+
+<section class="sec" id="katalog" style="background:var(--bg)">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Katalog</span>
+      <h2>Unsere bewährten Plattformen</h2>
+      <p>Jede Plattform läuft seit Jahren in Produktionsbetrieben. Konfigurierbar — aber nicht von Null entwickelt. Das ist der Unterschied zwischen Zuverlässigkeit und Risiko.</p>
+    </div>
+    <div class="catalog-grid">
+      <div class="catalog-card reveal">
+        <div class="catalog-card-top"><div class="catalog-ico">🧴</div><h3>NX-Fill L Serie</h3></div>
+        <div class="catalog-card-body">
+          <p>Flüssigkeits- und Cremefüller für stabile, niedrigviskose Produkte. Geeignet für Lebensmittel- und Kosmetikanwendungen.</p>
+          <div class="catalog-spec"><span class="k">Kapazität</span><span class="v">500–3.000 Stk./h</span></div>
+          <div class="catalog-spec"><span class="k">Chargengröße</span><span class="v">50 ml – 5 l</span></div>
+          <div class="catalog-spec"><span class="k">Füllköpfe</span><span class="v">2–12 Stk.</span></div>
+          <div class="catalog-spec"><span class="k">Lieferzeit</span><span class="v">6–10 Wochen</span></div>
+        </div>
+      </div>
+      <div class="catalog-card reveal">
+        <div class="catalog-card-top"><div class="catalog-ico">⚗️</div><h3>NX-Dose G Serie</h3></div>
+        <div class="catalog-card-body">
+          <p>Gravimetrische Dosierer für Pulver und Granulate. Genauigkeit und Reproduzierbarkeit in chemischen und lebensmittelindustriellen Umgebungen.</p>
+          <div class="catalog-spec"><span class="k">Genauigkeit</span><span class="v">± 0,3%</span></div>
+          <div class="catalog-spec"><span class="k">Dosiergröße</span><span class="v">10 g – 25 kg</span></div>
+          <div class="catalog-spec"><span class="k">Kapazität</span><span class="v">300–1.800 Stk./h</span></div>
+          <div class="catalog-spec"><span class="k">Lieferzeit</span><span class="v">8–12 Wochen</span></div>
+        </div>
+      </div>
+      <div class="catalog-card reveal">
+        <div class="catalog-card-top"><div class="catalog-ico">📦</div><h3>NX-Pack S Serie</h3></div>
+        <div class="catalog-card-body">
+          <p>Halbautomatische und vollautomatische Verpackungsmaschinen für Karton- und Beutelverpackungen. Einfache Bedienung, geringer Wartungsaufwand.</p>
+          <div class="catalog-spec"><span class="k">Kapazität</span><span class="v">200–1.200 Packungen/h</span></div>
+          <div class="catalog-spec"><span class="k">Format</span><span class="v">Flow-wrap, Box, Bag</span></div>
+          <div class="catalog-spec"><span class="k">Steuerung</span><span class="v">Touchscreen-HMI</span></div>
+          <div class="catalog-spec"><span class="k">Lieferzeit</span><span class="v">4–8 Wochen</span></div>
+        </div>
+      </div>
+      <div class="catalog-card reveal">
+        <div class="catalog-card-top"><div class="catalog-ico">🏷</div><h3>NX-Label A Serie</h3></div>
+        <div class="catalog-card-body">
+          <p>Selbstklebende und Schrumpfetikettiermaschinen für runde und flache Oberflächen. Branchenunabhängige, modulare Ausführung.</p>
+          <div class="catalog-spec"><span class="k">Geschwindigkeit</span><span class="v">40–200 m/min</span></div>
+          <div class="catalog-spec"><span class="k">Produktkern</span><span class="v">Ø 20–120 mm</span></div>
+          <div class="catalog-spec"><span class="k">Genauigkeit</span><span class="v">± 0,5 mm</span></div>
+          <div class="catalog-spec"><span class="k">Lieferzeit</span><span class="v">4–6 Wochen</span></div>
+        </div>
+      </div>
+      <div class="catalog-card reveal">
+        <div class="catalog-card-top"><div class="catalog-ico">🔍</div><h3>NX-Check V Serie</h3></div>
+        <div class="catalog-card-body">
+          <p>Maschinelles Sehen basierte Qualitätsprüfer und Kontrollwaagen — am Ende von Verpackungslinien montiert, minimaler Integrationsaufwand.</p>
+          <div class="catalog-spec"><span class="k">Genauigkeit</span><span class="v">± 0,1 g</span></div>
+          <div class="catalog-spec"><span class="k">Geschwindigkeit</span><span class="v">max. 400 Stk./min</span></div>
+          <div class="catalog-spec"><span class="k">Schnittstelle</span><span class="v">OPC-UA, Profinet</span></div>
+          <div class="catalog-spec"><span class="k">Lieferzeit</span><span class="v">6–8 Wochen</span></div>
+        </div>
+      </div>
+      <div class="catalog-card reveal">
+        <div class="catalog-card-top"><div class="catalog-ico">🚿</div><h3>NX-Clean C Serie</h3></div>
+        <div class="catalog-card-body">
+          <p>CIP/SIP-Reinigungsstationen für vorhandene Füll- und Dosieranlagen. Anschließbar an externe Steuerungssysteme oder selbstständig betreibbar.</p>
+          <div class="catalog-spec"><span class="k">Medien</span><span class="v">Wasser, Lauge, Säure, Dampf</span></div>
+          <div class="catalog-spec"><span class="k">Temperatur</span><span class="v">max. 140 °C</span></div>
+          <div class="catalog-spec"><span class="k">Druck</span><span class="v">max. 6 bar</span></div>
+          <div class="catalog-spec"><span class="k">Lieferzeit</span><span class="v">8–14 Wochen</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--bg-2)">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow center">Vorteile</span>
+      <h2>Warum die Standardplattform?</h2>
+      <p>Nicht jedes Projekt erfordert eine Individualentwicklung. Wenn Ihr Produkt zur Plattform passt, ist das Standardgerät eine schnellere, planbarere und risikoärmere Investition.</p>
+    </div>
+    <div class="advantage-grid">
+      <div class="advantage-item reveal"><div class="advantage-ico">⚡</div><div><h4>Schnellere Installation</h4><p>4–16 Wochen Lieferzeit gegenüber 6–14 Monaten bei individuellen Projekten. Wenn der Betrieb jetzt steht, ist das der Unterschied zwischen verlorener Produktion und erhaltener Wettbewerbsfähigkeit.</p></div></div>
+      <div class="advantage-item reveal"><div class="advantage-ico">🛡</div><div><h4>Geprüfte Zuverlässigkeit</h4><p>Jede Plattform läuft seit Jahren in Produktionsbetrieben. Anlaufprobleme und Kinderkrankheiten werden nicht in Ihrem Betrieb ausgetestet.</p></div></div>
+      <div class="advantage-item reveal"><div class="advantage-ico">💶</div><div><h4>Planbare Investition</h4><p>Listenpreisbasierte Preisgestaltung, minimaler Scope-Creep. Die Investition ist kalkulierbar, der ROI planbar — keine Überraschungen am Projektende.</p></div></div>
+      <div class="advantage-item reveal"><div class="advantage-ico">🔧</div><div><h4>Einfacherer Service</h4><p>Standardteile, bekannte Wartungspunkte, schnellere Reaktion. Die Lifecycle-Kosten sind ebenfalls planbarer als bei Individualmaschinen.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--bg)">
+  <div class="container">
+    <div class="sec-head reveal"><span class="eyebrow">Verwandte Lösungen</span><h2>Wenn der Standard nicht ausreicht</h2></div>
+    <div class="related-grid">
+      <a href="/de/solutions/custom-dosing.html" class="related-card reveal"><div class="r-ico">⚙️</div><h4>Individuelle Dosieranlagen</h4><p>Wenn das Produkt nicht in den Katalog passt — vollständige Individualentwicklung und Fertigung.</p><span class="r-link">Details →</span></a>
+      <a href="/de/solutions/modular-systems.html" class="related-card reveal"><div class="r-ico">🔩</div><h4>Modulare Systeme</h4><p>Der Mittelweg: bewährte Module, individuelle Zusammenstellung — schneller als individuell, flexibler als Standard.</p><span class="r-link">Details →</span></a>
+      <a href="/de/solutions/service-lifecycle.html" class="related-card reveal"><div class="r-ico">🛠</div><h4>Service &amp; Lifecycle</h4><p>Für jedes Standardgerät verfügbares Lifecycle-Paket — von Präventivwartung bis zur Ersatzteilversorgung.</p><span class="r-link">Details →</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <div class="cta-band-inner reveal">
+      <h2>Welche Plattform passt zu Ihrem Produkt?</h2>
+      <p>Senden Sie eine kurze Beschreibung des Produkts und der Chargengröße — wir melden uns innerhalb von 48 Stunden mit der besten Ausgangskonfiguration.</p>
+      <div class="cta-band-actions">
+        <a href="/de/contact/" class="btn btn-light btn-lg">Anfrage starten <span class="arrow">→</span></a>
+        <a href="/de/case-studies/" class="btn btn-outline-light">Referenzen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="container">
+  <div class="foot-grid">
+    <div><div class="brand"><svg class="brand-logo" viewBox="0 0 48 48" fill="none" style="width:32px;height:32px"><rect x="2" y="2" width="44" height="44" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.15)"/><path d="M14 34V14l9 12V14" stroke="#7fa8c9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 14c4 4 4 12 0 16-2-3-2-9 0-16Z" fill="#c4511c"/></svg><span><span class="brand-name">NORDE<span style="color:#c4511c">XA</span></span><span class="brand-sub">Industrial Solutions</span></span></div><p class="foot-about">Fortschrittliche Dosier- und Verpackungsanlagen — Székesfehérvár, seit 1994.</p></div>
+    <div class="foot-col"><h5>Lösungen</h5><a href="/de/solutions/custom-dosing.html">Individuelle Dosieranlagen</a><a href="/de/solutions/standard-equipment.html">Standardgeräte</a><a href="/de/solutions/modular-systems.html">Modulare Systeme</a><a href="/de/solutions/service-lifecycle.html">Service &amp; Lifecycle</a></div>
+    <div class="foot-col"><h5>Unternehmen</h5><a href="/de/about/">Über uns</a><a href="/de/industries/">Branchen</a><a href="/de/case-studies/">Referenzen</a><a href="/de/contact/">Karriere</a></div>
+    <div class="foot-col"><h5>Kontakt</h5><a href="mailto:sales@nordexa.hu">sales@nordexa.hu</a><a href="tel:+3622555100">+36 22 555 100</a><a href="/de/contact/">Angebot anfordern</a></div>
+  </div>
+  <div class="foot-bottom"><span>© 1994–2026 Nordexa Industrial Solutions Zrt.</span><span>Datenschutz · ISO 9001 zertifizierte Fertigung</span></div>
+</div></footer>
+<script src="../../js/main.js"></script>
+</body>
+</html>

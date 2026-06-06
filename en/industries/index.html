@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Industries — Nordexa Industrial Solutions</title>
+<meta name="description" content="Nordexa serves chemical, cosmetics, premium food and small batch manufacturers across 6 CEE countries. Dosing and packaging systems tailored to every industry's requirements." />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../../css/style.css" />
+<style>
+  .page-hero{padding:140px 0 80px;background:var(--bg);border-bottom:1px solid var(--line)}
+  .page-hero h1{font-size:clamp(34px,4.5vw,60px);font-weight:700;margin:16px 0 18px;max-width:760px}
+  .page-hero .lead{font-size:19px;color:var(--muted);max-width:640px;line-height:1.7}
+  .breadcrumb{font-family:var(--font-d);font-size:13px;color:var(--muted-2);margin-bottom:20px;display:flex;align-items:center;gap:8px}
+  .breadcrumb a{color:var(--muted)}.breadcrumb-sep{color:var(--line-strong)}
+  .ind-overview-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .ind-overview-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-l);overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s;display:flex;flex-direction:column}
+  .ind-overview-card:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(20,30,45,.11);border-color:var(--line-strong)}
+  .ind-card-img{aspect-ratio:16/9;overflow:hidden;background:var(--bg-2)}
+  .ind-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+  .ind-overview-card:hover .ind-card-img img{transform:scale(1.04)}
+  .ind-card-body{padding:28px;flex:1;display:flex;flex-direction:column;gap:10px}
+  .ind-card-body h2{font-size:22px;font-weight:700}
+  .ind-card-body p{font-size:15px;color:var(--muted);flex:1}
+  .ind-tags{display:flex;flex-wrap:wrap;gap:8px}
+  .ind-tag{font-family:var(--font-d);font-size:11.5px;font-weight:600;padding:5px 12px;border-radius:999px;background:var(--bg-2);color:var(--muted);border:1px solid var(--line)}
+  .ind-cta{font-family:var(--font-d);font-size:14px;font-weight:600;color:var(--steel);margin-top:4px}
+  @media(max-width:768px){.ind-overview-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header id="hdr">
+  <div class="container nav-wrap">
+    <a href="/en/" class="brand"><svg class="brand-logo" viewBox="0 0 48 48" fill="none"><rect x="2" y="2" width="44" height="44" rx="10" fill="#f4f0e8" stroke="#c4c0b2"/><path d="M14 34V14l9 12V14" stroke="#2b4560" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 14c4 4 4 12 0 16-2-3-2-9 0-16Z" fill="#c4511c"/></svg><span><span class="brand-name">NORDE<span>XA</span></span><span class="brand-sub">Industrial Solutions</span></span></a>
+    <nav class="main-nav" id="mainNav">
+      <div class="nav-item has-mega"><button class="nav-link" aria-expanded="false">Solutions <span class="chevron">▾</span></button><div class="mega-panel"><a href="/en/solutions/custom-dosing.html" class="mega-item"><span class="mega-item-ico">⚙️</span><span class="mega-item-title">Custom Dosing Lines</span><span class="mega-item-desc">Fully tailored</span></a><a href="/en/solutions/standard-equipment.html" class="mega-item"><span class="mega-item-ico">📦</span><span class="mega-item-title">Standard Equipment</span><span class="mega-item-desc">From catalogue</span></a><a href="/en/solutions/modular-systems.html" class="mega-item"><span class="mega-item-ico">🔩</span><span class="mega-item-title">Modular Systems</span><span class="mega-item-desc">Flexible</span></a><a href="/en/solutions/service-lifecycle.html" class="mega-item"><span class="mega-item-ico">🛠</span><span class="mega-item-title">Service &amp; Lifecycle</span><span class="mega-item-desc">96% uptime</span></a></div></div>
+      <div class="nav-item has-mega"><button class="nav-link active" aria-expanded="false">Industries <span class="chevron">▾</span></button><div class="mega-panel wide"><a href="/en/industries/chemical.html" class="mega-item"><span class="mega-item-ico">⚗️</span><span class="mega-item-title">Chemical</span><span class="mega-item-desc">Reactive materials</span></a><a href="/en/industries/cosmetics.html" class="mega-item"><span class="mega-item-ico">💄</span><span class="mega-item-title">Cosmetics</span><span class="mega-item-desc">Hygienic filling</span></a><a href="/en/industries/food.html" class="mega-item"><span class="mega-item-ico">🫙</span><span class="mega-item-title">Premium Food</span><span class="mega-item-desc">Food-safe systems</span></a><a href="/en/industries/small-batch.html" class="mega-item"><span class="mega-item-ico">🔄</span><span class="mega-item-title">Small Batch</span><span class="mega-item-desc">Flexible changeovers</span></a></div></div>
+      <a href="/en/case-studies/" class="nav-link">Case Studies</a>
+      <a href="/en/service/" class="nav-link">Service</a>
+      <a href="/en/about/" class="nav-link">About Us</a>
+      <a href="/en/contact/" class="nav-link">Contact</a>
+    </nav>
+    <div class="nav-actions"><div class="lang-switch"><a href="/" class="lang-btn">HU</a><span class="lang-sep">|</span><a href="/en/" class="lang-btn active">EN</a><span class="lang-sep">|</span><a href="/de/" class="lang-btn">DE</a><span class="lang-sep">|</span><a href="/pl/" class="lang-btn">PL</a><span class="lang-sep">|</span><a href="/sk/" class="lang-btn">SK</a></div><a href="/en/contact/" class="btn btn-primary">Request a Quote <span class="arrow">→</span></a><button class="burger" id="burger" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button></div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/en/">Home</a><span class="breadcrumb-sep">›</span><span>Industries</span></div>
+    <span class="eyebrow">Industries</span>
+    <h1>Where every batch matters</h1>
+    <p class="lead">We serve manufacturers where formulation, batch size and hygiene change constantly — and mistakes have a price. Four industries where we have 30 years of references.</p>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--bg)">
+  <div class="container">
+    <div class="ind-overview-grid">
+      <a href="/en/industries/chemical.html" class="ind-overview-card reveal">
+        <div class="ind-card-img"><img src="../../images/ind-vegyipar.jpg" alt="Chemical plant" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><div class=\'img-placeholder-icon\'>⚗️</div></div>'"/></div>
+        <div class="ind-card-body">
+          <h2>⚗️ Chemical Industry</h2>
+          <p>Precise, safe dosing of reactive, corrosive and viscous materials. ATEX zones, REACH compliance, 316L stainless steel construction.</p>
+          <div class="ind-tags"><span class="ind-tag">ATEX II 2G</span><span class="ind-tag">REACH-compliant</span><span class="ind-tag">500k+ cP</span></div>
+          <span class="ind-cta">Learn more →</span>
+        </div>
+      </a>
+      <a href="/en/industries/cosmetics.html" class="ind-overview-card reveal">
+        <div class="ind-card-img"><img src="../../images/ind-kozmetika.jpg" alt="Cosmetics filling" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><div class=\'img-placeholder-icon\'>💄</div></div>'"/></div>
+        <div class="ind-card-body">
+          <h2>💄 Cosmetics</h2>
+          <p>Premium cosmetics filling in hygienic, GMP-compatible environments. Where product quality and packaging aesthetics both matter.</p>
+          <div class="ind-tags"><span class="ind-tag">GMP / ISO 22716</span><span class="ind-tag">CIP/SIP</span><span class="ind-tag">&lt;15 min changeover</span></div>
+          <span class="ind-cta">Learn more →</span>
+        </div>
+      </a>
+      <a href="/en/industries/food.html" class="ind-overview-card reveal">
+        <div class="ind-card-img"><img src="../../images/ind-elelmiszer.jpg" alt="Premium food" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><div class=\'img-placeholder-icon\'>🫙</div></div>'"/></div>
+        <div class="ind-card-body">
+          <h2>🫙 Premium Food</h2>
+          <p>Food-safe dosing and packaging for delicate and sensitive products — where quality must never vary.</p>
+          <div class="ind-tags"><span class="ind-tag">FSSC 22000</span><span class="ind-tag">HACCP</span><span class="ind-tag">14 allergen groups</span></div>
+          <span class="ind-cta">Learn more →</span>
+        </div>
+      </a>
+      <a href="/en/industries/small-batch.html" class="ind-overview-card reveal">
+        <div class="ind-card-img"><img src="../../images/ind-kissorozat.jpg" alt="Small batch manufacturing" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><div class=\'img-placeholder-icon\'>🔄</div></div>'"/></div>
+        <div class="ind-card-body">
+          <h2>🔄 Small Batch / Short Run</h2>
+          <p>Short runs, frequent formulation changes, mixed products — where flexibility is as important as precision.</p>
+          <div class="ind-tags"><span class="ind-tag">&lt;15 min changeover</span><span class="ind-tag">100+ recipes</span><span class="ind-tag">Scalable</span></div>
+          <span class="ind-cta">Learn more →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container"><div class="cta-band-inner reveal">
+    <h2>Is your industry not listed? We likely work there too.</h2>
+    <p>Tell us about your plant and challenge — our engineers will assess whether Nordexa can help.</p>
+    <div class="cta-band-actions">
+      <a href="/en/contact/" class="btn btn-light btn-lg">Start a conversation <span class="arrow">→</span></a>
+      <a href="/en/case-studies/" class="btn btn-outline-light">References</a>
+    </div>
+  </div></div>
+</section>
+
+<footer><div class="container">
+  <div class="foot-grid">
+    <div><div class="brand"><svg class="brand-logo" viewBox="0 0 48 48" fill="none" style="width:32px;height:32px"><rect x="2" y="2" width="44" height="44" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.15)"/><path d="M14 34V14l9 12V14" stroke="#7fa8c9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 14c4 4 4 12 0 16-2-3-2-9 0-16Z" fill="#c4511c"/></svg><span><span class="brand-name">NORDE<span style="color:#c4511c">XA</span></span><span class="brand-sub">Industrial Solutions</span></span></div><p class="foot-about">Advanced dosing and packaging systems — Székesfehérvár, since 1994.</p></div>
+    <div class="foot-col"><h5>Solutions</h5><a href="/en/solutions/custom-dosing.html">Custom Dosing Lines</a><a href="/en/solutions/standard-equipment.html">Standard Equipment</a><a href="/en/solutions/modular-systems.html">Modular Systems</a><a href="/en/solutions/service-lifecycle.html">Service &amp; Lifecycle</a></div>
+    <div class="foot-col"><h5>Industries</h5><a href="/en/industries/chemical.html">Chemical</a><a href="/en/industries/cosmetics.html">Cosmetics</a><a href="/en/industries/food.html">Premium Food</a><a href="/en/industries/small-batch.html">Small Batch</a></div>
+    <div class="foot-col"><h5>Contact</h5><a href="mailto:sales@nordexa.hu">sales@nordexa.hu</a><a href="tel:+3622555100">+36 22 555 100</a><a href="/en/contact/">Request a Quote</a></div>
+  </div>
+  <div class="foot-bottom"><span>© 1994–2026 Nordexa Industrial Solutions Zrt.</span><span>Privacy Policy · ISO 9001</span></div>
+</div></footer>
+<script src="../../js/main.js"></script>
+</body>
+</html>

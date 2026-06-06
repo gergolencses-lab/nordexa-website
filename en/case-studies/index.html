@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Case Studies — Nordexa Industrial Solutions</title>
+<meta name="description" content="Real plant challenges, measurable results. Chemical, cosmetics, premium food, small batch — Nordexa references from six CEE countries." />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../../css/style.css" />
+<style>
+  .cases-hero{padding:140px 0 72px;background:var(--bg);border-bottom:1px solid var(--line);text-align:center}
+  .cases-hero h1{font-size:clamp(32px,4vw,56px);font-weight:700;margin:16px 0 18px}
+  .cases-hero p.lead{font-size:18px;color:var(--muted);max-width:600px;margin:0 auto 32px;line-height:1.7}
+  .filter-bar{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:48px}
+  .filter-btn{font-family:var(--font-d);font-size:13px;font-weight:600;padding:9px 18px;border-radius:999px;border:1.5px solid var(--line-strong);background:var(--surface);color:var(--muted);cursor:pointer;transition:all .2s}
+  .filter-btn:hover,.filter-btn.active{border-color:var(--accent);color:var(--accent);background:var(--accent-bg)}
+  .cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .case-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s,border-color .25s}
+  .case-card:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(20,30,45,.11);border-color:var(--line-strong)}
+  .case-card-img{aspect-ratio:16/9;overflow:hidden;background:var(--bg-2);position:relative}
+  .case-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+  .case-card:hover .case-card-img img{transform:scale(1.05)}
+  .case-tag{position:absolute;top:14px;left:14px;font-family:var(--font-d);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:999px;background:var(--headline);color:#fff}
+  .case-card-body{padding:24px;display:flex;flex-direction:column;gap:12px;flex:1}
+  .case-company{font-family:var(--font-d);font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-2)}
+  .case-card-body h3{font-size:18px;font-weight:700;line-height:1.3}
+  .case-card-body p{font-size:14px;color:var(--muted);flex:1}
+  .case-metrics{display:flex;gap:20px;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .case-metric .m-val{font-family:var(--font-d);font-weight:700;font-size:22px;color:var(--accent);line-height:1}
+  .case-metric .m-lbl{font-size:11.5px;color:var(--muted);margin-top:3px}
+  .case-card-link{font-family:var(--font-d);font-size:14px;font-weight:600;color:var(--steel);display:flex;align-items:center;gap:6px;transition:gap .2s}
+  .case-card:hover .case-card-link{gap:10px}
+  .featured-case{background:var(--bg-2);border-radius:var(--radius-l);overflow:hidden;display:grid;grid-template-columns:1fr 1fr;margin-bottom:40px}
+  .featured-case-img{aspect-ratio:4/3;overflow:hidden;background:var(--bg-2)}
+  .featured-case-img img{width:100%;height:100%;object-fit:cover}
+  .featured-case-body{padding:48px;display:flex;flex-direction:column;gap:18px;justify-content:center}
+  .featured-label{font-family:var(--font-d);font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent)}
+  .featured-case-body h2{font-size:clamp(22px,3vw,32px);font-weight:700;line-height:1.2}
+  .featured-case-body p{font-size:15px;color:var(--muted)}
+  .featured-metrics{display:flex;gap:28px}
+  .fm .fm-val{font-family:var(--font-d);font-weight:700;font-size:32px;color:var(--accent);line-height:1}
+  .fm .fm-lbl{font-size:12px;color:var(--muted);margin-top:4px}
+  .trust-strip{background:var(--headline);padding:56px 0;text-align:center}
+  .trust-strip h2{color:#fff;font-size:clamp(22px,3vw,32px);font-weight:700;margin-bottom:14px}
+  .trust-strip p{color:rgba(255,255,255,.6);font-size:16px;margin-bottom:32px;max-width:520px;margin-inline:auto}
+  @media(max-width:1024px){.cases-grid{grid-template-columns:repeat(2,1fr)}.featured-case{grid-template-columns:1fr}}
+  @media(max-width:640px){.cases-grid{grid-template-columns:1fr}.featured-case-body{padding:28px}.featured-metrics{flex-wrap:wrap;gap:16px}}
+</style>
+</head>
+<body>
+<header id="hdr">
+  <div class="container nav-wrap">
+    <a href="/en/" class="brand"><svg class="brand-logo" viewBox="0 0 48 48" fill="none"><rect x="2" y="2" width="44" height="44" rx="10" fill="#f4f0e8" stroke="#c4c0b2"/><path d="M14 34V14l9 12V14" stroke="#2b4560" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 14c4 4 4 12 0 16-2-3-2-9 0-16Z" fill="#c4511c"/></svg><span><span class="brand-name">NORDE<span>XA</span></span><span class="brand-sub">Industrial Solutions</span></span></a>
+    <nav class="main-nav" id="mainNav">
+      <div class="nav-item has-mega"><button class="nav-link" aria-expanded="false">Solutions <span class="chevron">▾</span></button><div class="mega-panel"><a href="/en/solutions/custom-dosing.html" class="mega-item"><span class="mega-item-ico">⚙️</span><span class="mega-item-title">Custom Dosing Lines</span><span class="mega-item-desc">Fully tailored</span></a><a href="/en/solutions/standard-equipment.html" class="mega-item"><span class="mega-item-ico">📦</span><span class="mega-item-title">Standard Equipment</span><span class="mega-item-desc">From catalogue</span></a><a href="/en/solutions/modular-systems.html" class="mega-item"><span class="mega-item-ico">🔩</span><span class="mega-item-title">Modular Systems</span><span class="mega-item-desc">Flexible</span></a><a href="/en/solutions/service-lifecycle.html" class="mega-item"><span class="mega-item-ico">🛠</span><span class="mega-item-title">Service &amp; Lifecycle</span><span class="mega-item-desc">96% uptime</span></a></div></div>
+      <div class="nav-item has-mega"><button class="nav-link" aria-expanded="false">Industries <span class="chevron">▾</span></button><div class="mega-panel wide"><a href="/en/industries/chemical.html" class="mega-item"><span class="mega-item-ico">⚗️</span><span class="mega-item-title">Chemical</span><span class="mega-item-desc">Reactive materials</span></a><a href="/en/industries/cosmetics.html" class="mega-item"><span class="mega-item-ico">💄</span><span class="mega-item-title">Cosmetics</span><span class="mega-item-desc">Hygienic filling</span></a><a href="/en/industries/food.html" class="mega-item"><span class="mega-item-ico">🫙</span><span class="mega-item-title">Premium Food</span><span class="mega-item-desc">Food-safe</span></a><a href="/en/industries/small-batch.html" class="mega-item"><span class="mega-item-ico">🔄</span><span class="mega-item-title">Small Batch</span><span class="mega-item-desc">Flexible changeovers</span></a></div></div>
+      <a href="/en/case-studies/" class="nav-link active">Case Studies</a>
+      <a href="/en/service/" class="nav-link">Service</a>
+      <a href="/en/about/" class="nav-link">About Us</a>
+      <a href="/en/contact/" class="nav-link">Contact</a>
+    </nav>
+    <div class="nav-actions"><div class="lang-switch"><a href="/" class="lang-btn">HU</a><span class="lang-sep">|</span><a href="/en/" class="lang-btn active">EN</a><span class="lang-sep">|</span><a href="/de/" class="lang-btn">DE</a><span class="lang-sep">|</span><a href="/pl/" class="lang-btn">PL</a><span class="lang-sep">|</span><a href="/sk/" class="lang-btn">SK</a></div><a href="/en/contact/" class="btn btn-primary">Request a Quote <span class="arrow">→</span></a><button class="burger" id="burger" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button></div>
+  </div>
+</header>
+
+<section class="cases-hero">
+  <div class="container">
+    <span class="eyebrow center">References</span>
+    <h1>Real challenges, measurable results</h1>
+    <p class="lead">Not slogans — specific plant problems we solved, and the numbers our clients used to measure it.</p>
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="chemical">Chemical</button>
+      <button class="filter-btn" data-filter="cosmetics">Cosmetics</button>
+      <button class="filter-btn" data-filter="food">Premium food</button>
+      <button class="filter-btn" data-filter="smallbatch">Small batch</button>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--bg);padding-top:0">
+  <div class="container">
+
+    <!-- FEATURED -->
+    <div class="featured-case reveal">
+      <div class="featured-case-img">
+        <img src="../../images/case-aurora.jpg" alt="Aurora Foods" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\' style=\'height:100%\'><div class=\'img-placeholder-icon\'>🏭</div><span>Aurora Foods</span></div>'"/>
+      </div>
+      <div class="featured-case-body">
+        <span class="featured-label">⭐ Featured case study</span>
+        <div style="display:flex;gap:8px;flex-wrap:wrap"><span style="font-family:var(--font-d);font-size:11px;font-weight:600;padding:4px 12px;border-radius:999px;background:var(--accent-bg);color:var(--accent)">Premium food</span><span style="font-family:var(--font-d);font-size:11px;font-weight:600;padding:4px 12px;border-radius:999px;background:var(--steel-bg);color:var(--steel)">Modular system</span></div>
+        <h2>Aurora Foods: +23% OEE, −18% scrap — in six months</h2>
+        <p>The premium sauce plant's mixed-batch, variable-formulation operation was paralysed by the old system. With Nordexa's modular dosing line it recovered in six months — and outperformed.</p>
+        <div class="featured-metrics">
+          <div class="fm"><div class="fm-val">+23%</div><div class="fm-lbl">OEE improvement</div></div>
+          <div class="fm"><div class="fm-val">−18%</div><div class="fm-lbl">scrap reduction</div></div>
+          <div class="fm"><div class="fm-val">8 mo</div><div class="fm-lbl">design to handover</div></div>
+        </div>
+        <a href="/en/case-studies/aurora-foods.html" class="btn btn-primary">Read full case study <span class="arrow">→</span></a>
+      </div>
+    </div>
+
+    <!-- CASE GRID -->
+    <div class="cases-grid">
+
+      <a href="#" class="case-card reveal" data-industry="chemical">
+        <div class="case-card-img">
+          <img src="../../images/ind-vegyipar.jpg" alt="ChemPol" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><div class=\'img-placeholder-icon\'>⚗️</div></div>'"/>
+          <span class="case-tag">Chemical</span>
+        </div>
+        <div class="case-card-body">
+          <div class="case-company">ChemPol · Poland</div>
+          <h3>ATEX-zone dosing line with zero safety incidents</h3>
+          <p>Explosive atmosphere, solvent-based products. Fully spark-proof, ATEX II 2G rated system — operating for 7 years with zero incidents.</p>
+          <div class="case-metrics">
+            <div class="case-metric"><div class="m-val">0</div><div class="m-lbl">incidents in 7 years</div></div>
+            <div class="case-metric"><div class="m-val">±0.2%</div><div class="m-lbl">accuracy</div></div>
+            <div class="case-metric"><div class="m-val">11 mo</div><div class="m-lbl">lead time</div></div>
+          </div>
+          <span class="case-card-link">Read case study →</span>
+        </div>
+      </a>
+
+      <a href="#" class="case-card reveal" data-industry="cosmetics">
+        <div class="case-card-img">
+          <img src="../../images/ind-kozmetika.jpg" alt="Lumière Cosmetics" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><div class=\'img-placeholder-icon\'>💄</div></div>'"/>
+          <span class="case-tag">Cosmetics</span>
+        </div>
+        <div class="case-card-body">
+          <div class="case-company">Lumière Cosmetics · Austria</div>
+          <h3>GMP-passing serum filler, up and running in 3 months</h3>
+          <p>Premium anti-aging serum, heat-sensitive emulsion, drip-free filling requirement. The first GMP audit passed without a single deviation.</p>
+          <div class="case-metrics">
+            <div class="case-metric"><div class="m-val">0</div><div class="m-lbl">GMP deviations</div></div>
+            <div class="case-metric"><div class="m-val">±0.3%</div><div class="m-lbl">filling acc.</div></div>
+            <div class="case-metric"><div class="m-val">3 mo</div><div class="m-lbl">commissioning</div></div>
+          </div>
+          <span class="case-card-link">Read case study →</span>
+        </div>
+      </a>
+
+      <a href="#" class="case-card reveal" data-industry="smallbatch">
+        <div class="case-card-img">
+          <img src="../../images/sol-modularis.jpg" alt="Vitalpharm" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><div class=\'img-placeholder-icon\'>🔩</div></div>'"/>
+          <span class="case-tag">Small batch</span>
+        </div>
+        <div class="case-card-body">
+          <div class="case-company">Vitalpharm · Czech Republic</div>
+          <h3>Modular dosing line for 40 different products — on one machine</h3>
+          <p>Czech supplement manufacturer making 40 different products in short runs, in 3 different packaging formats. With Nordexa modular system the changeover dropped to 12 minutes.</p>
+          <div class="case-metrics">
+            <div class="case-metric"><div class="m-val">40</div><div class="m-lbl">products on 1 machine</div></div>
+            <div class="case-metric"><div class="m-val">12'</div><div class="m-lbl">changeover</div></div>
+            <div class="case-metric"><div class="m-val">+31%</div><div class="m-lbl">capacity</div></div>
+          </div>
+          <span class="case-card-link">Read case study →</span>
+        </div>
+      </a>
+
+      <a href="#" class="case-card reveal" data-industry="food">
+        <div class="case-card-img">
+          <img src="../../images/hero-packaging-line.jpg" alt="Carpathia Dairy" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><div class=\'img-placeholder-icon\'>🫙</div></div>'"/>
+          <span class="case-tag">Premium food</span>
+        </div>
+        <div class="case-card-body">
+          <div class="case-company">Carpathia Dairy · Romania</div>
+          <h3>FSSC 22000-audited filling line for premium artisan dairy products</h3>
+          <p>Romanian artisan dairy producer's premium cheese and yoghurt products had special filling requirements. The system passed the first FSSC 22000 audit without issue.</p>
+          <div class="case-metrics">
+            <div class="case-metric"><div class="m-val">FSSC</div><div class="m-lbl">22000 audited</div></div>
+            <div class="case-metric"><div class="m-val">+19%</div><div class="m-lbl">OEE improvement</div></div>
+            <div class="case-metric"><div class="m-val">7 mo</div><div class="m-lbl">lead time</div></div>
+          </div>
+          <span class="case-card-link">Read case study →</span>
+        </div>
+      </a>
+
+      <a href="#" class="case-card reveal" data-industry="smallbatch">
+        <div class="case-card-img">
+          <img src="../../images/sol-standard.jpg" alt="PackLine" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><div class=\'img-placeholder-icon\'>📦</div></div>'"/>
+          <span class="case-tag">Small batch</span>
+        </div>
+        <div class="case-card-body">
+          <div class="case-company">PackLine · Hungary</div>
+          <h3>Standard NX-Fill L in 8 weeks — contract filling capacity tripled</h3>
+          <p>PackLine contract filler urgently needed additional filling capacity. Standard NX-Fill L platform, minimal customisation, 8-week delivery.</p>
+          <div class="case-metrics">
+            <div class="case-metric"><div class="m-val">3×</div><div class="m-lbl">capacity</div></div>
+            <div class="case-metric"><div class="m-val">8 wk</div><div class="m-lbl">delivery</div></div>
+            <div class="case-metric"><div class="m-val">96%</div><div class="m-lbl">uptime</div></div>
+          </div>
+          <span class="case-card-link">Read case study →</span>
+        </div>
+      </a>
+
+      <div class="case-card reveal" style="background:var(--bg-2);border-style:dashed;justify-content:center;align-items:center;text-align:center;padding:40px;gap:16px">
+        <div style="font-size:36px">🏗</div>
+        <h3 style="font-size:18px">More references coming soon</h3>
+        <p style="font-size:14px;color:var(--muted)">6 countries, 30 years, hundreds of projects — we are preparing the most interesting cases. Ask about industry-specific references!</p>
+        <a href="/en/contact/" class="btn btn-ghost" style="margin-top:8px">Reference inquiry →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="trust-strip">
+  <div class="container">
+    <h2>Your challenge can be solved too.</h2>
+    <p>Tell us about the project — our engineers will check whether we have a similar reference and what we learned from it.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a href="/en/contact/" class="btn btn-light btn-lg">Start a project conversation <span class="arrow">→</span></a>
+      <a href="/en/solutions/" class="btn btn-outline-light">Our solutions</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="container">
+  <div class="foot-grid">
+    <div><div class="brand"><svg class="brand-logo" viewBox="0 0 48 48" fill="none" style="width:32px;height:32px"><rect x="2" y="2" width="44" height="44" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.15)"/><path d="M14 34V14l9 12V14" stroke="#7fa8c9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 14c4 4 4 12 0 16-2-3-2-9 0-16Z" fill="#c4511c"/></svg><span><span class="brand-name">NORDE<span style="color:#c4511c">XA</span></span><span class="brand-sub">Industrial Solutions</span></span></div><p class="foot-about">Advanced dosing and packaging systems — Székesfehérvár, since 1994.</p></div>
+    <div class="foot-col"><h5>Solutions</h5><a href="/en/solutions/custom-dosing.html">Custom Dosing Lines</a><a href="/en/solutions/standard-equipment.html">Standard Equipment</a><a href="/en/solutions/modular-systems.html">Modular Systems</a><a href="/en/solutions/service-lifecycle.html">Service &amp; Lifecycle</a></div>
+    <div class="foot-col"><h5>Industries</h5><a href="/en/industries/chemical.html">Chemical</a><a href="/en/industries/cosmetics.html">Cosmetics</a><a href="/en/industries/food.html">Premium Food</a><a href="/en/industries/small-batch.html">Small Batch</a></div>
+    <div class="foot-col"><h5>Contact</h5><a href="mailto:sales@nordexa.hu">sales@nordexa.hu</a><a href="tel:+3622555100">+36 22 555 100</a><a href="/en/contact/">Request a Quote</a></div>
+  </div>
+  <div class="foot-bottom"><span>© 1994–2026 Nordexa Industrial Solutions Zrt.</span><span>Privacy Policy · ISO 9001</span></div>
+</div></footer>
+
+<script src="../../js/main.js"></script>
+<script>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const caseCards = document.querySelectorAll('.case-card[data-industry]');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      caseCards.forEach(card => {
+        const show = f === 'all' || card.dataset.industry === f;
+        card.style.display = show ? '' : 'none';
+      });
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Service &amp; Lifecycle — Nordexa Industrial Solutions</title>
+<meta name="description" content="Nordexa Service: Vorbeugende Wartung, Ersatzteilversorgung, 24/7-Notdienst. 96 % Verfügbarkeitsgarantie, 8 h Reaktionszeit, 6 CEE-Länder Abdeckung." />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../../css/style.css" />
+<style>
+  .page-hero{padding:140px 0 80px;background:var(--bg);border-bottom:1px solid var(--line)}
+  .page-hero h1{font-size:clamp(32px,4.5vw,56px);font-weight:700;margin:16px 0 16px;max-width:720px}
+  .page-hero h1 em{font-style:normal;color:var(--accent)}
+  .page-hero .lead{font-size:18px;color:var(--muted);max-width:600px;line-height:1.7;margin-bottom:28px}
+  .breadcrumb{font-family:var(--font-d);font-size:13px;color:var(--muted-2);margin-bottom:20px;display:flex;align-items:center;gap:8px}
+  .breadcrumb a{color:var(--muted)}.breadcrumb-sep{color:var(--line-strong)}
+  .szerviz-stats{background:var(--headline);display:grid;grid-template-columns:repeat(4,1fr)}
+  .sz-stat{padding:36px 28px;border-right:1px solid rgba(255,255,255,.08);text-align:center}
+  .sz-stat:last-child{border-right:0}
+  .sz-stat .val{font-family:var(--font-d);font-weight:700;font-size:44px;color:var(--accent);line-height:1;margin-bottom:8px}
+  .sz-stat .lbl{font-size:13px;color:rgba(255,255,255,.6)}
+  .preventive-split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .preventive-img{border-radius:var(--radius-l);overflow:hidden;aspect-ratio:4/3;background:var(--bg-2)}
+  .preventive-img img{width:100%;height:100%;object-fit:cover}
+  .cost-compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
+  .cost-card{border-radius:var(--radius);padding:20px;text-align:center}
+  .cost-card.bad{background:rgba(192,50,30,.06);border:1.5px solid rgba(192,50,30,.2)}
+  .cost-card.good{background:var(--green-bg);border:1.5px solid rgba(45,110,72,.25)}
+  .cost-card .cv{font-family:var(--font-d);font-weight:700;font-size:28px;line-height:1;margin-bottom:6px}
+  .cost-card.bad .cv{color:#c0321e}
+  .cost-card.good .cv{color:var(--green)}
+  .cost-card .cl{font-size:13px;color:var(--muted)}
+  .services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .service-item{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;gap:20px;align-items:flex-start;transition:border-color .2s,transform .2s}
+  .service-item:hover{border-color:var(--line-strong);transform:translateY(-3px)}
+  .service-ico{font-size:28px;flex-shrink:0;width:52px;height:52px;background:var(--accent-bg);border-radius:12px;display:flex;align-items:center;justify-content:center}
+  .service-item h3{font-size:18px;font-weight:700;margin-bottom:8px}
+  .service-item p{font-size:14.5px;color:var(--muted);line-height:1.6}
+  .packages-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .pkg{background:var(--surface);border:2px solid var(--line);border-radius:var(--radius);padding:32px;display:flex;flex-direction:column;gap:14px;transition:border-color .2s,box-shadow .2s}
+  .pkg.featured{border-color:var(--steel);box-shadow:0 8px 32px rgba(43,69,96,.12)}
+  .pkg-badge{font-family:var(--font-d);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 12px;border-radius:999px;display:inline-block;width:fit-content}
+  .badge-basic{background:var(--bg-2);color:var(--muted)}
+  .badge-pro{background:var(--steel-bg);color:var(--steel)}
+  .badge-premium{background:var(--accent-bg);color:var(--accent)}
+  .pkg h3{font-size:22px;font-weight:700}
+  .pkg .pkg-price{font-family:var(--font-d);font-size:14px;color:var(--muted)}
+  .pkg hr{border:0;border-top:1px solid var(--line)}
+  .pkg-features{display:flex;flex-direction:column;gap:9px;flex:1}
+  .pf{display:flex;gap:10px;font-size:14px;align-items:flex-start}
+  .pf-check{color:var(--green);font-weight:700;flex-shrink:0;margin-top:1px}
+  .pf-na{color:var(--muted-2);flex-shrink:0}
+  .process-v{display:flex;flex-direction:column;gap:0;max-width:680px;margin:0 auto}
+  .pv-item{display:grid;grid-template-columns:64px 1fr;gap:20px;padding-bottom:28px;position:relative}
+  .pv-item::before{content:"";position:absolute;left:31px;top:28px;bottom:0;width:2px;background:var(--line)}
+  .pv-item:last-child::before{display:none}.pv-item:last-child{padding-bottom:0}
+  .pv-num{width:40px;height:40px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-weight:700;font-size:14px;flex-shrink:0}
+  .pv-body{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px}
+  .pv-body h4{font-size:16px;font-weight:700;margin-bottom:5px}
+  .pv-body p{font-size:13.5px;color:var(--muted)}
+  .response-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .resp-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;text-align:center}
+  .resp-flag{font-size:28px;margin-bottom:8px}
+  .resp-card h4{font-size:15px;font-weight:700;margin-bottom:4px}
+  .resp-card p{font-size:13px;color:var(--muted)}
+  .resp-time{font-family:var(--font-d);font-weight:700;font-size:22px;color:var(--accent);display:block;margin-top:8px}
+  .emergency-bar{background:var(--accent);padding:20px 0}
+  .emergency-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  .emergency-text{color:#fff}
+  .emergency-text strong{font-family:var(--font-d);font-size:18px;font-weight:700;display:block;margin-bottom:4px}
+  .emergency-text span{font-size:14px;opacity:.85}
+  .emergency-actions{display:flex;gap:12px;flex-wrap:wrap}
+  @media(max-width:1024px){
+    .szerviz-stats{grid-template-columns:repeat(2,1fr)}.sz-stat:nth-child(2){border-right:0}.sz-stat:nth-child(3){border-top:1px solid rgba(255,255,255,.08)}
+    .preventive-split{grid-template-columns:1fr}
+    .services-grid{grid-template-columns:1fr}
+    .packages-grid{grid-template-columns:1fr;max-width:480px;margin:0 auto}
+    .response-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:640px){
+    .szerviz-stats{grid-template-columns:1fr 1fr}
+    .cost-compare{grid-template-columns:1fr}
+    .response-grid{grid-template-columns:1fr}
+    .emergency-inner{flex-direction:column;text-align:center}
+  }
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="container nav-wrap">
+    <a href="/de/" class="brand"><svg class="brand-logo" viewBox="0 0 48 48" fill="none"><rect x="2" y="2" width="44" height="44" rx="10" fill="#f4f0e8" stroke="#c4c0b2"/><path d="M14 34V14l9 12V14" stroke="#2b4560" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 14c4 4 4 12 0 16-2-3-2-9 0-16Z" fill="#c4511c"/></svg><span><span class="brand-name">NORDE<span>XA</span></span><span class="brand-sub">Industrial Solutions</span></span></a>
+    <nav class="main-nav" id="mainNav">
+      <div class="nav-item has-mega"><button class="nav-link" aria-expanded="false">Lösungen <span class="chevron">▾</span></button><div class="mega-panel"><a href="/de/solutions/custom-dosing.html" class="mega-item"><span class="mega-item-ico">⚙️</span><span class="mega-item-title">Individuelle Dosieranlagen</span><span class="mega-item-desc">Vollständig maßgeschneidert</span></a><a href="/de/solutions/standard-equipment.html" class="mega-item"><span class="mega-item-ico">📦</span><span class="mega-item-title">Standardgeräte</span><span class="mega-item-desc">Aus dem Katalog</span></a><a href="/de/solutions/modular-systems.html" class="mega-item"><span class="mega-item-ico">🔩</span><span class="mega-item-title">Modulare Systeme</span><span class="mega-item-desc">Flexibel</span></a><a href="/de/solutions/service-lifecycle.html" class="mega-item"><span class="mega-item-ico">🛠</span><span class="mega-item-title">Service &amp; Lifecycle</span><span class="mega-item-desc">96 % Verfügbarkeit</span></a></div></div>
+      <div class="nav-item has-mega"><button class="nav-link" aria-expanded="false">Branchen <span class="chevron">▾</span></button><div class="mega-panel wide"><a href="/de/industries/chemical.html" class="mega-item"><span class="mega-item-ico">⚗️</span><span class="mega-item-title">Chemie</span><span class="mega-item-desc">Reaktive Stoffe</span></a><a href="/de/industries/cosmetics.html" class="mega-item"><span class="mega-item-ico">💄</span><span class="mega-item-title">Kosmetik</span><span class="mega-item-desc">Hygienisches Abfüllen</span></a><a href="/de/industries/food.html" class="mega-item"><span class="mega-item-ico">🫙</span><span class="mega-item-title">Premium-Lebensmittel</span><span class="mega-item-desc">Lebensmittelkonform</span></a><a href="/de/industries/small-batch.html" class="mega-item"><span class="mega-item-ico">🔄</span><span class="mega-item-title">Kleinserie</span><span class="mega-item-desc">Flexible Umrüstung</span></a></div></div>
+      <a href="/de/case-studies/" class="nav-link">Referenzen</a>
+      <a href="/de/service/" class="nav-link active">Service</a>
+      <a href="/de/about/" class="nav-link">Über uns</a>
+      <a href="/de/contact/" class="nav-link">Kontakt</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="lang-switch">
+        <a href="/szerviz/" class="lang-btn">HU</a><span class="lang-sep">|</span>
+        <a href="/en/service/" class="lang-btn">EN</a><span class="lang-sep">|</span>
+        <span class="lang-btn active">DE</span><span class="lang-sep">|</span>
+        <a href="/pl/service/" class="lang-btn">PL</a><span class="lang-sep">|</span>
+        <a href="/sk/service/" class="lang-btn">SK</a>
+      </div>
+      <a href="/de/contact/" class="btn btn-primary">Angebot anfordern <span class="arrow">→</span></a>
+      <button class="burger" id="burger" aria-label="Menü"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/de/">Startseite</a><span class="breadcrumb-sep">›</span><span>Service &amp; Lifecycle</span></div>
+    <span class="eyebrow">Service &amp; Lifecycle</span>
+    <h1>Die Lieferung ist <em>erst der Anfang.</em></h1>
+    <p class="lead">Vorbeugende Wartung, schnelle Ersatzteilversorgung und Verfügbarkeitsverträge sorgen dafür, dass Ihre Investition über Jahrzehnte Höchstleistung bringt — nicht nur am ersten Tag.</p>
+    <div class="hero-actions">
+      <a href="/de/contact/" class="btn btn-primary btn-lg">Lifecycle-Vertrag anfragen <span class="arrow">→</span></a>
+      <a href="tel:+3622555199" class="btn btn-ghost">📞 Service-Notdienst: +36 22 555 199</a>
+    </div>
+  </div>
+</section>
+
+<div class="szerviz-stats">
+  <div class="sz-stat reveal"><div class="val">96%</div><div class="lbl">Maschinenverfügbarkeit (garantiert)</div></div>
+  <div class="sz-stat reveal"><div class="val">8 h</div><div class="lbl">durchschnittliche Reaktionszeit vor Ort</div></div>
+  <div class="sz-stat reveal"><div class="val">24/7</div><div class="lbl">telefonischer Service-Notdienst</div></div>
+  <div class="sz-stat reveal"><div class="val">6</div><div class="lbl">CEE-Länder Abdeckung vor Ort</div></div>
+</div>
+
+<div class="emergency-bar">
+  <div class="container">
+    <div class="emergency-inner">
+      <div class="emergency-text">
+        <strong>🚨 Sofortiger Service-Notdienst</strong>
+        <span>Bei Maschinenausfall: rufen Sie die 24/7-Service-Nummer — wir sind innerhalb von 8 Stunden vor Ort.</span>
+      </div>
+      <div class="emergency-actions">
+        <a href="tel:+3622555199" class="btn btn-light">📞 +36 22 555 199</a>
+        <a href="mailto:service@nordexa.hu" class="btn btn-outline-light">service@nordexa.hu</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="sec" style="background:var(--bg)">
+  <div class="container">
+    <div class="preventive-split">
+      <div class="preventive-img reveal">
+        <img src="../../images/sol-szerviz.jpg" alt="Serviceingenieur bei der Arbeit"
+          onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\' style=\'height:100%\'><div class=\'img-placeholder-icon\'>🛠</div></div>'"/>
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">Präventiv vs. reaktiv</span>
+        <h2 style="font-size:clamp(26px,3vw,36px);font-weight:700;margin:16px 0 18px">Prävention kostet nicht mehr — der Stillstand kostet mehr</h2>
+        <p style="font-size:16px;color:var(--muted);line-height:1.75;margin-bottom:16px">Ein ungeplanter Stillstand in einem Premium-Lebensmittelbetrieb bedeutet nicht nur Wartung: verlorene Produktionszeit, Reklamationen, dringender Ersatzversand, Operatoren-Überstunden — und die Geduld des Auftraggebers, die endlich ist.</p>
+        <p style="font-size:16px;color:var(--muted);line-height:1.75;margin-bottom:24px">Die Präventivwartung ist kein Luxus — das ist der Betrag, den das Werk für geplante Ausfälle ausgibt, nicht für ungeplante.</p>
+        <div class="cost-compare">
+          <div class="cost-card bad">
+            <div class="cv">4–8×</div>
+            <div class="cl">Kosten ungeplanter Stillstand vs. Jahresgebühr Präventivwartung (Branchendurchschnitt)</div>
+          </div>
+          <div class="cost-card good">
+            <div class="cv">96%</div>
+            <div class="cl">Garantierte Verfügbarkeit in den Paketen Priority Shield und Uptime Guarantee</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--bg-2)">
+  <div class="container">
+    <div class="sec-head reveal"><span class="eyebrow">Leistungen</span><h2>Was der Nordexa Lifecycle beinhaltet</h2><p>Kein einfaches Reparieren — umfassendes Lifecycle-Management, angepasst an den Maschinentyp und die Branche des Kunden.</p></div>
+    <div class="services-grid">
+      <div class="service-item reveal">
+        <div class="service-ico">🔍</div>
+        <div>
+          <h3>Vorbeugende Wartung</h3>
+          <p>Geplante, periodische technische Inspektion: präventiver Austausch von Verschleißteilen, Schmierung, Kalibrierungsprüfung. Jeder Eingriff dokumentiert — auditierbar.</p>
+        </div>
+      </div>
+      <div class="service-item reveal">
+        <div class="service-ico">⚡</div>
+        <div>
+          <h3>Notfalleinsatz (SLA)</h3>
+          <p>Bei Maschinenausfall garantierte Reaktionszeit — paketabhängig 4 h oder 8 h. Zunächst telefonische Diagnose, dann Servicetechniker vor Ort. Keine „Wartelösung".</p>
+        </div>
+      </div>
+      <div class="service-item reveal">
+        <div class="service-ico">🔩</div>
+        <div>
+          <h3>Ersatzteilversorgung &amp; Lagerbestand</h3>
+          <p>Garantierter Lagerbestand kritischer Verschleißteile (Dichtungen, Pumpenmembranen, Füllkopfeinsätze) im Werk des Kunden oder im Nordexa-Lager — mit 24-h-Lieferung.</p>
+        </div>
+      </div>
+      <div class="service-item reveal">
+        <div class="service-ico">📊</div>
+        <div>
+          <h3>Prädiktive Diagnose (IoT)</h3>
+          <p>Integriertes Sensorsystem: Vibration, Temperatur, Druckabfall, Betriebsstunden-Monitoring. Bei Anomalie automatischer Alarm — wir greifen ein, bevor der Fehler entsteht.</p>
+        </div>
+      </div>
+      <div class="service-item reveal">
+        <div class="service-ico">🎓</div>
+        <div>
+          <h3>Bediener- und Wartungsschulung</h3>
+          <p>Einweisung bei Übergabe und Auffrischungsschulungen bei Bedarf. Ihr Team soll auch erste Wartungsmaßnahmen selbst durchführen können — das reduziert den Servicebedarf.</p>
+        </div>
+      </div>
+      <div class="service-item reveal">
+        <div class="service-ico">📋</div>
+        <div>
+          <h3>Leistungsbericht und Auditdokumentation</h3>
+          <p>Jährlicher OEE-Bericht, Wartungsprotokoll und auditierbares Dokumentationspaket — direkt in Ihr Qualitätsmanagementsystem integrierbar.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--bg)">
+  <div class="container">
+    <div class="sec-head center reveal"><span class="eyebrow center">Lifecycle-Pakete</span><h2>Wählen Sie entsprechend Ihrem Bedarf</h2><p>Jedes Paket gilt ab Übergabe mit vorab festgelegtem Preis. Keine Überraschungsrechnung bei Stillstand.</p></div>
+    <div class="packages-grid">
+
+      <div class="pkg reveal">
+        <span class="pkg-badge badge-basic">Essential Care</span>
+        <h3>Essential Care</h3>
+        <p class="pkg-price">Mit Jahresvertrag · auf Anfrage</p>
+        <hr>
+        <div class="pkg-features">
+          <div class="pf"><span class="pf-check">✓</span><span>2 vorbeugende Wartungsbesuche pro Jahr</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>Lagerbestand kritischer Ersatzteile (Nordexa-Lager)</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>Telefonischer Service-Notdienst Mo–Fr 7:00–17:00</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>Software-Updates und Dokumentation</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>Jährliche Wartungszusammenfassung</span></div>
+          <div class="pf"><span class="pf-na">—</span><span style="color:var(--muted-2)">24/7 telefonischer Notdienst</span></div>
+          <div class="pf"><span class="pf-na">—</span><span style="color:var(--muted-2)">Garantierte SLA-Reaktionszeit</span></div>
+          <div class="pf"><span class="pf-na">—</span><span style="color:var(--muted-2)">Prädiktive IoT-Diagnose</span></div>
+        </div>
+        <a href="/de/contact/" class="btn btn-ghost" style="justify-content:center">Angebot anfragen →</a>
+      </div>
+
+      <div class="pkg featured reveal">
+        <span class="pkg-badge badge-pro">Priority Shield · Empfohlen</span>
+        <h3>Priority Shield</h3>
+        <p class="pkg-price">Mit Jahresvertrag · auf Anfrage</p>
+        <hr>
+        <div class="pkg-features">
+          <div class="pf"><span class="pf-check">✓</span><span>4 vorbeugende Wartungsbesuche pro Jahr</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>Erweiterter Ersatzteillagerbestand (im Kundenbetrieb)</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>24/7 telefonischer und Online-Service-Notdienst</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span><strong>Garantierte 8-h-Reaktionszeit SLA vor Ort</strong></span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>Software-Updates und Dokumentation</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>Jährlicher OEE-Bericht und Leistungsanalyse</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>Auditierfähige Wartungsdokumentation</span></div>
+          <div class="pf"><span class="pf-na">—</span><span style="color:var(--muted-2)">Prädiktive IoT-Diagnose</span></div>
+        </div>
+        <a href="/de/contact/" class="btn btn-steel" style="justify-content:center">Angebot anfragen →</a>
+      </div>
+
+      <div class="pkg reveal">
+        <span class="pkg-badge badge-premium">Uptime Guarantee · Premium</span>
+        <h3>Uptime Guarantee</h3>
+        <p class="pkg-price">Mit Jahresvertrag · auf Anfrage</p>
+        <hr>
+        <div class="pkg-features">
+          <div class="pf"><span class="pf-check">✓</span><span>Monatliche Präventivwartung (12×/Jahr)</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>Vollständiger Ersatzteilbestand im Kundenbetrieb</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>24/7 Notdienst + dedizierter Serviceingenieur</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span><strong>Garantierte 4-h-Reaktionszeit SLA vor Ort</strong></span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>Software-Updates und Dokumentation</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span><strong>Prädiktive IoT-Diagnose (Sensorik)</strong></span></div>
+          <div class="pf"><span class="pf-check">✓</span><span><strong>96 % Verfügbarkeit finanzielle Garantie</strong></span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>Vierteljährlicher OEE-Bericht und Empfehlungen</span></div>
+        </div>
+        <a href="/de/contact/" class="btn btn-primary" style="justify-content:center">Angebot anfragen →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--bg-2)">
+  <div class="container">
+    <div class="sec-head center reveal"><span class="eyebrow center">Ablauf</span><h2>Der Lifecycle-Vertragsprozess</h2></div>
+    <div class="process-v reveal">
+      <div class="pv-item">
+        <div class="pv-num">01</div>
+        <div class="pv-body"><h4>Bedarfsanalyse und Paketauswahl</h4><p>Wir besprechen Maschinentyp, Branche, Verfügbarkeitsanforderung und CEE-Erreichbarkeit. Wir bestimmen das passende Paket.</p></div>
+      </div>
+      <div class="pv-item">
+        <div class="pv-num">02</div>
+        <div class="pv-body"><h4>Zustandsaufnahme bei Übergabe</h4><p>Bei Übergabe oder Vertragsstart dokumentieren unsere Ingenieure den Maschinenzustand — das ist die Grundlage für SLA-Berechnung und Garantie.</p></div>
+      </div>
+      <div class="pv-item">
+        <div class="pv-num">03</div>
+        <div class="pv-body"><h4>Geplante Präventivwartung</h4><p>Der jährliche Wartungskalender richtet sich nach Ihrem Produktionsplan — wir kommen nicht zufällig, sondern in geplanten Zeitfenstern.</p></div>
+      </div>
+      <div class="pv-item">
+        <div class="pv-num">04</div>
+        <div class="pv-body"><h4>Kontinuierliches Monitoring und Alarm (beim Uptime-Paket)</h4><p>IoT-Sensorsystem sendet Echtzeit-Daten an das Nordexa Service-Center — bei Anomalie alarmieren wir, bevor ein Fehler entsteht.</p></div>
+      </div>
+      <div class="pv-item">
+        <div class="pv-num">05</div>
+        <div class="pv-body"><h4>Jährlicher Leistungsbericht und Vertragsverlängerung</h4><p>Am Jahresende zusammenfassender Bericht: durchgeführte Eingriffe, Ersatzteilwechsel, OEE-Trend, Empfehlungen für das Folgejahr. Vertragsverlängerung mit transparenten Konditionen.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--bg)">
+  <div class="container">
+    <div class="sec-head center reveal"><span class="eyebrow center">CEE-Abdeckung</span><h2>Vor-Ort-Service in sechs Ländern</h2><p>Die Reaktionszeitgarantie gilt nicht nur für Ungarn. In jedem Zielmarkt haben wir Servicepartner.</p></div>
+    <div class="response-grid">
+      <div class="resp-card reveal"><div class="resp-flag">🇭🇺</div><h4>Ungarn</h4><p>Eigenes Team in Székesfehérvár</p><span class="resp-time">4 h SLA</span></div>
+      <div class="resp-card reveal"><div class="resp-flag">🇦🇹</div><h4>Österreich</h4><p>TechServ GmbH, Wien + Graz</p><span class="resp-time">8 h SLA</span></div>
+      <div class="resp-card reveal"><div class="resp-flag">🇸🇰</div><h4>Slowakei</h4><p>ProTech s.r.o., Bratislava + Košice</p><span class="resp-time">8 h SLA</span></div>
+      <div class="resp-card reveal"><div class="resp-flag">🇨🇿</div><h4>Tschechien</h4><p>IndusTech s.r.o., Prag + Brünn</p><span class="resp-time">8 h SLA</span></div>
+      <div class="resp-card reveal"><div class="resp-flag">🇵🇱</div><h4>Polen</h4><p>PolMech Sp. z o.o., Warschau + Krakau</p><span class="resp-time">12 h SLA</span></div>
+      <div class="resp-card reveal"><div class="resp-flag">🇷🇴</div><h4>Rumänien</h4><p>TehnoServ S.R.L., Cluj-Napoca + Timișoara</p><span class="resp-time">12 h SLA</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container"><div class="cta-band-inner reveal">
+    <h2>Warten Sie nicht auf den ersten Stillstand.</h2>
+    <p>Die Präventivwartung ist eine Investition, keine Ausgabe. Fordern Sie ein Angebot für einen Lifecycle-Vertrag an — wir zeigen Ihnen auch die Amortisationsrechnung.</p>
+    <div class="cta-band-actions">
+      <a href="/de/contact/" class="btn btn-light btn-lg">Lifecycle-Angebot anfragen <span class="arrow">→</span></a>
+      <a href="tel:+3622555199" class="btn btn-outline-light">📞 Service-Notdienst: +36 22 555 199</a>
+    </div>
+  </div></div>
+</section>
+
+<footer><div class="container">
+  <div class="foot-grid">
+    <div><div class="brand"><svg class="brand-logo" viewBox="0 0 48 48" fill="none" style="width:32px;height:32px"><rect x="2" y="2" width="44" height="44" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.15)"/><path d="M14 34V14l9 12V14" stroke="#7fa8c9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 14c4 4 4 12 0 16-2-3-2-9 0-16Z" fill="#c4511c"/></svg><span><span class="brand-name">NORDE<span style="color:#c4511c">XA</span></span><span class="brand-sub">Industrial Solutions</span></span></div><p class="foot-about">Fortschrittliche Dosier- und Verpackungsanlagen — Székesfehérvár, seit 1994.</p></div>
+    <div class="foot-col"><h5>Service</h5><a href="/de/service/">Service Übersicht</a><a href="/de/solutions/service-lifecycle.html">Lifecycle-Pakete</a><a href="mailto:service@nordexa.hu">service@nordexa.hu</a><a href="tel:+3622555199">Service-Notdienst 24/7</a></div>
+    <div class="foot-col"><h5>Lösungen</h5><a href="/de/solutions/custom-dosing.html">Individuelle Dosieranlagen</a><a href="/de/solutions/modular-systems.html">Modulare Systeme</a><a href="/de/solutions/standard-equipment.html">Standardgeräte</a></div>
+    <div class="foot-col"><h5>Kontakt</h5><a href="mailto:sales@nordexa.hu">sales@nordexa.hu</a><a href="tel:+3622555100">+36 22 555 100</a><a href="/de/contact/">Angebot anfordern</a></div>
+  </div>
+  <div class="foot-bottom"><span>© 1994–2026 Nordexa Industrial Solutions Zrt.</span><span>ISO 9001 · Datenschutz</span></div>
+</div></footer>
+<script src="../../js/main.js"></script>
+</body>
+</html>

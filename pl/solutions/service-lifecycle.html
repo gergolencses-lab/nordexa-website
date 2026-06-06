@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Serwis i Lifecycle — Nordexa Industrial Solutions</title>
+<meta name="description" content="Konserwacja zapobiegawcza, dostawa części zamiennych i kontrakty dostępności. Gwarancja 96% dostępności, czas reakcji 8 h, obsługa w 6 krajach CEE." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../../css/style.css" />
+<style>
+  .page-hero{padding:140px 0 80px;background:var(--bg);border-bottom:1px solid var(--line)}
+  .page-hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .breadcrumb{font-family:var(--font-d);font-size:13px;color:var(--muted-2);margin-bottom:20px;display:flex;align-items:center;gap:8px}
+  .breadcrumb a{color:var(--muted);transition:color .2s}.breadcrumb a:hover{color:var(--steel)}.breadcrumb-sep{color:var(--line-strong)}
+  .page-hero h1{font-size:clamp(32px,4vw,56px);font-weight:700;margin:16px 0 20px}
+  .page-hero .lead{font-size:18px;color:var(--muted);margin-bottom:28px;line-height:1.7}
+  .spec-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+  .spec-tag{font-family:var(--font-d);font-size:12.5px;font-weight:600;padding:7px 14px;border-radius:999px;border:1.5px solid var(--line-strong);color:var(--text);background:var(--surface)}
+  .spec-tag.accent{border-color:var(--accent);color:var(--accent);background:var(--accent-bg)}
+  .page-hero-img{border-radius:var(--radius-l);overflow:hidden;aspect-ratio:4/3;background:var(--bg-2)}
+  .page-hero-img img{width:100%;height:100%;object-fit:cover}
+  .key-facts{background:var(--headline)}
+  .key-facts-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+  .key-fact{padding:32px 28px;border-right:1px solid rgba(255,255,255,.08);text-align:center}
+  .key-fact:last-child{border-right:0}
+  .key-fact .val{font-family:var(--font-d);font-weight:700;font-size:32px;color:var(--accent);line-height:1;margin-bottom:8px}
+  .key-fact .lbl{font-size:13px;color:rgba(255,255,255,.55)}
+  .packages-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .package-card{background:var(--surface);border:2px solid var(--line);border-radius:var(--radius);padding:32px;display:flex;flex-direction:column;gap:16px;transition:border-color .2s,box-shadow .2s}
+  .package-card.featured{border-color:var(--steel);box-shadow:0 8px 32px rgba(43,69,96,.12)}
+  .package-badge{font-family:var(--font-d);font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:5px 12px;border-radius:999px;display:inline-block;width:fit-content}
+  .badge-basic{background:var(--bg-2);color:var(--muted)}
+  .badge-pro{background:var(--steel-bg);color:var(--steel)}
+  .badge-premium{background:var(--accent-bg);color:var(--accent)}
+  .package-card h3{font-size:22px;font-weight:700}
+  .package-price{font-family:var(--font-d);font-size:15px;color:var(--muted)}
+  .package-divider{border:0;border-top:1px solid var(--line)}
+  .package-features{display:flex;flex-direction:column;gap:10px;flex:1}
+  .pf-item{display:flex;gap:10px;font-size:14px;align-items:flex-start}
+  .pf-check{color:var(--green);font-weight:700;flex-shrink:0;margin-top:1px}
+  .pf-na{color:var(--muted-2);flex-shrink:0;margin-top:1px}
+  .response-map{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .response-item{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;text-align:center}
+  .response-flag{font-size:28px;margin-bottom:8px}
+  .response-item h4{font-size:15px;font-weight:700;margin-bottom:4px}
+  .response-item p{font-size:13px;color:var(--muted)}
+  .response-time{font-family:var(--font-d);font-weight:700;font-size:20px;color:var(--accent);display:block;margin-top:8px}
+  .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .related-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;transition:border-color .2s,box-shadow .2s;display:flex;flex-direction:column;gap:10px}
+  .related-card:hover{border-color:var(--steel);box-shadow:0 6px 24px rgba(20,30,45,.08)}
+  .related-card .r-ico{font-size:24px}
+  .related-card h4{font-size:17px;font-weight:700}
+  .related-card p{font-size:13.5px;color:var(--muted);flex:1}
+  .related-card .r-link{font-family:var(--font-d);font-size:13.5px;font-weight:600;color:var(--steel);display:flex;align-items:center;gap:6px;transition:gap .2s}
+  .related-card:hover .r-link{gap:10px}
+  @media(max-width:1024px){.page-hero-inner{grid-template-columns:1fr}.key-facts-grid{grid-template-columns:repeat(2,1fr)}.packages-grid{grid-template-columns:1fr;max-width:480px;margin:0 auto}.response-map{grid-template-columns:repeat(2,1fr)}.related-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:640px){.response-map,.related-grid{grid-template-columns:1fr}.key-facts-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="container nav-wrap">
+    <a href="/pl/" class="brand"><svg class="brand-logo" viewBox="0 0 48 48" fill="none"><rect x="2" y="2" width="44" height="44" rx="10" fill="#f4f0e8" stroke="#c4c0b2"/><path d="M14 34V14l9 12V14" stroke="#2b4560" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 14c4 4 4 12 0 16-2-3-2-9 0-16Z" fill="#c4511c"/></svg><span><span class="brand-name">NORDE<span>XA</span></span><span class="brand-sub">Industrial Solutions</span></span></a>
+    <nav class="main-nav" id="mainNav">
+      <div class="nav-item has-mega"><button class="nav-link active" aria-expanded="false">Rozwiązania <span class="chevron">▾</span></button><div class="mega-panel"><a href="/pl/solutions/custom-dosing.html" class="mega-item"><span class="mega-item-ico">⚙️</span><span class="mega-item-title">Indywidualne linie dozujące</span><span class="mega-item-desc">W pełni spersonalizowane</span></a><a href="/pl/solutions/standard-equipment.html" class="mega-item"><span class="mega-item-ico">📦</span><span class="mega-item-title">Urządzenia standardowe</span><span class="mega-item-desc">Z katalogu</span></a><a href="/pl/solutions/modular-systems.html" class="mega-item"><span class="mega-item-ico">🔩</span><span class="mega-item-title">Systemy modułowe</span><span class="mega-item-desc">Elastyczne</span></a><a href="/pl/solutions/service-lifecycle.html" class="mega-item"><span class="mega-item-ico">🛠</span><span class="mega-item-title">Serwis &amp; Lifecycle</span><span class="mega-item-desc">96% dostępność</span></a></div></div>
+      <div class="nav-item has-mega"><button class="nav-link" aria-expanded="false">Branże <span class="chevron">▾</span></button><div class="mega-panel wide"><a href="/pl/industries/chemical.html" class="mega-item"><span class="mega-item-ico">⚗️</span><span class="mega-item-title">Przemysł chemiczny</span><span class="mega-item-desc">Substancje reaktywne</span></a><a href="/pl/industries/cosmetics.html" class="mega-item"><span class="mega-item-ico">💄</span><span class="mega-item-title">Kosmetyki</span><span class="mega-item-desc">Higieniczne napełnianie</span></a><a href="/pl/industries/food.html" class="mega-item"><span class="mega-item-ico">🫙</span><span class="mega-item-title">Premium żywność</span><span class="mega-item-desc">Food-safe</span></a><a href="/pl/industries/small-batch.html" class="mega-item"><span class="mega-item-ico">🔄</span><span class="mega-item-title">Produkcja małoseryjna</span><span class="mega-item-desc">Elastyczne przezbrojenie</span></a></div></div>
+      <a href="/pl/case-studies/" class="nav-link">Referencje</a>
+      <a href="/pl/service/" class="nav-link">Serwis</a>
+      <a href="/pl/about/" class="nav-link">O nas</a>
+      <a href="/pl/contact/" class="nav-link">Kontakt</a>
+    </nav>
+    <div class="nav-actions"><div class="lang-switch"><a href="/" class="lang-btn">HU</a><span class="lang-sep">|</span><a href="/en/" class="lang-btn">EN</a><span class="lang-sep">|</span><a href="/de/" class="lang-btn">DE</a><span class="lang-sep">|</span><button class="lang-btn active">PL</button><span class="lang-sep">|</span><a href="/sk/" class="lang-btn">SK</a></div><a href="/pl/contact/" class="btn btn-primary">Zapytaj o ofertę <span class="arrow">→</span></a><button class="burger" id="burger" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button></div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <div class="reveal">
+      <div class="breadcrumb"><a href="/pl/">Strona główna</a><span class="breadcrumb-sep">›</span><a href="/pl/solutions/">Rozwiązania</a><span class="breadcrumb-sep">›</span><span>Serwis &amp; Lifecycle</span></div>
+      <span class="eyebrow">Rozwiązanie</span>
+      <h1>Serwis &amp; Lifecycle</h1>
+      <p class="lead">Dostawa to dopiero początek. Konserwacja zapobiegawcza, szybka dostawa części zamiennych i kontrakty dostępności zapewniają, że Państwa inwestycja przez dziesięciolecia działa w najlepszej formie.</p>
+      <div class="spec-tags">
+        <span class="spec-tag accent">Gwarancja dostępności 96%</span>
+        <span class="spec-tag">Średni czas reakcji 8 h</span>
+        <span class="spec-tag">Dyżur 24/7</span>
+        <span class="spec-tag">6 krajów CEE</span>
+      </div>
+      <div class="hero-actions">
+        <a href="/pl/contact/" class="btn btn-primary btn-lg">Zapytaj o kontrakt lifecycle <span class="arrow">→</span></a>
+        <a href="#pakiety" class="btn btn-ghost">Przeglądaj pakiety →</a>
+      </div>
+    </div>
+    <div class="page-hero-img reveal">
+      <img src="../../images/sol-szerviz.jpg" alt="Technik serwisowy przy maszynie przemysłowej"
+        onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\' style=\'height:100%\'><div class=\'img-placeholder-icon\'>🛠</div><span>Serwis &amp; Lifecycle</span></div>'" />
+    </div>
+  </div>
+</section>
+
+<div class="key-facts">
+  <div class="container">
+    <div class="key-facts-grid">
+      <div class="key-fact reveal"><div class="val">96%</div><div class="lbl">dostępność systemu</div></div>
+      <div class="key-fact reveal"><div class="val">8 h</div><div class="lbl">średni czas reakcji serwisowej</div></div>
+      <div class="key-fact reveal"><div class="val">24/7</div><div class="lbl">telefoniczny dyżur</div></div>
+      <div class="key-fact reveal"><div class="val">6</div><div class="lbl">krajów z obsługą na miejscu</div></div>
+    </div>
+  </div>
+</div>
+
+<section class="sec" id="pakiety" style="background:var(--bg)">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow center">Pakiety lifecycle</span>
+      <h2>Wybierz odpowiedni pakiet</h2>
+      <p>Każdy pakiet obowiązuje od momentu odbioru i zawiera usługi po z góry ustalonej cenie — żadnych niespodziewanych rachunków przy awarii.</p>
+    </div>
+    <div class="packages-grid">
+      <div class="package-card reveal">
+        <span class="package-badge badge-basic">Basic</span>
+        <h3>Essential Care</h3>
+        <p class="package-price">Umowa roczna · wycena indywidualna</p>
+        <hr class="package-divider"/>
+        <div class="package-features">
+          <div class="pf-item"><span class="pf-check">✓</span><span>2 wizyty konserwacji zapobiegawczej rocznie</span></div>
+          <div class="pf-item"><span class="pf-check">✓</span><span>Magazyn krytycznych części zamiennych</span></div>
+          <div class="pf-item"><span class="pf-check">✓</span><span>Telefoniczny dyżur serwisowy Pon–Pt 7–17</span></div>
+          <div class="pf-item"><span class="pf-check">✓</span><span>Aktualizacje oprogramowania i dokumentacja</span></div>
+          <div class="pf-item"><span class="pf-na">—</span><span style="color:var(--muted-2)">Dyżur telefoniczny 24/7</span></div>
+          <div class="pf-item"><span class="pf-na">—</span><span style="color:var(--muted-2)">Gwarantowany czas reakcji SLA</span></div>
+          <div class="pf-item"><span class="pf-na">—</span><span style="color:var(--muted-2)">Diagnostyka predykcyjna</span></div>
+        </div>
+        <a href="/pl/contact/" class="btn btn-ghost" style="justify-content:center">Zapytaj o ofertę →</a>
+      </div>
+      <div class="package-card featured reveal">
+        <span class="package-badge badge-pro">Pro · Polecany</span>
+        <h3>Priority Shield</h3>
+        <p class="package-price">Umowa roczna · wycena indywidualna</p>
+        <hr class="package-divider"/>
+        <div class="package-features">
+          <div class="pf-item"><span class="pf-check">✓</span><span>4 wizyty konserwacji zapobiegawczej rocznie</span></div>
+          <div class="pf-item"><span class="pf-check">✓</span><span>Rozszerzony magazyn części zamiennych</span></div>
+          <div class="pf-item"><span class="pf-check">✓</span><span>Dyżur telefoniczny i online 24/7</span></div>
+          <div class="pf-item"><span class="pf-check">✓</span><span>Gwarantowany czas reakcji SLA 8 h</span></div>
+          <div class="pf-item"><span class="pf-check">✓</span><span>Aktualizacje oprogramowania i dokumentacja</span></div>
+          <div class="pf-item"><span class="pf-check">✓</span><span>Roczny raport wydajności</span></div>
+          <div class="pf-item"><span class="pf-na">—</span><span style="color:var(--muted-2)">Diagnostyka predykcyjna (IoT)</span></div>
+        </div>
+        <a href="/pl/contact/" class="btn btn-steel" style="justify-content:center">Zapytaj o ofertę →</a>
+      </div>
+      <div class="package-card reveal">
+        <span class="package-badge badge-premium">Premium</span>
+        <h3>Uptime Guarantee</h3>
+        <p class="package-price">Umowa roczna · wycena indywidualna</p>
+        <hr class="package-divider"/>
+        <div class="package-features">
+          <div class="pf-item"><span class="pf-check">✓</span><span>Miesięczna konserwacja zapobiegawcza</span></div>
+          <div class="pf-item"><span class="pf-check">✓</span><span>Kompletny magazyn części u klienta</span></div>
+          <div class="pf-item"><span class="pf-check">✓</span><span>Dyżur 24/7 + dedykowany inżynier</span></div>
+          <div class="pf-item"><span class="pf-check">✓</span><span>Gwarantowany czas reakcji SLA 4 h</span></div>
+          <div class="pf-item"><span class="pf-check">✓</span><span>Aktualizacje oprogramowania i dokumentacja</span></div>
+          <div class="pf-item"><span class="pf-check">✓</span><span>Diagnostyka predykcyjna (czujniki IoT)</span></div>
+          <div class="pf-item"><span class="pf-check">✓</span><span>Finansowa gwarancja dostępności 96%</span></div>
+        </div>
+        <a href="/pl/contact/" class="btn btn-primary" style="justify-content:center">Zapytaj o ofertę →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--bg-2)">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow center">Zasięg CEE</span>
+      <h2>Serwis na miejscu w sześciu krajach</h2>
+      <p>Inżynierowie serwisowi Nordexa są dostępni na wszystkich rynkach docelowych — gwarancja czasu reakcji dotyczy nie tylko Węgier.</p>
+    </div>
+    <div class="response-map">
+      <div class="response-item reveal"><div class="response-flag">🇭🇺</div><h4>Węgry</h4><p>Centrala: Székesfehérvár</p><span class="response-time">4 h</span></div>
+      <div class="response-item reveal"><div class="response-flag">🇦🇹</div><h4>Austria</h4><p>Partner serwisowy: Wiedeń, Graz</p><span class="response-time">8 h</span></div>
+      <div class="response-item reveal"><div class="response-flag">🇸🇰</div><h4>Słowacja</h4><p>Partner serwisowy: Bratysława, Koszyce</p><span class="response-time">8 h</span></div>
+      <div class="response-item reveal"><div class="response-flag">🇨🇿</div><h4>Czechy</h4><p>Partner serwisowy: Praga, Brno</p><span class="response-time">8 h</span></div>
+      <div class="response-item reveal"><div class="response-flag">🇵🇱</div><h4>Polska</h4><p>Partner serwisowy: Warszawa, Kraków</p><span class="response-time">12 h</span></div>
+      <div class="response-item reveal"><div class="response-flag">🇷🇴</div><h4>Rumunia</h4><p>Partner serwisowy: Kluż, Timișoara</p><span class="response-time">12 h</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--bg)">
+  <div class="container">
+    <div class="sec-head reveal"><span class="eyebrow">Powiązane rozwiązania</span><h2>Od maszyn do pełnego cyklu życia</h2></div>
+    <div class="related-grid">
+      <a href="/pl/solutions/custom-dosing.html" class="related-card reveal"><div class="r-ico">⚙️</div><h4>Indywidualne linie dozujące</h4><p>W pełni spersonalizowane systemy — zamówione razem z pakietem lifecycle są najbardziej ekonomiczne.</p><span class="r-link">Szczegóły →</span></a>
+      <a href="/pl/solutions/modular-systems.html" class="related-card reveal"><div class="r-ico">🔩</div><h4>Systemy modułowe</h4><p>Architektura modułowa jest najłatwiejsza do serwisowania — szybsza diagnostyka, tańsze części.</p><span class="r-link">Szczegóły →</span></a>
+      <a href="/pl/solutions/standard-equipment.html" class="related-card reveal"><div class="r-ico">📦</div><h4>Urządzenia standardowe</h4><p>Dla standardowych platform już zoptymalizowany pakiet lifecycle — najbardziej przewidywalne koszty lifecycle.</p><span class="r-link">Szczegóły →</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container"><div class="cta-band-inner reveal">
+    <h2>Nie czekaj na pierwszą awarię.</h2>
+    <p>Serwis prewencyjny kosztuje więcej? Nie — tańszy jest kosztowna awaria. Zapytaj o kontrakt lifecycle już dziś.</p>
+    <div class="cta-band-actions">
+      <a href="/pl/contact/" class="btn btn-light btn-lg">Zapytaj o kontrakt lifecycle <span class="arrow">→</span></a>
+      <a href="/pl/case-studies/" class="btn btn-outline-light">Referencje</a>
+    </div>
+  </div></div>
+</section>
+
+<footer><div class="container">
+  <div class="foot-grid">
+    <div><div class="brand"><svg class="brand-logo" viewBox="0 0 48 48" fill="none" style="width:32px;height:32px"><rect x="2" y="2" width="44" height="44" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.15)"/><path d="M14 34V14l9 12V14" stroke="#7fa8c9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 14c4 4 4 12 0 16-2-3-2-9 0-16Z" fill="#c4511c"/></svg><span><span class="brand-name">NORDE<span style="color:#c4511c">XA</span></span><span class="brand-sub">Industrial Solutions</span></span></div><p class="foot-about">Zaawansowane systemy dozowania i pakowania — Székesfehérvár, od 1994 roku.</p></div>
+    <div class="foot-col"><h5>Rozwiązania</h5><a href="/pl/solutions/custom-dosing.html">Indywidualne linie dozujące</a><a href="/pl/solutions/standard-equipment.html">Urządzenia standardowe</a><a href="/pl/solutions/modular-systems.html">Systemy modułowe</a><a href="/pl/solutions/service-lifecycle.html">Serwis &amp; Lifecycle</a></div>
+    <div class="foot-col"><h5>Firma</h5><a href="/pl/about/">O nas</a><a href="/pl/industries/">Branże</a><a href="/pl/case-studies/">Referencje</a><a href="/pl/contact/">Kariera</a></div>
+    <div class="foot-col"><h5>Kontakt</h5><a href="mailto:sales@nordexa.hu">sales@nordexa.hu</a><a href="tel:+3622555100">+36 22 555 100</a><a href="/pl/contact/">Zapytaj o ofertę</a></div>
+  </div>
+  <div class="foot-bottom"><span>© 1994–2026 Nordexa Industrial Solutions Zrt.</span><span>Polityka prywatności · Certyfikat ISO 9001</span></div>
+</div></footer>
+<script src="../../js/main.js"></script>
+</body>
+</html>

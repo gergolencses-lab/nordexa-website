@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Servis &amp; Lifecycle — Nordexa Industrial Solutions</title>
+<meta name="description" content="Nordexa servis: preventívna údržba, dodávka náhradných dielov, pohotovosť 24/7. Garancia 96% dostupnosti, reakcia 8 h, pokrytie 6 krajín SVE." />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../../css/style.css" />
+<style>
+  .page-hero{padding:140px 0 80px;background:var(--bg);border-bottom:1px solid var(--line)}
+  .page-hero h1{font-size:clamp(32px,4.5vw,56px);font-weight:700;margin:16px 0 16px;max-width:720px}
+  .page-hero h1 em{font-style:normal;color:var(--accent)}
+  .page-hero .lead{font-size:18px;color:var(--muted);max-width:600px;line-height:1.7;margin-bottom:28px}
+  .breadcrumb{font-family:var(--font-d);font-size:13px;color:var(--muted-2);margin-bottom:20px;display:flex;align-items:center;gap:8px}
+  .breadcrumb a{color:var(--muted)}.breadcrumb-sep{color:var(--line-strong)}
+  .szerviz-stats{background:var(--headline);display:grid;grid-template-columns:repeat(4,1fr)}
+  .sz-stat{padding:36px 28px;border-right:1px solid rgba(255,255,255,.08);text-align:center}
+  .sz-stat:last-child{border-right:0}
+  .sz-stat .val{font-family:var(--font-d);font-weight:700;font-size:44px;color:var(--accent);line-height:1;margin-bottom:8px}
+  .sz-stat .lbl{font-size:13px;color:rgba(255,255,255,.6)}
+  .preventive-split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .preventive-img{border-radius:var(--radius-l);overflow:hidden;aspect-ratio:4/3;background:var(--bg-2)}
+  .preventive-img img{width:100%;height:100%;object-fit:cover}
+  .cost-compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
+  .cost-card{border-radius:var(--radius);padding:20px;text-align:center}
+  .cost-card.bad{background:rgba(192,50,30,.06);border:1.5px solid rgba(192,50,30,.2)}
+  .cost-card.good{background:var(--green-bg);border:1.5px solid rgba(45,110,72,.25)}
+  .cost-card .cv{font-family:var(--font-d);font-weight:700;font-size:28px;line-height:1;margin-bottom:6px}
+  .cost-card.bad .cv{color:#c0321e}
+  .cost-card.good .cv{color:var(--green)}
+  .cost-card .cl{font-size:13px;color:var(--muted)}
+  .services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .service-item{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;gap:20px;align-items:flex-start;transition:border-color .2s,transform .2s}
+  .service-item:hover{border-color:var(--line-strong);transform:translateY(-3px)}
+  .service-ico{font-size:28px;flex-shrink:0;width:52px;height:52px;background:var(--accent-bg);border-radius:12px;display:flex;align-items:center;justify-content:center}
+  .service-item h3{font-size:18px;font-weight:700;margin-bottom:8px}
+  .service-item p{font-size:14.5px;color:var(--muted);line-height:1.6}
+  .packages-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .pkg{background:var(--surface);border:2px solid var(--line);border-radius:var(--radius);padding:32px;display:flex;flex-direction:column;gap:14px;transition:border-color .2s,box-shadow .2s}
+  .pkg.featured{border-color:var(--steel);box-shadow:0 8px 32px rgba(43,69,96,.12)}
+  .pkg-badge{font-family:var(--font-d);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 12px;border-radius:999px;display:inline-block;width:fit-content}
+  .badge-basic{background:var(--bg-2);color:var(--muted)}
+  .badge-pro{background:var(--steel-bg);color:var(--steel)}
+  .badge-premium{background:var(--accent-bg);color:var(--accent)}
+  .pkg h3{font-size:22px;font-weight:700}
+  .pkg .pkg-price{font-family:var(--font-d);font-size:14px;color:var(--muted)}
+  .pkg hr{border:0;border-top:1px solid var(--line)}
+  .pkg-features{display:flex;flex-direction:column;gap:9px;flex:1}
+  .pf{display:flex;gap:10px;font-size:14px;align-items:flex-start}
+  .pf-check{color:var(--green);font-weight:700;flex-shrink:0;margin-top:1px}
+  .pf-na{color:var(--muted-2);flex-shrink:0}
+  .process-v{display:flex;flex-direction:column;gap:0;max-width:680px;margin:0 auto}
+  .pv-item{display:grid;grid-template-columns:64px 1fr;gap:20px;padding-bottom:28px;position:relative}
+  .pv-item::before{content:"";position:absolute;left:31px;top:28px;bottom:0;width:2px;background:var(--line)}
+  .pv-item:last-child::before{display:none}.pv-item:last-child{padding-bottom:0}
+  .pv-num{width:40px;height:40px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-weight:700;font-size:14px;flex-shrink:0}
+  .pv-body{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px}
+  .pv-body h4{font-size:16px;font-weight:700;margin-bottom:5px}
+  .pv-body p{font-size:13.5px;color:var(--muted)}
+  .response-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .resp-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;text-align:center}
+  .resp-flag{font-size:28px;margin-bottom:8px}
+  .resp-card h4{font-size:15px;font-weight:700;margin-bottom:4px}
+  .resp-card p{font-size:13px;color:var(--muted)}
+  .resp-time{font-family:var(--font-d);font-weight:700;font-size:22px;color:var(--accent);display:block;margin-top:8px}
+  .emergency-bar{background:var(--accent);padding:20px 0}
+  .emergency-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  .emergency-text{color:#fff}
+  .emergency-text strong{font-family:var(--font-d);font-size:18px;font-weight:700;display:block;margin-bottom:4px}
+  .emergency-text span{font-size:14px;opacity:.85}
+  .emergency-actions{display:flex;gap:12px;flex-wrap:wrap}
+  @media(max-width:1024px){.szerviz-stats{grid-template-columns:repeat(2,1fr)}.sz-stat:nth-child(2){border-right:0}.sz-stat:nth-child(3){border-top:1px solid rgba(255,255,255,.08)}.preventive-split{grid-template-columns:1fr}.services-grid{grid-template-columns:1fr}.packages-grid{grid-template-columns:1fr;max-width:480px;margin:0 auto}.response-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:640px){.szerviz-stats{grid-template-columns:1fr 1fr}.cost-compare{grid-template-columns:1fr}.response-grid{grid-template-columns:1fr}.emergency-inner{flex-direction:column;text-align:center}}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="container nav-wrap">
+    <a href="/sk/" class="brand"><svg class="brand-logo" viewBox="0 0 48 48" fill="none"><rect x="2" y="2" width="44" height="44" rx="10" fill="#f4f0e8" stroke="#c4c0b2"/><path d="M14 34V14l9 12V14" stroke="#2b4560" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 14c4 4 4 12 0 16-2-3-2-9 0-16Z" fill="#c4511c"/></svg><span><span class="brand-name">NORDE<span>XA</span></span><span class="brand-sub">Industrial Solutions</span></span></a>
+    <nav class="main-nav" id="mainNav">
+      <div class="nav-item has-mega"><button class="nav-link" aria-expanded="false">Riešenia <span class="chevron">▾</span></button><div class="mega-panel"><a href="/sk/solutions/custom-dosing.html" class="mega-item"><span class="mega-item-ico">⚙️</span><span class="mega-item-title">Individuálne dávacie linky</span><span class="mega-item-desc">Plne prispôsobené</span></a><a href="/sk/solutions/standard-equipment.html" class="mega-item"><span class="mega-item-ico">📦</span><span class="mega-item-title">Štandardné zariadenia</span><span class="mega-item-desc">Z katalógu</span></a><a href="/sk/solutions/modular-systems.html" class="mega-item"><span class="mega-item-ico">🔩</span><span class="mega-item-title">Modulárne systémy</span><span class="mega-item-desc">Flexibilné</span></a><a href="/sk/solutions/service-lifecycle.html" class="mega-item"><span class="mega-item-ico">🛠</span><span class="mega-item-title">Servis &amp; Lifecycle</span><span class="mega-item-desc">96% dostupnosť</span></a></div></div>
+      <div class="nav-item has-mega"><button class="nav-link" aria-expanded="false">Odvetvia <span class="chevron">▾</span></button><div class="mega-panel wide"><a href="/sk/industries/chemical.html" class="mega-item"><span class="mega-item-ico">⚗️</span><span class="mega-item-title">Chemický priemysel</span><span class="mega-item-desc">Reaktívne látky</span></a><a href="/sk/industries/cosmetics.html" class="mega-item"><span class="mega-item-ico">💄</span><span class="mega-item-title">Kozmetika</span><span class="mega-item-desc">Hygienické plnenie</span></a><a href="/sk/industries/food.html" class="mega-item"><span class="mega-item-ico">🫙</span><span class="mega-item-title">Prémiové potraviny</span><span class="mega-item-desc">Potravinársky bezpečné</span></a><a href="/sk/industries/small-batch.html" class="mega-item"><span class="mega-item-ico">🔄</span><span class="mega-item-title">Malosériová výroba</span><span class="mega-item-desc">Flexibilná prestavba</span></a></div></div>
+      <a href="/sk/case-studies/" class="nav-link">Referencie</a>
+      <a href="/sk/service/" class="nav-link active">Servis</a>
+      <a href="/sk/about/" class="nav-link">O nás</a>
+      <a href="/sk/contact/" class="nav-link">Kontakt</a>
+    </nav>
+    <div class="nav-actions"><div class="lang-switch"><a href="/szerviz/" class="lang-btn">HU</a><span class="lang-sep">|</span><a href="/en/service/" class="lang-btn">EN</a><span class="lang-sep">|</span><a href="/de/service/" class="lang-btn">DE</a><span class="lang-sep">|</span><a href="/pl/service/" class="lang-btn">PL</a><span class="lang-sep">|</span><span class="lang-btn active">SK</span></div><a href="/sk/contact/" class="btn btn-primary">Požiadať o cenovú ponuku <span class="arrow">→</span></a><button class="burger" id="burger" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button></div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/sk/">Domovská stránka</a><span class="breadcrumb-sep">›</span><span>Servis &amp; Lifecycle</span></div>
+    <span class="eyebrow">Servis &amp; Lifecycle</span>
+    <h1>Odovzdanie je <em>len začiatok.</em></h1>
+    <p class="lead">Preventívna údržba, rýchla dodávka náhradných dielov a zmluvy o dostupnosti zaručujú, že vaša investícia bude podávať najlepší výkon po celé desaťročia — nielen od prvého dňa.</p>
+    <div class="hero-actions">
+      <a href="/sk/contact/" class="btn btn-primary btn-lg">Požiadať o lifecycle zmluvu <span class="arrow">→</span></a>
+      <a href="tel:+3622555199" class="btn btn-ghost">📞 Servisná pohotovosť: +36 22 555 199</a>
+    </div>
+  </div>
+</section>
+
+<div class="szerviz-stats">
+  <div class="sz-stat reveal"><div class="val">96%</div><div class="lbl">dostupnosť systému (garantovaná)</div></div>
+  <div class="sz-stat reveal"><div class="val">8 h</div><div class="lbl">priemerná reakcia na mieste</div></div>
+  <div class="sz-stat reveal"><div class="val">24/7</div><div class="lbl">telefonická servisná pohotovosť</div></div>
+  <div class="sz-stat reveal"><div class="val">6</div><div class="lbl">krajín SVE s pokrytím na mieste</div></div>
+</div>
+
+<div class="emergency-bar">
+  <div class="container">
+    <div class="emergency-inner">
+      <div class="emergency-text">
+        <strong>🚨 Okamžitá servisná pohotovosť</strong>
+        <span>Pri výpadku stroja: zavolajte na 24/7 servisné číslo — do 8 hodín sme na mieste.</span>
+      </div>
+      <div class="emergency-actions">
+        <a href="tel:+3622555199" class="btn btn-light">📞 +36 22 555 199</a>
+        <a href="mailto:szerviz@nordexa.hu" class="btn btn-outline-light">szerviz@nordexa.hu</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="sec" style="background:var(--bg)">
+  <div class="container">
+    <div class="preventive-split">
+      <div class="preventive-img reveal">
+        <img src="../../images/sol-szerviz.jpg" alt="Servisný inžinier pri práci"
+          onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\' style=\'height:100%\'><div class=\'img-placeholder-icon\'>🛠</div></div>'"/>
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">Preventívny vs. reaktívny servis</span>
+        <h2 style="font-size:clamp(26px,3vw,36px);font-weight:700;margin:16px 0 18px">Prevencia nestojí viac — výpadok stojí viac</h2>
+        <p style="font-size:16px;color:var(--muted);line-height:1.75;margin-bottom:16px">Neplánovaný výpadok v prevádzke prémiových potravín neznamená len údržbu: stratený výrobný čas, reklamácie, urgentné náhradné dodávky, operátorské nadčasy — a trpezlivosť odberateľa, ktorej je obmedzené množstvo.</p>
+        <p style="font-size:16px;color:var(--muted);line-height:1.75;margin-bottom:24px">Preventívna údržba nie je luxus — je to suma, ktorú prevádzka vydáva na plánované prestoje, nie na nečakané.</p>
+        <div class="cost-compare">
+          <div class="cost-card bad">
+            <div class="cv">4–8×</div>
+            <div class="cl">Náklady neplánovaného výpadku vs. ročný poplatok za preventívnu údržbu (priemer odvetvia)</div>
+          </div>
+          <div class="cost-card good">
+            <div class="cv">96%</div>
+            <div class="cl">Garantovaná dostupnosť v balíčkoch Priority Shield a Uptime Guarantee</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--bg-2)">
+  <div class="container">
+    <div class="sec-head reveal"><span class="eyebrow">Služby</span><h2>Čo zahŕňa lifecycle Nordexa?</h2><p>Nie jednoduché opravy — komplexná správa životného cyklu prispôsobená typu stroja a odvetviu zákazníka.</p></div>
+    <div class="services-grid">
+      <div class="service-item reveal">
+        <div class="service-ico">🔍</div>
+        <div><h3>Preventívna údržba</h3><p>Plánovaná, periodická technická kontrola: preventívna výmena opotrebených dielov, ošetrenie mazacích bodov, overenie kalibrácie. Každý zásah zdokumentovaný — auditovateľný.</p></div>
+      </div>
+      <div class="service-item reveal">
+        <div class="service-ico">⚡</div>
+        <div><h3>Urgentný zásah (SLA)</h3><p>Pri výpadku stroja garantovaný reakčný čas — podľa balíčka 4 h alebo 8 h. Najprv telefonická diagnostika, potom inžinier na mieste. Žiadne „čakajte na rade".</p></div>
+      </div>
+      <div class="service-item reveal">
+        <div class="service-ico">🔩</div>
+        <div><h3>Dodávka náhradných dielov &amp; skladové zásoby</h3><p>Garantované skladové zásoby kritických opotrebovaných dielov (tesnenia, membrány čerpadiel, vložky plniacich hláv) v prevádzke zákazníka alebo v sklade Nordexa — dodávka do 24 h.</p></div>
+      </div>
+      <div class="service-item reveal">
+        <div class="service-ico">📊</div>
+        <div><h3>Prediktívna diagnostika (IoT)</h3><p>Vstavaný senzorový systém: monitorovanie vibrácií, teploty, poklesu tlaku, prevádzkových hodín. Automatické upozornenie pri anomálii — zasahujeme skôr, ako nastane porucha.</p></div>
+      </div>
+      <div class="service-item reveal">
+        <div class="service-ico">🎓</div>
+        <div><h3>Školenie obsluhy a údržbárov</h3><p>Zaškolenie operátorov pri odovzdaní a opakovanie školenia podľa potreby. Váš tím by mal byť schopný vykonávať údržbu prvého stupňa — to znižuje servisné požiadavky.</p></div>
+      </div>
+      <div class="service-item reveal">
+        <div class="service-ico">📋</div>
+        <div><h3>Výkonnostný prehľad a auditová dokumentácia</h3><p>Ročný prehľad OEE, denník údržby a auditovateľný dokumentačný balíček — ktorý je možné priamo integrovať do vášho systému zabezpečenia kvality.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--bg)">
+  <div class="container">
+    <div class="sec-head center reveal"><span class="eyebrow center">Lifecycle balíčky</span><h2>Vyberte podľa vašich potrieb</h2><p>Každý balíček platí od odovzdania, s vopred dohodnutým poplatkom. Žiadne prekvapujúce faktúry pri výpadku.</p></div>
+    <div class="packages-grid">
+
+      <div class="pkg reveal">
+        <span class="pkg-badge badge-basic">Essential Care</span>
+        <h3>Essential Care</h3>
+        <p class="pkg-price">Ročná zmluva · na základe cenovej ponuky</p>
+        <hr>
+        <div class="pkg-features">
+          <div class="pf"><span class="pf-check">✓</span><span>2 návštevy preventívnej údržby ročne</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>Skladové zásoby kritických dielov (sklad Nordexa)</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>Telefonická servisná pohotovosť Po–Pi 7:00–17:00</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>Aktualizácie softvéru a dokumentácia</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>Ročný prehľad údržby</span></div>
+          <div class="pf"><span class="pf-na">—</span><span style="color:var(--muted-2)">Telefonická pohotovosť 24/7</span></div>
+          <div class="pf"><span class="pf-na">—</span><span style="color:var(--muted-2)">Garantovaný reakčný čas SLA</span></div>
+          <div class="pf"><span class="pf-na">—</span><span style="color:var(--muted-2)">Prediktívna IoT diagnostika</span></div>
+        </div>
+        <a href="/sk/contact/" class="btn btn-ghost" style="justify-content:center">Požiadať o ponuku →</a>
+      </div>
+
+      <div class="pkg featured reveal">
+        <span class="pkg-badge badge-pro">Priority Shield · Odporúčané</span>
+        <h3>Priority Shield</h3>
+        <p class="pkg-price">Ročná zmluva · na základe cenovej ponuky</p>
+        <hr>
+        <div class="pkg-features">
+          <div class="pf"><span class="pf-check">✓</span><span>4 návštevy preventívnej údržby ročne</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>Rozšírené skladové zásoby dielov (v prevádzke zákazníka)</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>Telefonická a online servisná pohotovosť 24/7</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span><strong>Garantovaný SLA reakčný čas 8 h na mieste</strong></span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>Aktualizácie softvéru a dokumentácia</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>Ročný prehľad OEE a analýza výkonnosti</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>Auditovateľná dokumentácia údržby</span></div>
+          <div class="pf"><span class="pf-na">—</span><span style="color:var(--muted-2)">Prediktívna IoT diagnostika</span></div>
+        </div>
+        <a href="/sk/contact/" class="btn btn-steel" style="justify-content:center">Požiadať o ponuku →</a>
+      </div>
+
+      <div class="pkg reveal">
+        <span class="pkg-badge badge-premium">Uptime Guarantee · Prémiový</span>
+        <h3>Uptime Guarantee</h3>
+        <p class="pkg-price">Ročná zmluva · na základe cenovej ponuky</p>
+        <hr>
+        <div class="pkg-features">
+          <div class="pf"><span class="pf-check">✓</span><span>Mesačná preventívna údržba (12×/rok)</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>Kompletné zásoby dielov v prevádzke zákazníka</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>Pohotovosť 24/7 + dedikovaný servisný inžinier</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span><strong>Garantovaný SLA reakčný čas 4 h na mieste</strong></span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>Aktualizácie softvéru a dokumentácia</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span><strong>Prediktívna IoT diagnostika (senzory)</strong></span></div>
+          <div class="pf"><span class="pf-check">✓</span><span><strong>Finančná garancia dostupnosti 96%</strong></span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>Štvrťročný prehľad OEE a odporúčania</span></div>
+        </div>
+        <a href="/sk/contact/" class="btn btn-primary" style="justify-content:center">Požiadať o ponuku →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--bg-2)">
+  <div class="container">
+    <div class="sec-head center reveal"><span class="eyebrow center">Ako to funguje</span><h2>Postup lifecycle zmluvy</h2></div>
+    <div class="process-v reveal">
+      <div class="pv-item">
+        <div class="pv-num">01</div>
+        <div class="pv-body"><h4>Prieskum potrieb a výber balíčka</h4><p>Prerokujeme typ stroja, odvetvie, požiadavky na dostupnosť a pokrytie SVE. Určíme vhodný balíček.</p></div>
+      </div>
+      <div class="pv-item">
+        <div class="pv-num">02</div>
+        <div class="pv-body"><h4>Zaznamenanie stavu pri odovzdaní</h4><p>Pri odovzdaní alebo začatí zmluvy naši inžinieri zaznamenajú stav stroja — to je základ pre výpočet SLA a garancií.</p></div>
+      </div>
+      <div class="pv-item">
+        <div class="pv-num">03</div>
+        <div class="pv-body"><h4>Plánovaná preventívna údržba</h4><p>Ročný harmonogram údržby sa prispôsobuje vášmu výrobnému plánu — neprichádzame náhodne, ale v plánovaných oknách.</p></div>
+      </div>
+      <div class="pv-item">
+        <div class="pv-num">04</div>
+        <div class="pv-body"><h4>Priebežný monitoring a upozornenia (balíček Uptime)</h4><p>IoT senzorový systém posiela dáta v reálnom čase do servisného centra Nordexa — pri anomálii upozorníme ešte pred vznikom poruchy.</p></div>
+      </div>
+      <div class="pv-item">
+        <div class="pv-num">05</div>
+        <div class="pv-body"><h4>Ročný výkonnostný prehľad a obnovenie</h4><p>Na konci roka súhrnný prehľad: vykonané zásahy, výmeny dielov, trend OEE, odporúčania na ďalší rok. Obnovenie zmluvy za transparentných podmienok.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--bg)">
+  <div class="container">
+    <div class="sec-head center reveal"><span class="eyebrow center">Pokrytie SVE</span><h2>Servis na mieste v šiestich krajinách</h2><p>Garancia reakčného času sa nevzťahuje len na Maďarsko. Na každom cieľovom trhu máme servisného partnera.</p></div>
+    <div class="response-grid">
+      <div class="resp-card reveal"><div class="resp-flag">🇭🇺</div><h4>Maďarsko</h4><p>Vlastný tím v Székesfehérváre</p><span class="resp-time">4 h SLA</span></div>
+      <div class="resp-card reveal"><div class="resp-flag">🇦🇹</div><h4>Rakúsko</h4><p>TechServ GmbH, Viedeň + Graz</p><span class="resp-time">8 h SLA</span></div>
+      <div class="resp-card reveal"><div class="resp-flag">🇸🇰</div><h4>Slovensko</h4><p>ProTech s.r.o., Bratislava + Košice</p><span class="resp-time">8 h SLA</span></div>
+      <div class="resp-card reveal"><div class="resp-flag">🇨🇿</div><h4>Česká republika</h4><p>IndusTech s.r.o., Praha + Brno</p><span class="resp-time">8 h SLA</span></div>
+      <div class="resp-card reveal"><div class="resp-flag">🇵🇱</div><h4>Poľsko</h4><p>PolMech Sp. z o.o., Varšava + Krakov</p><span class="resp-time">12 h SLA</span></div>
+      <div class="resp-card reveal"><div class="resp-flag">🇷🇴</div><h4>Rumunsko</h4><p>TehnoServ S.R.L., Kluž-Napoca + Timișoara</p><span class="resp-time">12 h SLA</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container"><div class="cta-band-inner reveal">
+    <h2>Nečakajte na prvý výpadok.</h2>
+    <p>Preventívna údržba je investícia, nie náklad. Požiadajte o ponuku na lifecycle zmluvu — ukážeme vám aj výpočet návratnosti.</p>
+    <div class="cta-band-actions">
+      <a href="/sk/contact/" class="btn btn-light btn-lg">Požiadať o lifecycle ponuku <span class="arrow">→</span></a>
+      <a href="tel:+3622555199" class="btn btn-outline-light">📞 Servisná pohotovosť: +36 22 555 199</a>
+    </div>
+  </div></div>
+</section>
+
+<footer><div class="container">
+  <div class="foot-grid">
+    <div><div class="brand"><svg class="brand-logo" viewBox="0 0 48 48" fill="none" style="width:32px;height:32px"><rect x="2" y="2" width="44" height="44" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.15)"/><path d="M14 34V14l9 12V14" stroke="#7fa8c9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 14c4 4 4 12 0 16-2-3-2-9 0-16Z" fill="#c4511c"/></svg><span><span class="brand-name">NORDE<span style="color:#c4511c">XA</span></span><span class="brand-sub">Industrial Solutions</span></span></div><p class="foot-about">Pokročilé dávacie a baliace systémy — Székesfehérvár, od roku 1994.</p></div>
+    <div class="foot-col"><h5>Servis</h5><a href="/sk/service/">Prehľad servisu</a><a href="/sk/solutions/service-lifecycle.html">Lifecycle balíčky</a><a href="mailto:szerviz@nordexa.hu">szerviz@nordexa.hu</a><a href="tel:+3622555199">Servisná pohotovosť 24/7</a></div>
+    <div class="foot-col"><h5>Riešenia</h5><a href="/sk/solutions/custom-dosing.html">Individuálne dávacie linky</a><a href="/sk/solutions/modular-systems.html">Modulárne systémy</a><a href="/sk/solutions/standard-equipment.html">Štandardné zariadenia</a></div>
+    <div class="foot-col"><h5>Kontakt</h5><a href="mailto:sales@nordexa.hu">sales@nordexa.hu</a><a href="tel:+3622555100">+36 22 555 100</a><a href="/sk/contact/">Požiadať o cenovú ponuku</a></div>
+  </div>
+  <div class="foot-bottom"><span>© 1994–2026 Nordexa Industrial Solutions Zrt.</span><span>ISO 9001 · Ochrana osobných údajov</span></div>
+</div></footer>
+<script src="../../js/main.js"></script>
+</body>
+</html>

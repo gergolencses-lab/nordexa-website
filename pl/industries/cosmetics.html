@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kosmetyki — Nordexa Industrial Solutions</title>
+<meta name="description" content="Higieniczne napełnianie kremów, serum i premium opakowań kosmetycznych. GMP, ISO 22716, EU Cosmetics Regulation — dla producentów kosmetyków." />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../../css/style.css" />
+<style>
+  .page-hero{padding:140px 0 80px;background:var(--bg);border-bottom:1px solid var(--line)}
+  .page-hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .breadcrumb{font-family:var(--font-d);font-size:13px;color:var(--muted-2);margin-bottom:20px;display:flex;align-items:center;gap:8px}
+  .breadcrumb a{color:var(--muted);transition:color .2s}.breadcrumb a:hover{color:var(--steel)}.breadcrumb-sep{color:var(--line-strong)}
+  .page-hero h1{font-size:clamp(32px,4vw,56px);font-weight:700;margin:16px 0 20px}
+  .page-hero .lead{font-size:18px;color:var(--muted);margin-bottom:28px;line-height:1.7}
+  .spec-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+  .spec-tag{font-family:var(--font-d);font-size:12.5px;font-weight:600;padding:7px 14px;border-radius:999px;border:1.5px solid var(--line-strong);color:var(--text);background:var(--surface)}
+  .spec-tag.accent{border-color:var(--accent);color:var(--accent);background:var(--accent-bg)}
+  .page-hero-img{border-radius:var(--radius-l);overflow:hidden;aspect-ratio:4/3;background:var(--bg-2)}
+  .page-hero-img img{width:100%;height:100%;object-fit:cover}
+  .key-facts{background:var(--headline)}.key-facts-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+  .key-fact{padding:32px 28px;border-right:1px solid rgba(255,255,255,.08);text-align:center}.key-fact:last-child{border-right:0}
+  .key-fact .val{font-family:var(--font-d);font-weight:700;font-size:32px;color:var(--accent);line-height:1;margin-bottom:8px}
+  .key-fact .lbl{font-size:13px;color:rgba(255,255,255,.55)}
+  .challenges-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .challenge-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+  .challenge-card .c-ico{font-size:28px;margin-bottom:14px}
+  .challenge-card h4{font-size:18px;font-weight:700;margin-bottom:10px}
+  .challenge-card p{font-size:14.5px;color:var(--muted);line-height:1.6}
+  .cert-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+  .cert-badge{font-family:var(--font-d);font-size:13px;font-weight:700;padding:10px 20px;border:2px solid var(--line-strong);border-radius:10px;background:var(--surface);color:var(--steel)}
+  .solutions-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .sol-ref{display:flex;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;transition:border-color .2s,transform .2s}
+  .sol-ref:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .sol-ref-ico{font-size:24px;flex-shrink:0}
+  .sol-ref h4{font-size:16px;font-weight:700;margin-bottom:6px}
+  .sol-ref p{font-size:13px;color:var(--muted)}
+  .sol-ref-link{font-family:var(--font-d);font-size:13px;font-weight:600;color:var(--steel);margin-top:8px;display:inline-block}
+  .ind-related{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .ind-ref{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;text-align:center;transition:border-color .2s,transform .2s}
+  .ind-ref:hover{border-color:var(--accent);transform:translateY(-3px)}
+  .ind-ref .ico{font-size:28px;margin-bottom:10px}
+  .ind-ref h4{font-size:15px;font-weight:700;margin-bottom:4px}
+  .ind-ref p{font-size:12.5px;color:var(--muted)}
+  @media(max-width:1024px){.page-hero-inner{grid-template-columns:1fr}.key-facts-grid{grid-template-columns:repeat(2,1fr)}.challenges-grid,.solutions-list{grid-template-columns:1fr}.ind-related{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:640px){.ind-related{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header id="hdr">
+  <div class="container nav-wrap">
+    <a href="/pl/" class="brand"><svg class="brand-logo" viewBox="0 0 48 48" fill="none"><rect x="2" y="2" width="44" height="44" rx="10" fill="#f4f0e8" stroke="#c4c0b2"/><path d="M14 34V14l9 12V14" stroke="#2b4560" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 14c4 4 4 12 0 16-2-3-2-9 0-16Z" fill="#c4511c"/></svg><span><span class="brand-name">NORDE<span>XA</span></span><span class="brand-sub">Industrial Solutions</span></span></a>
+    <nav class="main-nav" id="mainNav">
+      <div class="nav-item has-mega"><button class="nav-link" aria-expanded="false">Rozwiązania <span class="chevron">▾</span></button><div class="mega-panel"><a href="/pl/solutions/custom-dosing.html" class="mega-item"><span class="mega-item-ico">⚙️</span><span class="mega-item-title">Indywidualne linie dozujące</span><span class="mega-item-desc">W pełni spersonalizowane</span></a><a href="/pl/solutions/standard-equipment.html" class="mega-item"><span class="mega-item-ico">📦</span><span class="mega-item-title">Urządzenia standardowe</span><span class="mega-item-desc">Z katalogu</span></a><a href="/pl/solutions/modular-systems.html" class="mega-item"><span class="mega-item-ico">🔩</span><span class="mega-item-title">Systemy modułowe</span><span class="mega-item-desc">Elastyczne</span></a><a href="/pl/solutions/service-lifecycle.html" class="mega-item"><span class="mega-item-ico">🛠</span><span class="mega-item-title">Serwis &amp; Lifecycle</span><span class="mega-item-desc">96% dostępność</span></a></div></div>
+      <div class="nav-item has-mega"><button class="nav-link active" aria-expanded="false">Branże <span class="chevron">▾</span></button><div class="mega-panel wide"><a href="/pl/industries/chemical.html" class="mega-item"><span class="mega-item-ico">⚗️</span><span class="mega-item-title">Przemysł chemiczny</span><span class="mega-item-desc">Substancje reaktywne</span></a><a href="/pl/industries/cosmetics.html" class="mega-item"><span class="mega-item-ico">💄</span><span class="mega-item-title">Kosmetyki</span><span class="mega-item-desc">Higieniczne napełnianie</span></a><a href="/pl/industries/food.html" class="mega-item"><span class="mega-item-ico">🫙</span><span class="mega-item-title">Premium żywność</span><span class="mega-item-desc">Food-safe</span></a><a href="/pl/industries/small-batch.html" class="mega-item"><span class="mega-item-ico">🔄</span><span class="mega-item-title">Produkcja małoseryjna</span><span class="mega-item-desc">Elastyczne przezbrojenie</span></a></div></div>
+      <a href="/pl/case-studies/" class="nav-link">Referencje</a>
+      <a href="/pl/service/" class="nav-link">Serwis</a>
+      <a href="/pl/about/" class="nav-link">O nas</a>
+      <a href="/pl/contact/" class="nav-link">Kontakt</a>
+    </nav>
+    <div class="nav-actions"><div class="lang-switch"><a href="/" class="lang-btn">HU</a><span class="lang-sep">|</span><a href="/en/" class="lang-btn">EN</a><span class="lang-sep">|</span><a href="/de/" class="lang-btn">DE</a><span class="lang-sep">|</span><button class="lang-btn active">PL</button><span class="lang-sep">|</span><a href="/sk/" class="lang-btn">SK</a></div><a href="/pl/contact/" class="btn btn-primary">Zapytaj o ofertę <span class="arrow">→</span></a><button class="burger" id="burger" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button></div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <div class="reveal">
+      <div class="breadcrumb"><a href="/pl/">Strona główna</a><span class="breadcrumb-sep">›</span><a href="/pl/industries/">Branże</a><span class="breadcrumb-sep">›</span><span>Kosmetyki</span></div>
+      <span class="eyebrow">Branża</span>
+      <h1>Kosmetyki</h1>
+      <p class="lead">Napełnianie i pakowanie premium kosmetyków w higienicznym środowisku zgodnym z GMP. Gdzie jakość produktu i estetyka opakowania są jednakowo ważne — tam nie ma miejsca na kompromis w zakresie precyzji maszyny.</p>
+      <div class="spec-tags">
+        <span class="spec-tag accent">Zgodność z GMP</span>
+        <span class="spec-tag">ISO 22716</span>
+        <span class="spec-tag">Kremy · Serum · Emulsje</span>
+        <span class="spec-tag">Wykonanie clean-room</span>
+      </div>
+      <div class="hero-actions">
+        <a href="/pl/contact/" class="btn btn-primary btn-lg">Omów projekt kosmetyczny <span class="arrow">→</span></a>
+        <a href="/pl/solutions/custom-dosing.html" class="btn btn-ghost">Nasze rozwiązania →</a>
+      </div>
+    </div>
+    <div class="page-hero-img reveal">
+      <img src="../../images/ind-kozmetika.jpg" alt="Linia napełniania kosmetyków"
+        onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\' style=\'height:100%\'><div class=\'img-placeholder-icon\'>💄</div><span>Linia kosmetyczna</span></div>'" />
+    </div>
+  </div>
+</section>
+
+<div class="key-facts">
+  <div class="container"><div class="key-facts-grid">
+    <div class="key-fact reveal"><div class="val">±0,5%</div><div class="lbl">precyzja napełniania</div></div>
+    <div class="key-fact reveal"><div class="val">GMP</div><div class="lbl">wykonanie wg ISO 22716</div></div>
+    <div class="key-fact reveal"><div class="val">&lt;15'</div><div class="lbl">czas przezbrojenia przy zmianie receptury</div></div>
+    <div class="key-fact reveal"><div class="val">CIP</div><div class="lbl">mycie na miejscu opcjonalnie</div></div>
+  </div></div>
+</div>
+
+<section class="sec" style="background:var(--bg)">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Wyzwania</span>
+      <h2>Czego wymaga przemysł kosmetyczny</h2>
+      <p>Przy napełnianiu kosmetyków czystość mikrobiologiczna, precyzja dozowania i wygląd wizualny są potrzebne jednocześnie. Bąbelka w kremie, kropla na zewnątrz butelki, odchylenie o gram — wszystko to reklamacja.</p>
+    </div>
+    <div class="challenges-grid">
+      <div class="challenge-card reveal"><div class="c-ico">🧼</div><h4>Higiena i czystość mikrobiologiczna</h4><p>Całkowicie gładkie powierzchnie wewnętrzne, brak martwych stref — części kontaktowe z inoksu 316L i PTFE, wykonanie kompatybilne z CIP/SIP. Auditowany proces czyszczenia przed i po każdym uruchomieniu.</p></div>
+      <div class="challenge-card reveal"><div class="c-ico">🌡</div><h4>Emulsje wrażliwe na temperaturę</h4><p>Serum i emulsje zawierające aktywne składniki są wrażliwe na temperaturę i ścinanie. Pompa o niskim ścinaniu, ogrzewane rury transportowe i głowice napełniające — produkt w butelce jest taki sam jak w zbiorniku.</p></div>
+      <div class="challenge-card reveal"><div class="c-ico">💅</div><h4>Precyzja napełniania premium</h4><p>W kosmetykach luksusowych napełnianie bez kapania i dokładna wysokość poziomu to nie opcja — odchylenie jest widoczne i natychmiast staje się reklamacją. Głowice anti-drip, opcja kamery do pomiaru poziomu.</p></div>
+      <div class="challenge-card reveal"><div class="c-ico">🔄</div><h4>Zmiana receptury i opakowania</h4><p>Linie sezonowe, limitowane i premium następują szybko po sobie — maszyna musi przezbrajać się w &lt;15 minut. Biblioteka receptur, automatyczne głowice do zmiany rozmiaru, minimalna ingerencja ręczna.</p></div>
+    </div>
+    <div class="cert-row reveal">
+      <span class="cert-badge">GMP / ISO 22716</span>
+      <span class="cert-badge">EU Cosmetics Regulation</span>
+      <span class="cert-badge">ISO 9001</span>
+      <span class="cert-badge">Kompatybilny z CIP/SIP</span>
+      <span class="cert-badge">FDA 21 CFR 111 ready</span>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--bg-2)">
+  <div class="container">
+    <div class="sec-head reveal"><span class="eyebrow">Polecane rozwiązania</span><h2>Systemy Nordexa dla producentów kosmetyków</h2></div>
+    <div class="solutions-list">
+      <a href="/pl/solutions/custom-dosing.html" class="sol-ref reveal"><div class="sol-ref-ico">⚙️</div><div><h4>Indywidualne linie dozujące</h4><p>Marka premium, unikalne opakowanie, wrażliwa receptura — tu właściwy wybór to indywidualne projektowanie.</p><span class="sol-ref-link">Szczegóły →</span></div></a>
+      <a href="/pl/solutions/modular-systems.html" class="sol-ref reveal"><div class="sol-ref-ico">🔩</div><div><h4>Systemy modułowe</h4><p>Znane portfolio receptur, zmienne opakowania — architektura modułowa zapewnia szybkie i auditowalne przezbrojenie.</p><span class="sol-ref-link">Szczegóły →</span></div></a>
+      <a href="/pl/solutions/standard-equipment.html" class="sol-ref reveal"><div class="sol-ref-ico">📦</div><div><h4>Urządzenia standardowe</h4><p>Do stabilnego, jednorodnego produktu — seria NX-Fill L w wykonaniu kosmetycznym, krótka dostawa.</p><span class="sol-ref-link">Szczegóły →</span></div></a>
+      <a href="/pl/solutions/service-lifecycle.html" class="sol-ref reveal"><div class="sol-ref-ico">🛠</div><div><h4>Serwis &amp; Lifecycle</h4><p>Regularna wymiana uszczelek, pomp i filtrów może być udokumentowana w audycie GMP.</p><span class="sol-ref-link">Szczegóły →</span></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec case-study-feature" style="background:var(--bg)">
+  <div class="container"><div class="case-split">
+    <figure class="case-img reveal">
+      <img src="../../images/ind-kozmetika.jpg" alt="Referencja Lumière Cosmetics"
+        onerror="this.innerHTML='<div class=\'img-placeholder\' style=\'height:100%\'><div class=\'img-placeholder-icon\'>💄</div><span>Zdjęcie referencji</span></div>'"/>
+    </figure>
+    <div class="case-body reveal">
+      <span class="eyebrow">Referencja</span>
+      <h2>Lumière Cosmetics: napełniarka serum zgodna z GMP, uruchomiona w 3 miesiące</h2>
+      <p>Lumière Cosmetics szukała rozwiązania do napełniania premium serum anti-aging — zgodnego z GMP, dla wrażliwej emulsji termicznej, z napełnianiem bez kapania. System Nordexa oparty na NX-Fill L z indywidualnymi głowicami przeszedł pierwszy audyt GMP bez zastrzeżeń.</p>
+      <div class="case-results">
+        <div class="result-item"><span class="result-num">0</span><span class="result-label">odchyleń GMP w audycie</span></div>
+        <div class="result-item"><span class="result-num">±0,3%</span><span class="result-label">precyzja napełniania</span></div>
+        <div class="result-item"><span class="result-num">3 mies.</span><span class="result-label">uruchomienie</span></div>
+      </div>
+      <a href="/pl/case-studies/" class="btn btn-steel">Wszystkie referencje <span class="arrow">→</span></a>
+    </div>
+  </div></div>
+</section>
+
+<section class="sec" style="background:var(--bg-2)">
+  <div class="container">
+    <div class="sec-head center reveal"><span class="eyebrow center">Powiązane branże</span><h2>Inne sektory, w których pracujemy</h2></div>
+    <div class="ind-related">
+      <a href="/pl/industries/chemical.html" class="ind-ref reveal"><div class="ico">⚗️</div><h4>Przemysł chemiczny</h4><p>ATEX, substancje reaktywne, REACH</p></a>
+      <a href="/pl/industries/food.html" class="ind-ref reveal"><div class="ico">🫙</div><h4>Premium żywność</h4><p>HACCP, systemy food-safe</p></a>
+      <a href="/pl/industries/small-batch.html" class="ind-ref reveal"><div class="ico">🔄</div><h4>Produkcja małoseryjna</h4><p>Elastyczne przezbrojenie, edycje limitowane</p></a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container"><div class="cta-band-inner reveal">
+    <h2>Produkt premium zasługuje na premium system napełniania.</h2>
+    <p>Opiszcie recepturę, opakowanie i wymagania GMP — nasi inżynierowie przedstawią najlepsze rozwiązanie.</p>
+    <div class="cta-band-actions">
+      <a href="/pl/contact/" class="btn btn-light btn-lg">Omów projekt <span class="arrow">→</span></a>
+      <a href="/pl/case-studies/" class="btn btn-outline-light">Referencje</a>
+    </div>
+  </div></div>
+</section>
+
+<footer><div class="container">
+  <div class="foot-grid">
+    <div><div class="brand"><svg class="brand-logo" viewBox="0 0 48 48" fill="none" style="width:32px;height:32px"><rect x="2" y="2" width="44" height="44" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.15)"/><path d="M14 34V14l9 12V14" stroke="#7fa8c9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 14c4 4 4 12 0 16-2-3-2-9 0-16Z" fill="#c4511c"/></svg><span><span class="brand-name">NORDE<span style="color:#c4511c">XA</span></span><span class="brand-sub">Industrial Solutions</span></span></div><p class="foot-about">Zaawansowane systemy dozowania i pakowania — Székesfehérvár, od 1994 roku.</p></div>
+    <div class="foot-col"><h5>Rozwiązania</h5><a href="/pl/solutions/custom-dosing.html">Indywidualne linie dozujące</a><a href="/pl/solutions/standard-equipment.html">Urządzenia standardowe</a><a href="/pl/solutions/modular-systems.html">Systemy modułowe</a><a href="/pl/solutions/service-lifecycle.html">Serwis &amp; Lifecycle</a></div>
+    <div class="foot-col"><h5>Branże</h5><a href="/pl/industries/chemical.html">Przemysł chemiczny</a><a href="/pl/industries/cosmetics.html">Kosmetyki</a><a href="/pl/industries/food.html">Premium żywność</a><a href="/pl/industries/small-batch.html">Produkcja małoseryjna</a></div>
+    <div class="foot-col"><h5>Kontakt</h5><a href="mailto:sales@nordexa.hu">sales@nordexa.hu</a><a href="tel:+3622555100">+36 22 555 100</a><a href="/pl/contact/">Zapytaj o ofertę</a></div>
+  </div>
+  <div class="foot-bottom"><span>© 1994–2026 Nordexa Industrial Solutions Zrt.</span><span>Polityka prywatności · ISO 9001</span></div>
+</div></footer>
+<script src="../../js/main.js"></script>
+</body>
+</html>

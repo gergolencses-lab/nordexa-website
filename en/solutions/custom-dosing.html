@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Custom Dosing Lines — Nordexa Industrial Solutions</title>
+<meta name="description" content="Fully tailored dosing and filling systems for variable, short-run manufacturing. Liquid, cream, granule, powder — from €250k, 6–14 month lead time." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../../css/style.css" />
+<style>
+  .page-hero { padding: 140px 0 80px; background: var(--bg); border-bottom: 1px solid var(--line); }
+  .page-hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .breadcrumb { font-family: var(--font-d); font-size: 13px; color: var(--muted-2); margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
+  .breadcrumb a { color: var(--muted); transition: color .2s; }
+  .breadcrumb a:hover { color: var(--steel); }
+  .breadcrumb-sep { color: var(--line-strong); }
+  .page-hero h1 { font-size: clamp(32px, 4vw, 56px); font-weight: 700; margin: 16px 0 20px; }
+  .page-hero .lead { font-size: 18px; color: var(--muted); margin-bottom: 28px; line-height: 1.7; }
+  .spec-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+  .spec-tag { font-family: var(--font-d); font-size: 12.5px; font-weight: 600; padding: 7px 14px; border-radius: 999px; border: 1.5px solid var(--line-strong); color: var(--text); background: var(--surface); }
+  .spec-tag.accent { border-color: var(--accent); color: var(--accent); background: var(--accent-bg); }
+  .page-hero-img { border-radius: var(--radius-l); overflow: hidden; aspect-ratio: 4/3; background: var(--bg-2); }
+  .page-hero-img img { width: 100%; height: 100%; object-fit: cover; }
+  .key-facts { background: var(--headline); padding: 0; }
+  .key-facts-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .key-fact { padding: 32px 28px; border-right: 1px solid rgba(255,255,255,.08); text-align: center; }
+  .key-fact:last-child { border-right: 0; }
+  .key-fact .val { font-family: var(--font-d); font-weight: 700; font-size: 32px; color: var(--accent); line-height: 1; margin-bottom: 8px; }
+  .key-fact .lbl { font-size: 13px; color: rgba(255,255,255,.55); }
+  .challenge-sec { background: var(--bg-2); }
+  .challenge-split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+  .challenge-block h3 { font-size: 22px; font-weight: 700; margin-bottom: 20px; }
+  .challenge-list { display: flex; flex-direction: column; gap: 14px; }
+  .challenge-item { display: flex; gap: 14px; padding: 18px 20px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+  .challenge-item .ci-dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+  .challenge-item .ci-dot.problem { background: #c0392b; }
+  .challenge-item .ci-dot.solution { background: var(--green); }
+  .challenge-item p { font-size: 14.5px; color: var(--text); line-height: 1.5; }
+  .specs-sec { background: var(--surface); }
+  .specs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .spec-card { background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; }
+  .spec-card-ico { width: 48px; height: 48px; background: var(--accent-bg); border: 1px solid rgba(196,81,28,.2); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 16px; }
+  .spec-card h4 { font-size: 17px; font-weight: 700; margin-bottom: 10px; }
+  .spec-card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+  .spec-card .spec-values { margin-top: 14px; display: flex; flex-direction: column; gap: 6px; }
+  .spec-value { display: flex; justify-content: space-between; font-size: 13px; padding: 6px 0; border-bottom: 1px solid var(--line); }
+  .spec-value:last-child { border-bottom: 0; }
+  .spec-value .sv-key { color: var(--muted); }
+  .spec-value .sv-val { font-family: var(--font-d); font-weight: 600; color: var(--headline); }
+  .process-vertical { background: var(--bg); }
+  .process-v-list { display: flex; flex-direction: column; gap: 0; max-width: 720px; margin: 0 auto; }
+  .process-v-item { display: grid; grid-template-columns: 60px 1fr; gap: 24px; padding: 32px 0; border-bottom: 1px solid var(--line); }
+  .process-v-item:last-child { border-bottom: 0; }
+  .pv-num { width: 44px; height: 44px; background: var(--accent); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-d); font-weight: 700; font-size: 15px; flex-shrink: 0; }
+  .pv-body h4 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+  .pv-body p { font-size: 15px; color: var(--muted); }
+  .pv-body .pv-duration { display: inline-block; margin-top: 10px; font-family: var(--font-d); font-size: 12px; font-weight: 600; color: var(--steel); background: var(--steel-bg); padding: 4px 12px; border-radius: 999px; }
+  .applies-to { background: var(--surface-2); }
+  .applies-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .applies-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; text-align: center; transition: border-color .2s, transform .2s; }
+  .applies-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+  .applies-card .ico { font-size: 28px; margin-bottom: 10px; }
+  .applies-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+  .applies-card p { font-size: 12.5px; color: var(--muted); }
+  .related-sols { background: var(--bg); }
+  .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .related-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; transition: border-color .2s, box-shadow .2s; display: flex; flex-direction: column; gap: 10px; }
+  .related-card:hover { border-color: var(--steel); box-shadow: 0 6px 24px rgba(20,30,45,.08); }
+  .related-card .r-ico { font-size: 24px; }
+  .related-card h4 { font-size: 17px; font-weight: 700; }
+  .related-card p { font-size: 13.5px; color: var(--muted); flex: 1; }
+  .related-card .r-link { font-family: var(--font-d); font-size: 13.5px; font-weight: 600; color: var(--steel); display: flex; align-items: center; gap: 6px; transition: gap .2s; }
+  .related-card:hover .r-link { gap: 10px; }
+  @media (max-width: 1024px) {
+    .page-hero-inner { grid-template-columns: 1fr; }
+    .page-hero-img { max-width: 520px; }
+    .key-facts-grid { grid-template-columns: repeat(2, 1fr); }
+    .challenge-split { grid-template-columns: 1fr; }
+    .specs-grid { grid-template-columns: 1fr 1fr; }
+    .applies-grid { grid-template-columns: repeat(2, 1fr); }
+    .related-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 640px) {
+    .specs-grid, .applies-grid, .related-grid { grid-template-columns: 1fr; }
+    .key-facts-grid { grid-template-columns: 1fr 1fr; }
+    .key-fact { padding: 22px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="container nav-wrap">
+    <a href="/en/" class="brand"><svg class="brand-logo" viewBox="0 0 48 48" fill="none"><rect x="2" y="2" width="44" height="44" rx="10" fill="#f4f0e8" stroke="#c4c0b2"/><path d="M14 34V14l9 12V14" stroke="#2b4560" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 14c4 4 4 12 0 16-2-3-2-9 0-16Z" fill="#c4511c"/></svg><span><span class="brand-name">NORDE<span>XA</span></span><span class="brand-sub">Industrial Solutions</span></span></a>
+    <nav class="main-nav" id="mainNav">
+      <div class="nav-item has-mega">
+        <button class="nav-link active" aria-expanded="false" aria-haspopup="true">Solutions <span class="chevron">▾</span></button>
+        <div class="mega-panel">
+          <a href="/en/solutions/custom-dosing.html" class="mega-item"><span class="mega-item-ico">⚙️</span><span class="mega-item-title">Custom Dosing Lines</span><span class="mega-item-desc">Fully tailored systems for variable manufacturing</span></a>
+          <a href="/en/solutions/standard-equipment.html" class="mega-item"><span class="mega-item-ico">📦</span><span class="mega-item-title">Standard Equipment</span><span class="mega-item-desc">Configurable from catalogue, short lead times</span></a>
+          <a href="/en/solutions/modular-systems.html" class="mega-item"><span class="mega-item-ico">🔩</span><span class="mega-item-title">Modular Systems</span><span class="mega-item-desc">Flexible customisation without bespoke risk</span></a>
+          <a href="/en/solutions/service-lifecycle.html" class="mega-item"><span class="mega-item-ico">🛠</span><span class="mega-item-title">Service &amp; Lifecycle</span><span class="mega-item-desc">96% uptime guarantee, 8 h average response time</span></a>
+        </div>
+      </div>
+      <div class="nav-item has-mega">
+        <button class="nav-link" aria-expanded="false" aria-haspopup="true">Industries <span class="chevron">▾</span></button>
+        <div class="mega-panel wide">
+          <a href="/en/industries/chemical.html" class="mega-item"><span class="mega-item-ico">⚗️</span><span class="mega-item-title">Chemical</span><span class="mega-item-desc">Safe dosing of reactive and viscous materials</span></a>
+          <a href="/en/industries/cosmetics.html" class="mega-item"><span class="mega-item-ico">💄</span><span class="mega-item-title">Cosmetics</span><span class="mega-item-desc">Hygienic filling for creams and serums</span></a>
+          <a href="/en/industries/food.html" class="mega-item"><span class="mega-item-ico">🫙</span><span class="mega-item-title">Premium Food</span><span class="mega-item-desc">Food-safe systems for sensitive products</span></a>
+          <a href="/en/industries/small-batch.html" class="mega-item"><span class="mega-item-ico">🔄</span><span class="mega-item-title">Small Batch / Short Run</span><span class="mega-item-desc">Flexible changeovers, short-run manufacturing</span></a>
+        </div>
+      </div>
+      <a href="/en/case-studies/" class="nav-link">Case Studies</a>
+      <a href="/en/service/" class="nav-link">Service</a>
+      <a href="/en/about/" class="nav-link">About Us</a>
+      <a href="/en/contact/" class="nav-link">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="lang-switch"><a href="/" class="lang-btn">HU</a><span class="lang-sep">|</span><a href="/en/" class="lang-btn active">EN</a><span class="lang-sep">|</span><a href="/de/" class="lang-btn">DE</a><span class="lang-sep">|</span><a href="/pl/" class="lang-btn">PL</a><span class="lang-sep">|</span><a href="/sk/" class="lang-btn">SK</a></div>
+      <a href="/en/contact/" class="btn btn-primary">Request a Quote <span class="arrow">→</span></a>
+      <button class="burger" id="burger" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <div class="reveal">
+      <div class="breadcrumb">
+        <a href="/en/">Home</a><span class="breadcrumb-sep">›</span>
+        <a href="/en/solutions/">Solutions</a><span class="breadcrumb-sep">›</span>
+        <span>Custom Dosing Lines</span>
+      </div>
+      <span class="eyebrow">Solution</span>
+      <h1>Custom Dosing Lines</h1>
+      <p class="lead">High-engineering-content, fully tailored systems for plants where the standard catalogue is not enough. Variable formulations, mixed batch sizes, unique material properties — this is our comfort zone.</p>
+      <div class="spec-tags">
+        <span class="spec-tag accent">€250k – €2M</span>
+        <span class="spec-tag">6–14 month lead time</span>
+        <span class="spec-tag">Liquid · Cream · Granule · Powder</span>
+        <span class="spec-tag">ISO 9001 quality</span>
+      </div>
+      <div class="hero-actions">
+        <a href="/en/contact/" class="btn btn-primary btn-lg">Request a Project Conversation <span class="arrow">→</span></a>
+        <a href="#technical-specs" class="btn btn-ghost">Technical specs →</a>
+      </div>
+    </div>
+    <div class="page-hero-img reveal">
+      <img src="../../images/sol-egyedi.jpg" alt="Custom dosing line close-up"
+        onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\' style=\'height:100%\'><div class=\'img-placeholder-icon\'>⚙️</div><span>Custom dosing line</span></div>'" />
+    </div>
+  </div>
+</section>
+
+<div class="key-facts">
+  <div class="container">
+    <div class="key-facts-grid">
+      <div class="key-fact reveal"><div class="val">± 0.5%</div><div class="lbl">dosing accuracy</div></div>
+      <div class="key-fact reveal"><div class="val">6–14 mo</div><div class="lbl">design to handover</div></div>
+      <div class="key-fact reveal"><div class="val">96%</div><div class="lbl">guaranteed uptime</div></div>
+      <div class="key-fact reveal"><div class="val">30+</div><div class="lbl">years of custom projects</div></div>
+    </div>
+  </div>
+</div>
+
+<section class="sec challenge-sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">The problem and the solution</span>
+      <h2>When the standard catalogue is not enough</h2>
+      <p>A custom dosing line is not a luxury — it is necessary when the product, formulation or manufacturing logic contains variables that an off-the-shelf product cannot handle.</p>
+    </div>
+    <div class="challenge-split">
+      <div class="challenge-block reveal">
+        <h3>Typical challenges</h3>
+        <div class="challenge-list">
+          <div class="challenge-item">
+            <div class="ci-dot problem"></div>
+            <p>Constantly changing formulations and mixed batch sizes — the standard machine cannot keep up.</p>
+          </div>
+          <div class="challenge-item">
+            <div class="ci-dot problem"></div>
+            <p>Unique material properties: high viscosity, reactive ingredients, light-sensitive or heat-sensitive products.</p>
+          </div>
+          <div class="challenge-item">
+            <div class="ci-dot problem"></div>
+            <p>Confined plant space, specific hygiene requirements (GMP, ATEX), or the need to integrate with an existing line.</p>
+          </div>
+          <div class="challenge-item">
+            <div class="ci-dot problem"></div>
+            <p>The previous supplier did not understand the plant logic — the machine exists but production is not optimal.</p>
+          </div>
+        </div>
+      </div>
+      <div class="challenge-block reveal">
+        <h3>What Nordexa delivers</h3>
+        <div class="challenge-list">
+          <div class="challenge-item">
+            <div class="ci-dot solution"></div>
+            <p>Engineering consultation from day one — not a template quote, but a real on-site needs assessment.</p>
+          </div>
+          <div class="challenge-item">
+            <div class="ci-dot solution"></div>
+            <p>Modular internal architecture: the system is bespoke, but the modules are proven — lower risk, better serviceability.</p>
+          </div>
+          <div class="challenge-item">
+            <div class="ci-dot solution"></div>
+            <p>Own manufacturing in Székesfehérvár — no subcontractor chain, quality stays in our hands.</p>
+          </div>
+          <div class="challenge-item">
+            <div class="ci-dot solution"></div>
+            <p>Lifecycle guarantee: we do not disappear after handover — service, parts and expandability for decades.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec specs-sec" id="technical-specs">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow center">Technical specifications</span>
+      <h2>What the system can do</h2>
+      <p>The values below apply to typical projects — actual parameters are always tailored to your product and process.</p>
+    </div>
+    <div class="specs-grid">
+      <div class="spec-card reveal">
+        <div class="spec-card-ico">⚗️</div>
+        <h4>Dosable materials</h4>
+        <p>Liquids, emulsions, creams, pastes, granules and powders alike — with filling head design to match material properties.</p>
+        <div class="spec-values">
+          <div class="spec-value"><span class="sv-key">Viscosity</span><span class="sv-val">1 – 500,000 cP</span></div>
+          <div class="spec-value"><span class="sv-key">Temperature</span><span class="sv-val">−5 °C – +95 °C</span></div>
+          <div class="spec-value"><span class="sv-key">pH range</span><span class="sv-val">0–14</span></div>
+        </div>
+      </div>
+      <div class="spec-card reveal">
+        <div class="spec-card-ico">🎯</div>
+        <h4>Dosing accuracy</h4>
+        <p>Both gravimetric and volumetric dosing available — accuracy depends on type and material.</p>
+        <div class="spec-values">
+          <div class="spec-value"><span class="sv-key">Gravimetric</span><span class="sv-val">± 0.1 – 0.5%</span></div>
+          <div class="spec-value"><span class="sv-key">Volumetric</span><span class="sv-val">± 0.5 – 1.5%</span></div>
+          <div class="spec-value"><span class="sv-key">Batch size</span><span class="sv-val">5 ml – 25 l</span></div>
+        </div>
+      </div>
+      <div class="spec-card reveal">
+        <div class="spec-card-ico">⚡</div>
+        <h4>Capacity &amp; speed</h4>
+        <p>Scalable with custom filling head count and conveyor system — batch count and cycle time match your requirements.</p>
+        <div class="spec-values">
+          <div class="spec-value"><span class="sv-key">Filling heads</span><span class="sv-val">1 – 24 units</span></div>
+          <div class="spec-value"><span class="sv-key">Typical capacity</span><span class="sv-val">200–4,000 units/h</span></div>
+          <div class="spec-value"><span class="sv-key">Changeover time</span><span class="sv-val">&lt; 15 min</span></div>
+        </div>
+      </div>
+      <div class="spec-card reveal">
+        <div class="spec-card-ico">🖥</div>
+        <h4>Control &amp; integration</h4>
+        <p>Custom HMI design, SCADA-compatible output, MES/ERP integration connection points.</p>
+        <div class="spec-values">
+          <div class="spec-value"><span class="sv-key">PLC</span><span class="sv-val">Siemens S7 / Allen-Bradley</span></div>
+          <div class="spec-value"><span class="sv-key">Protocol</span><span class="sv-val">OPC-UA, Modbus, Profinet</span></div>
+          <div class="spec-value"><span class="sv-key">Data logging</span><span class="sv-val">Batch record, FDA 21 CFR 11</span></div>
+        </div>
+      </div>
+      <div class="spec-card reveal">
+        <div class="spec-card-ico">🧹</div>
+        <h4>Hygiene &amp; cleanability</h4>
+        <p>Execution options meeting food, cosmetics and pharmaceutical requirements.</p>
+        <div class="spec-values">
+          <div class="spec-value"><span class="sv-key">Material</span><span class="sv-val">316L stainless steel base</span></div>
+          <div class="spec-value"><span class="sv-key">CIP/SIP</span><span class="sv-val">optionally integrated</span></div>
+          <div class="spec-value"><span class="sv-key">Certifications</span><span class="sv-val">GMP, ATEX, FDA-compatible</span></div>
+        </div>
+      </div>
+      <div class="spec-card reveal">
+        <div class="spec-card-ico">💶</div>
+        <h4>Project parameters</h4>
+        <p>Project size spans a wide range — depends on complexity, number of filling heads and level of automation.</p>
+        <div class="spec-values">
+          <div class="spec-value"><span class="sv-key">Investment</span><span class="sv-val">€250k – €2M</span></div>
+          <div class="spec-value"><span class="sv-key">Lead time</span><span class="sv-val">6–14 months</span></div>
+          <div class="spec-value"><span class="sv-key">Warranty</span><span class="sv-val">24 months base</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec process-vertical">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow center">How we work</span>
+      <h2>Steps of a custom project</h2>
+      <p>No surprises — at every phase you know what is happening, when and why.</p>
+    </div>
+    <div class="process-v-list reveal">
+      <div class="process-v-item">
+        <div class="pv-num">01</div>
+        <div class="pv-body">
+          <h4>On-site needs assessment</h4>
+          <p>Our engineers visit the plant, learn about the product, material, existing infrastructure and manufacturing logic. Not an email questionnaire — a personal consultation.</p>
+          <span class="pv-duration">1–3 days</span>
+        </div>
+      </div>
+      <div class="process-v-item">
+        <div class="pv-num">02</div>
+        <div class="pv-body">
+          <h4>Concept and technical proposal</h4>
+          <p>Validated solution concept, 3D layout design, refined schedule and detailed quotation. At this point you decide — not beforehand.</p>
+          <span class="pv-duration">2–4 weeks</span>
+        </div>
+      </div>
+      <div class="process-v-item">
+        <div class="pv-num">03</div>
+        <div class="pv-body">
+          <h4>Detailed design and manufacturing</h4>
+          <p>Own design and manufacturing capacity in Székesfehérvár. Regular status updates, milestone photos, FAT (Factory Acceptance Test) open to the client.</p>
+          <span class="pv-duration">4–10 months</span>
+        </div>
+      </div>
+      <div class="process-v-item">
+        <div class="pv-num">04</div>
+        <div class="pv-body">
+          <h4>On-site installation and SAT</h4>
+          <p>Delivery, assembly, connection, Site Acceptance Test — together with your team, documented. We only hand over when the system performs.</p>
+          <span class="pv-duration">2–4 weeks</span>
+        </div>
+      </div>
+      <div class="process-v-item">
+        <div class="pv-num">05</div>
+        <div class="pv-body">
+          <h4>Training and lifecycle activation</h4>
+          <p>Operator and maintenance training, documentation handover, lifecycle contract activation. This is not the end — it is the beginning.</p>
+          <span class="pv-duration">1–2 weeks</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec case-study-feature" style="background:var(--bg-2)">
+  <div class="container">
+    <div class="case-split">
+      <figure class="case-img reveal">
+        <img src="../../images/case-aurora.jpg" alt="Aurora Foods production line"
+          onerror="this.innerHTML='<div class=\'img-placeholder\' style=\'height:100%\'><div class=\'img-placeholder-icon\'>🏭</div><span>Case study photo</span></div>'"/>
+      </figure>
+      <div class="case-body reveal">
+        <span class="eyebrow">Reference</span>
+        <h2>Aurora Foods: +23% OEE with a custom dosing line</h2>
+        <p>The premium sauce manufacturer's mixed-batch, variable-formulation operation was paralysed by the old standard system. With Nordexa's custom modular dosing line it recovered — and outperformed — within six months.</p>
+        <div class="case-results">
+          <div class="result-item"><span class="result-num">+23%</span><span class="result-label">OEE improvement</span></div>
+          <div class="result-item"><span class="result-num">−18%</span><span class="result-label">scrap</span></div>
+          <div class="result-item"><span class="result-num">8 mo</span><span class="result-label">design to handover</span></div>
+        </div>
+        <a href="/en/case-studies/aurora-foods.html" class="btn btn-steel">Full case study <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec applies-to">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow center">Industries</span>
+      <h2>Where we apply it</h2>
+      <p>A custom dosing line is justified wherever the formulation, material or batch size does not fit a standard solution.</p>
+    </div>
+    <div class="applies-grid">
+      <a href="/en/industries/chemical.html" class="applies-card reveal"><div class="ico">⚗️</div><h4>Chemical</h4><p>Reactive and viscous materials, ATEX zones</p></a>
+      <a href="/en/industries/cosmetics.html" class="applies-card reveal"><div class="ico">💄</div><h4>Cosmetics</h4><p>GMP, hygienic filling, premium packaging</p></a>
+      <a href="/en/industries/food.html" class="applies-card reveal"><div class="ico">🫙</div><h4>Premium Food</h4><p>Food-safe materials, CIP/SIP, FDA</p></a>
+      <a href="/en/industries/small-batch.html" class="applies-card reveal"><div class="ico">🔄</div><h4>Small Batch</h4><p>Fast changeovers, mixed products, flexibility</p></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec related-sols">
+  <div class="container">
+    <div class="sec-head reveal"><span class="eyebrow">Related solutions</span><h2>Other solutions you may be interested in</h2></div>
+    <div class="related-grid">
+      <a href="/en/solutions/modular-systems.html" class="related-card reveal"><div class="r-ico">🔩</div><h4>Modular Systems</h4><p>If the bespoke challenge is there but you want faster, more predictable implementation — the modular architecture is the middle ground.</p><span class="r-link">Details →</span></a>
+      <a href="/en/solutions/standard-equipment.html" class="related-card reveal"><div class="r-ico">📦</div><h4>Standard Equipment</h4><p>If the product fits the catalogue — proven platform, short delivery, lower investment.</p><span class="r-link">Details →</span></a>
+      <a href="/en/solutions/service-lifecycle.html" class="related-card reveal"><div class="r-ico">🛠</div><h4>Service &amp; Lifecycle</h4><p>Lifecycle contracts available for every custom system — preventive maintenance, 96% uptime, 8 h response.</p><span class="r-link">Details →</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <div class="cta-band-inner reveal">
+      <h2>Show us the challenge — we will solve it.</h2>
+      <p>The first consultation is free and non-binding. Our engineers visit the plant and bring a real solution concept — not a template proposal.</p>
+      <div class="cta-band-actions">
+        <a href="/en/contact/" class="btn btn-light btn-lg">Start a Project Conversation <span class="arrow">→</span></a>
+        <a href="/en/case-studies/" class="btn btn-outline-light">View references</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div><div class="brand"><svg class="brand-logo" viewBox="0 0 48 48" fill="none" style="width:32px;height:32px"><rect x="2" y="2" width="44" height="44" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.15)"/><path d="M14 34V14l9 12V14" stroke="#7fa8c9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 14c4 4 4 12 0 16-2-3-2-9 0-16Z" fill="#c4511c"/></svg><span><span class="brand-name">NORDE<span style="color:#c4511c">XA</span></span><span class="brand-sub">Industrial Solutions</span></span></div><p class="foot-about">Advanced dosing and packaging systems for variable manufacturing. Székesfehérvár — since 1994.</p></div>
+      <div class="foot-col"><h5>Solutions</h5><a href="/en/solutions/custom-dosing.html">Custom Dosing Lines</a><a href="/en/solutions/standard-equipment.html">Standard Equipment</a><a href="/en/solutions/modular-systems.html">Modular Systems</a><a href="/en/solutions/service-lifecycle.html">Service &amp; Lifecycle</a></div>
+      <div class="foot-col"><h5>Company</h5><a href="/en/about/">About Us</a><a href="/en/industries/">Industries</a><a href="/en/case-studies/">Case Studies</a><a href="/en/contact/">Careers</a></div>
+      <div class="foot-col"><h5>Contact</h5><a href="mailto:sales@nordexa.hu">sales@nordexa.hu</a><a href="tel:+3622555100">+36 22 555 100</a><a href="/en/contact/">Request a Quote</a></div>
+    </div>
+    <div class="foot-bottom"><span>© 1994–2026 Nordexa Industrial Solutions Zrt.</span><span>Privacy Policy · ISO 9001 Certified Manufacturing</span></div>
+  </div>
+</footer>
+
+<script src="../../js/main.js"></script>
+</body>
+</html>

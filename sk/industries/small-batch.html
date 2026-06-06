@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Malosériová výroba — Nordexa Industrial Solutions</title>
+<meta name="description" content="Flexibilné dávacie a baliace systémy pre krátko-sériovú, často sa meniacu výrobu. Rýchla prestavba, zmiešané produkty, malé šarže — komfortná zóna Nordexu." />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../../css/style.css" />
+<style>
+  .page-hero{padding:140px 0 80px;background:var(--bg);border-bottom:1px solid var(--line)}
+  .page-hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .breadcrumb{font-family:var(--font-d);font-size:13px;color:var(--muted-2);margin-bottom:20px;display:flex;align-items:center;gap:8px}
+  .breadcrumb a{color:var(--muted);transition:color .2s}.breadcrumb a:hover{color:var(--steel)}.breadcrumb-sep{color:var(--line-strong)}
+  .page-hero h1{font-size:clamp(32px,4vw,56px);font-weight:700;margin:16px 0 20px}
+  .page-hero .lead{font-size:18px;color:var(--muted);margin-bottom:28px;line-height:1.7}
+  .spec-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+  .spec-tag{font-family:var(--font-d);font-size:12.5px;font-weight:600;padding:7px 14px;border-radius:999px;border:1.5px solid var(--line-strong);color:var(--text);background:var(--surface)}
+  .spec-tag.accent{border-color:var(--accent);color:var(--accent);background:var(--accent-bg)}
+  .page-hero-img{border-radius:var(--radius-l);overflow:hidden;aspect-ratio:4/3;background:var(--bg-2)}
+  .page-hero-img img{width:100%;height:100%;object-fit:cover}
+  .key-facts{background:var(--headline)}.key-facts-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+  .key-fact{padding:32px 28px;border-right:1px solid rgba(255,255,255,.08);text-align:center}.key-fact:last-child{border-right:0}
+  .key-fact .val{font-family:var(--font-d);font-weight:700;font-size:32px;color:var(--accent);line-height:1;margin-bottom:8px}
+  .key-fact .lbl{font-size:13px;color:rgba(255,255,255,.55)}
+  .challenges-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .challenge-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+  .challenge-card .c-ico{font-size:28px;margin-bottom:14px}
+  .challenge-card h4{font-size:18px;font-weight:700;margin-bottom:10px}
+  .challenge-card p{font-size:14.5px;color:var(--muted);line-height:1.6}
+  .solutions-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .sol-ref{display:flex;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;transition:border-color .2s,transform .2s}
+  .sol-ref:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .sol-ref-ico{font-size:24px;flex-shrink:0}
+  .sol-ref h4{font-size:16px;font-weight:700;margin-bottom:6px}
+  .sol-ref p{font-size:13px;color:var(--muted)}
+  .sol-ref-link{font-family:var(--font-d);font-size:13px;font-weight:600;color:var(--steel);margin-top:8px;display:inline-block}
+  .usecases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .usecase{background:var(--surface-2);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+  .usecase .uc-ico{font-size:24px;margin-bottom:10px}
+  .usecase h4{font-size:16px;font-weight:700;margin-bottom:6px}
+  .usecase p{font-size:13px;color:var(--muted)}
+  .ind-related{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .ind-ref{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;text-align:center;transition:border-color .2s,transform .2s}
+  .ind-ref:hover{border-color:var(--accent);transform:translateY(-3px)}
+  .ind-ref .ico{font-size:28px;margin-bottom:10px}
+  .ind-ref h4{font-size:15px;font-weight:700;margin-bottom:4px}
+  .ind-ref p{font-size:12.5px;color:var(--muted)}
+  @media(max-width:1024px){.page-hero-inner{grid-template-columns:1fr}.key-facts-grid{grid-template-columns:repeat(2,1fr)}.challenges-grid,.solutions-list,.usecases-grid{grid-template-columns:1fr}.ind-related{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<header id="hdr">
+  <div class="container nav-wrap">
+    <a href="/sk/" class="brand"><svg class="brand-logo" viewBox="0 0 48 48" fill="none"><rect x="2" y="2" width="44" height="44" rx="10" fill="#f4f0e8" stroke="#c4c0b2"/><path d="M14 34V14l9 12V14" stroke="#2b4560" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 14c4 4 4 12 0 16-2-3-2-9 0-16Z" fill="#c4511c"/></svg><span><span class="brand-name">NORDE<span>XA</span></span><span class="brand-sub">Industrial Solutions</span></span></a>
+    <nav class="main-nav" id="mainNav">
+      <div class="nav-item has-mega"><button class="nav-link" aria-expanded="false">Riešenia <span class="chevron">▾</span></button><div class="mega-panel"><a href="/sk/solutions/custom-dosing.html" class="mega-item"><span class="mega-item-ico">⚙️</span><span class="mega-item-title">Individuálne dávacie linky</span><span class="mega-item-desc">Plne prispôsobené</span></a><a href="/sk/solutions/standard-equipment.html" class="mega-item"><span class="mega-item-ico">📦</span><span class="mega-item-title">Štandardné zariadenia</span><span class="mega-item-desc">Z katalógu</span></a><a href="/sk/solutions/modular-systems.html" class="mega-item"><span class="mega-item-ico">🔩</span><span class="mega-item-title">Modulárne systémy</span><span class="mega-item-desc">Flexibilné</span></a><a href="/sk/solutions/service-lifecycle.html" class="mega-item"><span class="mega-item-ico">🛠</span><span class="mega-item-title">Servis &amp; Lifecycle</span><span class="mega-item-desc">96% dostupnosť</span></a></div></div>
+      <div class="nav-item has-mega"><button class="nav-link active" aria-expanded="false">Odvetvia <span class="chevron">▾</span></button><div class="mega-panel wide"><a href="/sk/industries/chemical.html" class="mega-item"><span class="mega-item-ico">⚗️</span><span class="mega-item-title">Chemický priemysel</span><span class="mega-item-desc">Reaktívne látky</span></a><a href="/sk/industries/cosmetics.html" class="mega-item"><span class="mega-item-ico">💄</span><span class="mega-item-title">Kozmetika</span><span class="mega-item-desc">Hygienické plnenie</span></a><a href="/sk/industries/food.html" class="mega-item"><span class="mega-item-ico">🫙</span><span class="mega-item-title">Prémiové potraviny</span><span class="mega-item-desc">Potravinársky bezpečné</span></a><a href="/sk/industries/small-batch.html" class="mega-item"><span class="mega-item-ico">🔄</span><span class="mega-item-title">Malosériová výroba</span><span class="mega-item-desc">Flexibilná prestavba</span></a></div></div>
+      <a href="/sk/case-studies/" class="nav-link">Referencie</a><a href="/sk/service/" class="nav-link">Servis</a><a href="/sk/about/" class="nav-link">O nás</a><a href="/sk/contact/" class="nav-link">Kontakt</a>
+    </nav>
+    <div class="nav-actions"><div class="lang-switch"><a href="/iparagak/kis-sorozat.html" class="lang-btn">HU</a><span class="lang-sep">|</span><a href="/en/industries/small-batch.html" class="lang-btn">EN</a><span class="lang-sep">|</span><a href="/de/industries/small-batch.html" class="lang-btn">DE</a><span class="lang-sep">|</span><a href="/pl/industries/small-batch.html" class="lang-btn">PL</a><span class="lang-sep">|</span><span class="lang-btn active">SK</span></div><a href="/sk/contact/" class="btn btn-primary">Požiadať o cenovú ponuku <span class="arrow">→</span></a><button class="burger" id="burger" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button></div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <div class="reveal">
+      <div class="breadcrumb"><a href="/sk/">Domovská stránka</a><span class="breadcrumb-sep">›</span><a href="/sk/industries/">Odvetvia</a><span class="breadcrumb-sep">›</span><span>Malosériová výroba</span></div>
+      <span class="eyebrow">Odvetvie</span>
+      <h1>Malosériová &amp; zákazková výroba</h1>
+      <p class="lead">Krátke série, časté zmeny receptúry, zmiešané produkty — kde je flexibilita rovnako dôležitá ako presnosť. Nordexa 30 rokov vyrába stroje pre prevádzky, kde variabilita nie je problém, ale obchodný model.</p>
+      <div class="spec-tags">
+        <span class="spec-tag accent">&lt;15 minút prestavba</span>
+        <span class="spec-tag">Knižnica receptúr</span>
+        <span class="spec-tag">Zmiešané veľkosti šarží</span>
+        <span class="spec-tag">Multi-produkt</span>
+      </div>
+      <div class="hero-actions">
+        <a href="/sk/contact/" class="btn btn-primary btn-lg">Navrhnúť flexibilný systém <span class="arrow">→</span></a>
+        <a href="/sk/solutions/modular-systems.html" class="btn btn-ghost">Modulárne riešenia →</a>
+      </div>
+    </div>
+    <div class="page-hero-img reveal">
+      <img src="../../images/ind-kissorozat.jpg" alt="Flexibilná malosériová výrobná linka"
+        onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\' style=\'height:100%\'><div class=\'img-placeholder-icon\'>🔄</div><span>Malosériová linka</span></div>'" />
+    </div>
+  </div>
+</section>
+
+<div class="key-facts">
+  <div class="container"><div class="key-facts-grid">
+    <div class="key-fact reveal"><div class="val">&lt;15'</div><div class="lbl">čas zmeny receptúry</div></div>
+    <div class="key-fact reveal"><div class="val">100+</div><div class="lbl">receptúr uložiteľných</div></div>
+    <div class="key-fact reveal"><div class="val">1–25 l</div><div class="lbl">rozsah veľkostí šarží</div></div>
+    <div class="key-fact reveal"><div class="val">96%</div><div class="lbl">garancia dostupnosti</div></div>
+  </div></div>
+</div>
+
+<section class="sec" style="background:var(--bg)">
+  <div class="container">
+    <div class="sec-head reveal"><span class="eyebrow">Výzvy</span><h2>Čo malosériová výroba vyžaduje</h2><p>Malosériová, premenlivá výroba je jednou z najnáročnejších úloh z hľadiska dávacej a baliacej techniky. Flexibilita si vyžaduje vážnu inžiniersku investíciu — ale návratnosť je úmerná.</p></div>
+    <div class="challenges-grid">
+      <div class="challenge-card reveal"><div class="c-ico">⚡</div><h4>Rýchla, auditovateľná prestavba</h4><p>Ak stroj denne produkuje 3-5 produktov, čas prestavby priamo ovplyvňuje kapacitu. Automatické plniace hlavy so zmeniteľnou veľkosťou, jednoduché volanie receptúry, prestavba za menej ako 15 minút z knižnice receptúr.</p></div>
+      <div class="challenge-card reveal"><div class="c-ico">📊</div><h4>Batch dokumentácia a sledovateľnosť</h4><p>Pri malých sériách je sledovateľnosť kritická — ak je šarža zlá, treba vedieť presne ktorá. Automatický batch record pre každú operáciu, denník šarží a podpis operátora.</p></div>
+      <div class="challenge-card reveal"><div class="c-ico">🧩</div><h4>Zmiešané portfólio materiálov a balení</h4><p>Rôzne viskózne materiály, rôzne veľkosti fliaš a šarží — na jednom stroji. Modulárna výmena plniacich hláv, široký rozsah viskozít, sada adaptérov pre zmenu balenia.</p></div>
+      <div class="challenge-card reveal"><div class="c-ico">📈</div><h4>Škálovateľnosť s rastom</h4><p>Dnes 200 ks/deň, o rok možno 2000. Modulárna architektúra znamená, že stroj je rozšíriteľný, nie vymeniteľný — investícia je dlhodobo hodnotná.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--bg-2)">
+  <div class="container">
+    <div class="sec-head reveal"><span class="eyebrow">Typické prípady použitia</span><h2>Kde sa najčastejšie stretávame</h2></div>
+    <div class="usecases-grid">
+      <div class="usecase reveal"><div class="uc-ico">🏷</div><h4>Výroba private label</h4><p>Produkty viacerých zákazníkov paralelne, s auditovateľnou segregáciou a batch record.</p></div>
+      <div class="usecase reveal"><div class="uc-ico">🎁</div><h4>Limitované edície</h4><p>Sezónne, prémiové a spolupracujúce produkty — malé množstvo, ale vysoké nároky na prezentáciu.</p></div>
+      <div class="usecase reveal"><div class="uc-ico">🧪</div><h4>Skúšobné série</h4><p>Vývojové šarže, trhové testy, validácia receptúry — malé množstvá, ale kritická dokumentácia.</p></div>
+      <div class="usecase reveal"><div class="uc-ico">🌍</div><h4>Exportná diferenciácia</h4><p>Rôzne balenie, etikety, receptúry pre rôzne trhy — na jednej výrobnej linke.</p></div>
+      <div class="usecase reveal"><div class="uc-ico">⚗️</div><h4>Špeciálne materiály</h4><p>Plnenie priemyselných chemikálií a špeciálnych zlúčenín malého objemu so špeciálnym zložením.</p></div>
+      <div class="usecase reveal"><div class="uc-ico">🏭</div><h4>Lohnvýroba / toll manufacturing</h4><p>Plní a balí produkty externých zákazníkov — stroj musí zodpovedať aj ich požiadavkám.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--bg)">
+  <div class="container">
+    <div class="sec-head reveal"><span class="eyebrow">Odporúčané riešenia</span><h2>Systémy Nordexa pre flexibilných výrobcov</h2></div>
+    <div class="solutions-list">
+      <a href="/sk/solutions/modular-systems.html" class="sol-ref reveal"><div class="sol-ref-ico">🔩</div><div><h4>Modulárne systémy</h4><p>Najlepší priateľ malosériovej výroby — moduly sú vymeniteľné, stroj rozšíriteľný, prestavba plánovaná.</p><span class="sol-ref-link">Podrobnosti →</span></div></a>
+      <a href="/sk/solutions/custom-dosing.html" class="sol-ref reveal"><div class="sol-ref-ico">⚙️</div><div><h4>Individuálne dávacie linky</h4><p>Ak je portfólio také široké, že ani knižnica modulov nestačí — plne zákazkové projektovanie.</p><span class="sol-ref-link">Podrobnosti →</span></div></a>
+      <a href="/sk/solutions/standard-equipment.html" class="sol-ref reveal"><div class="sol-ref-ico">📦</div><div><h4>Štandardné zariadenia</h4><p>Ak je produkt homogénny a objem predvídateľný — overená platforma rýchlo a spoľahlivo.</p><span class="sol-ref-link">Podrobnosti →</span></div></a>
+      <a href="/sk/solutions/service-lifecycle.html" class="sol-ref reveal"><div class="sol-ref-ico">🛠</div><div><h4>Servis &amp; Lifecycle</h4><p>Pri malých sériách nie je záložný stroj — servisná garancia nie je možnosť, ale bezpečnostná sieť výroby.</p><span class="sol-ref-link">Podrobnosti →</span></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--bg-2)">
+  <div class="container">
+    <div class="sec-head center reveal"><span class="eyebrow center">Súvisiace odvetvia</span><h2>Ďalšie sektory, kde pracujeme</h2></div>
+    <div class="ind-related">
+      <a href="/sk/industries/chemical.html" class="ind-ref reveal"><div class="ico">⚗️</div><h4>Chemický priemysel</h4><p>ATEX, reaktívne látky, REACH</p></a>
+      <a href="/sk/industries/cosmetics.html" class="ind-ref reveal"><div class="ico">💄</div><h4>Kozmetika</h4><p>GMP, prémiové balenie</p></a>
+      <a href="/sk/industries/food.html" class="ind-ref reveal"><div class="ico">🫙</div><h4>Prémiové potraviny</h4><p>HACCP, sezónne série</p></a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band"><div class="container"><div class="cta-band-inner reveal">
+  <h2>Variabilita je naša komfortná zóna.</h2>
+  <p>Povedzte nám o vašich produktoch, veľkostiach šarží a požiadavkách na prestavbu — naši inžinieri ukážu, ako to riešiť flexibilne a predvídateľne.</p>
+  <div class="cta-band-actions"><a href="/sk/contact/" class="btn btn-light btn-lg">Projektový rozhovor <span class="arrow">→</span></a><a href="/sk/case-studies/" class="btn btn-outline-light">Referencie</a></div>
+</div></div></section>
+
+<footer><div class="container">
+  <div class="foot-grid">
+    <div><div class="brand"><svg class="brand-logo" viewBox="0 0 48 48" fill="none" style="width:32px;height:32px"><rect x="2" y="2" width="44" height="44" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.15)"/><path d="M14 34V14l9 12V14" stroke="#7fa8c9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 14c4 4 4 12 0 16-2-3-2-9 0-16Z" fill="#c4511c"/></svg><span><span class="brand-name">NORDE<span style="color:#c4511c">XA</span></span><span class="brand-sub">Industrial Solutions</span></span></div><p class="foot-about">Pokročilé dávacie a baliace systémy — Székesfehérvár, od roku 1994.</p></div>
+    <div class="foot-col"><h5>Riešenia</h5><a href="/sk/solutions/custom-dosing.html">Individuálne dávacie linky</a><a href="/sk/solutions/standard-equipment.html">Štandardné zariadenia</a><a href="/sk/solutions/modular-systems.html">Modulárne systémy</a><a href="/sk/solutions/service-lifecycle.html">Servis &amp; Lifecycle</a></div>
+    <div class="foot-col"><h5>Odvetvia</h5><a href="/sk/industries/chemical.html">Chemický priemysel</a><a href="/sk/industries/cosmetics.html">Kozmetika</a><a href="/sk/industries/food.html">Prémiové potraviny</a><a href="/sk/industries/small-batch.html">Malosériová výroba</a></div>
+    <div class="foot-col"><h5>Kontakt</h5><a href="mailto:sales@nordexa.hu">sales@nordexa.hu</a><a href="tel:+3622555100">+36 22 555 100</a><a href="/sk/contact/">Požiadať o cenovú ponuku</a></div>
+  </div>
+  <div class="foot-bottom"><span>© 1994–2026 Nordexa Industrial Solutions Zrt.</span><span>Ochrana osobných údajov · ISO 9001</span></div>
+</div></footer>
+<script src="../../js/main.js"></script>
+</body>
+</html>

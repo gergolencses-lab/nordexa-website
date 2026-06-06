@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Modular Systems — Nordexa Industrial Solutions</title>
+<meta name="description" content="Lines assembled quickly and predictably from standardised modules. The flexibility of customisation without the risk and lead time of bespoke manufacturing." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../../css/style.css" />
+<style>
+  .page-hero { padding: 140px 0 80px; background: var(--bg); border-bottom: 1px solid var(--line); }
+  .page-hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .breadcrumb { font-family: var(--font-d); font-size: 13px; color: var(--muted-2); margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
+  .breadcrumb a { color: var(--muted); transition: color .2s; }
+  .breadcrumb a:hover { color: var(--steel); }
+  .breadcrumb-sep { color: var(--line-strong); }
+  .page-hero h1 { font-size: clamp(32px, 4vw, 56px); font-weight: 700; margin: 16px 0 20px; }
+  .page-hero .lead { font-size: 18px; color: var(--muted); margin-bottom: 28px; line-height: 1.7; }
+  .spec-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+  .spec-tag { font-family: var(--font-d); font-size: 12.5px; font-weight: 600; padding: 7px 14px; border-radius: 999px; border: 1.5px solid var(--line-strong); color: var(--text); background: var(--surface); }
+  .spec-tag.accent { border-color: var(--accent); color: var(--accent); background: var(--accent-bg); }
+  .page-hero-img { border-radius: var(--radius-l); overflow: hidden; aspect-ratio: 4/3; background: var(--bg-2); }
+  .page-hero-img img { width: 100%; height: 100%; object-fit: cover; }
+  .key-facts { background: var(--headline); }
+  .key-facts-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .key-fact { padding: 32px 28px; border-right: 1px solid rgba(255,255,255,.08); text-align: center; }
+  .key-fact:last-child { border-right: 0; }
+  .key-fact .val { font-family: var(--font-d); font-weight: 700; font-size: 32px; color: var(--accent); line-height: 1; margin-bottom: 8px; }
+  .key-fact .lbl { font-size: 13px; color: rgba(255,255,255,.55); }
+  .modules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .module-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; position: relative; overflow: hidden; transition: border-color .25s, transform .25s; }
+  .module-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent), var(--steel)); transform: scaleX(0); transform-origin: left; transition: transform .3s; }
+  .module-card:hover { border-color: var(--line-strong); transform: translateY(-3px); }
+  .module-card:hover::before { transform: scaleX(1); }
+  .module-ico { font-size: 28px; margin-bottom: 12px; }
+  .module-card h4 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+  .module-card p { font-size: 13.5px; color: var(--muted); }
+  .comparison-table { width: 100%; border-collapse: collapse; }
+  .comparison-table th { font-family: var(--font-d); font-size: 13px; font-weight: 700; padding: 14px 20px; text-align: left; background: var(--bg-2); border-bottom: 2px solid var(--line-strong); }
+  .comparison-table td { padding: 14px 20px; font-size: 14px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+  .comparison-table tr:last-child td { border-bottom: 0; }
+  .comparison-table tr:hover td { background: var(--bg); }
+  .check { color: var(--green); font-weight: 700; font-size: 16px; }
+  .partial { color: var(--accent); font-weight: 600; }
+  .cross { color: var(--muted-2); font-size: 16px; }
+  .highlight-col { background: rgba(43,69,96,0.05); font-weight: 600; }
+  .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .related-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; transition: border-color .2s, box-shadow .2s; display: flex; flex-direction: column; gap: 10px; }
+  .related-card:hover { border-color: var(--steel); box-shadow: 0 6px 24px rgba(20,30,45,.08); }
+  .related-card .r-ico { font-size: 24px; }
+  .related-card h4 { font-size: 17px; font-weight: 700; }
+  .related-card p { font-size: 13.5px; color: var(--muted); flex: 1; }
+  .related-card .r-link { font-family: var(--font-d); font-size: 13.5px; font-weight: 600; color: var(--steel); display: flex; align-items: center; gap: 6px; transition: gap .2s; }
+  .related-card:hover .r-link { gap: 10px; }
+  @media (max-width: 1024px) {
+    .page-hero-inner { grid-template-columns: 1fr; }
+    .key-facts-grid { grid-template-columns: repeat(2, 1fr); }
+    .modules-grid { grid-template-columns: 1fr 1fr; }
+    .related-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 640px) {
+    .modules-grid, .related-grid { grid-template-columns: 1fr; }
+    .key-facts-grid { grid-template-columns: 1fr 1fr; }
+    .comparison-table { font-size: 12px; }
+    .comparison-table th, .comparison-table td { padding: 10px 12px; }
+  }
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="container nav-wrap">
+    <a href="/en/" class="brand"><svg class="brand-logo" viewBox="0 0 48 48" fill="none"><rect x="2" y="2" width="44" height="44" rx="10" fill="#f4f0e8" stroke="#c4c0b2"/><path d="M14 34V14l9 12V14" stroke="#2b4560" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 14c4 4 4 12 0 16-2-3-2-9 0-16Z" fill="#c4511c"/></svg><span><span class="brand-name">NORDE<span>XA</span></span><span class="brand-sub">Industrial Solutions</span></span></a>
+    <nav class="main-nav" id="mainNav">
+      <div class="nav-item has-mega">
+        <button class="nav-link active" aria-expanded="false">Solutions <span class="chevron">▾</span></button>
+        <div class="mega-panel">
+          <a href="/en/solutions/custom-dosing.html" class="mega-item"><span class="mega-item-ico">⚙️</span><span class="mega-item-title">Custom Dosing Lines</span><span class="mega-item-desc">Fully tailored systems</span></a>
+          <a href="/en/solutions/standard-equipment.html" class="mega-item"><span class="mega-item-ico">📦</span><span class="mega-item-title">Standard Equipment</span><span class="mega-item-desc">Configurable from catalogue</span></a>
+          <a href="/en/solutions/modular-systems.html" class="mega-item"><span class="mega-item-ico">🔩</span><span class="mega-item-title">Modular Systems</span><span class="mega-item-desc">Flexible customisation</span></a>
+          <a href="/en/solutions/service-lifecycle.html" class="mega-item"><span class="mega-item-ico">🛠</span><span class="mega-item-title">Service &amp; Lifecycle</span><span class="mega-item-desc">96% uptime guarantee</span></a>
+        </div>
+      </div>
+      <div class="nav-item has-mega">
+        <button class="nav-link" aria-expanded="false">Industries <span class="chevron">▾</span></button>
+        <div class="mega-panel wide">
+          <a href="/en/industries/chemical.html" class="mega-item"><span class="mega-item-ico">⚗️</span><span class="mega-item-title">Chemical</span><span class="mega-item-desc">Reactive materials dosing</span></a>
+          <a href="/en/industries/cosmetics.html" class="mega-item"><span class="mega-item-ico">💄</span><span class="mega-item-title">Cosmetics</span><span class="mega-item-desc">Hygienic filling</span></a>
+          <a href="/en/industries/food.html" class="mega-item"><span class="mega-item-ico">🫙</span><span class="mega-item-title">Premium Food</span><span class="mega-item-desc">Food-safe systems</span></a>
+          <a href="/en/industries/small-batch.html" class="mega-item"><span class="mega-item-ico">🔄</span><span class="mega-item-title">Small Batch / Short Run</span><span class="mega-item-desc">Flexible changeovers</span></a>
+        </div>
+      </div>
+      <a href="/en/case-studies/" class="nav-link">Case Studies</a>
+      <a href="/en/service/" class="nav-link">Service</a>
+      <a href="/en/about/" class="nav-link">About Us</a>
+      <a href="/en/contact/" class="nav-link">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="lang-switch"><a href="/" class="lang-btn">HU</a><span class="lang-sep">|</span><a href="/en/" class="lang-btn active">EN</a><span class="lang-sep">|</span><a href="/de/" class="lang-btn">DE</a><span class="lang-sep">|</span><a href="/pl/" class="lang-btn">PL</a><span class="lang-sep">|</span><a href="/sk/" class="lang-btn">SK</a></div>
+      <a href="/en/contact/" class="btn btn-primary">Request a Quote <span class="arrow">→</span></a>
+      <button class="burger" id="burger" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <div class="reveal">
+      <div class="breadcrumb">
+        <a href="/en/">Home</a><span class="breadcrumb-sep">›</span>
+        <a href="/en/solutions/">Solutions</a><span class="breadcrumb-sep">›</span>
+        <span>Modular Systems</span>
+      </div>
+      <span class="eyebrow">Solution</span>
+      <h1>Modular Systems</h1>
+      <p class="lead">Lines assembled quickly and predictably from standardised, proven modules. The flexibility of customisation — without the risk and lead time of bespoke manufacturing.</p>
+      <div class="spec-tags">
+        <span class="spec-tag accent">Flexible configuration</span>
+        <span class="spec-tag">Shorter lead time</span>
+        <span class="spec-tag">Proven modules</span>
+        <span class="spec-tag">Easy expandability</span>
+      </div>
+      <div class="hero-actions">
+        <a href="/en/contact/" class="btn btn-primary btn-lg">Configure together <span class="arrow">→</span></a>
+        <a href="#modules" class="btn btn-ghost">Module library →</a>
+      </div>
+    </div>
+    <div class="page-hero-img reveal">
+      <img src="../../images/sol-modularis.jpg" alt="Modular manufacturing system"
+        onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\' style=\'height:100%\'><div class=\'img-placeholder-icon\'>🔩</div><span>Modular system</span></div>'" />
+    </div>
+  </div>
+</section>
+
+<div class="key-facts">
+  <div class="container">
+    <div class="key-facts-grid">
+      <div class="key-fact reveal"><div class="val">3–9 mo</div><div class="lbl">typical lead time</div></div>
+      <div class="key-fact reveal"><div class="val">30%</div><div class="lbl">faster than custom</div></div>
+      <div class="key-fact reveal"><div class="val">96%</div><div class="lbl">uptime guaranteed</div></div>
+      <div class="key-fact reveal"><div class="val">+∞</div><div class="lbl">expandability with modules</div></div>
+    </div>
+  </div>
+</div>
+
+<section class="sec" id="modules" style="background:var(--bg)">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Module library</span>
+      <h2>Proven modules — custom assembly</h2>
+      <p>Every module is developed and validated in our own plants. The assembly is custom — the reliability of the components is proven.</p>
+    </div>
+    <div class="modules-grid">
+      <div class="module-card reveal"><div class="module-ico">🫗</div><h4>Filling module — liquid</h4><p>Volumetric and gravimetric versions, 1–24 filling heads. Interchangeable filling head geometries matched to material viscosity.</p></div>
+      <div class="module-card reveal"><div class="module-ico">⚗️</div><h4>Filling module — powder/granule</h4><p>Screw, vibratory and bulk feeder variants. Accuracy ± 0.3%, automatic tare correction.</p></div>
+      <div class="module-card reveal"><div class="module-ico">🏷</div><h4>Labelling module</h4><p>Self-adhesive and shrink-sleeve labels, for round and flat surfaces. Plug-and-play integration with conveyor module.</p></div>
+      <div class="module-card reveal"><div class="module-ico">📦</div><h4>Packaging module</h4><p>Carton, bag, tray and box formats. Automatic size change via recipe call, &lt;5 min changeover.</p></div>
+      <div class="module-card reveal"><div class="module-ico">🔍</div><h4>Inspection module</h4><p>Weight check, machine vision, metal detection — unified data stream to the quality management system.</p></div>
+      <div class="module-card reveal"><div class="module-ico">🖥</div><h4>Control module</h4><p>Unified HMI for all modules. OPC-UA output, recipe library, batch record — MES/ERP-ready.</p></div>
+      <div class="module-card reveal"><div class="module-ico">🚿</div><h4>CIP/SIP module</h4><p>Automatic in-place cleaning — connectable to any affected module. GMP and FDA-compatible.</p></div>
+      <div class="module-card reveal"><div class="module-ico">🚂</div><h4>Conveyor module</h4><p>Belt, roller and asynchronous motor-driven variants. Obstacle detection, speed synchronisation.</p></div>
+      <div class="module-card reveal"><div class="module-ico">🔌</div><h4>Integration module</h4><p>Fitting to existing lines — between Nordexa and third-party equipment alike.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--bg-2)">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow center">Comparison</span>
+      <h2>Which solution fits your case?</h2>
+      <p>Modular architecture is the optimal compromise in most cases — but not for every project.</p>
+    </div>
+    <div class="reveal" style="overflow-x:auto">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Criterion</th>
+            <th>Standard</th>
+            <th class="highlight-col" style="background:rgba(43,69,96,0.10)">Modular ✦</th>
+            <th>Custom</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Lead time</td><td>4–16 weeks</td><td class="highlight-col">3–9 months</td><td>6–14 months</td></tr>
+          <tr><td>Customisability</td><td><span class="partial">Limited</span></td><td class="highlight-col"><span class="check">✓ High</span></td><td><span class="check">✓ Full</span></td></tr>
+          <tr><td>Startup risk</td><td><span class="check">✓ Low</span></td><td class="highlight-col"><span class="check">✓ Low</span></td><td><span class="partial">Medium</span></td></tr>
+          <tr><td>Expandability</td><td><span class="partial">Limited</span></td><td class="highlight-col"><span class="check">✓ Module by module</span></td><td><span class="partial">Individually</span></td></tr>
+          <tr><td>Investment</td><td><span class="check">✓ Lowest</span></td><td class="highlight-col">Medium</td><td>Highest</td></tr>
+          <tr><td>Custom material/process</td><td><span class="cross">✗</span></td><td class="highlight-col"><span class="check">✓ Yes</span></td><td><span class="check">✓ Yes</span></td></tr>
+          <tr><td>Service simplicity</td><td><span class="check">✓ Simple</span></td><td class="highlight-col"><span class="check">✓ Simple</span></td><td><span class="partial">Variable</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="sec related-sols" style="background:var(--bg)">
+  <div class="container">
+    <div class="sec-head reveal"><span class="eyebrow">Related solutions</span><h2>Other solutions</h2></div>
+    <div class="related-grid">
+      <a href="/en/solutions/custom-dosing.html" class="related-card reveal"><div class="r-ico">⚙️</div><h4>Custom Dosing Lines</h4><p>If the module library is not enough — fully bespoke design and manufacturing.</p><span class="r-link">Details →</span></a>
+      <a href="/en/solutions/standard-equipment.html" class="related-card reveal"><div class="r-ico">📦</div><h4>Standard Equipment</h4><p>If the product fits the catalogue — the fastest and most predictable route.</p><span class="r-link">Details →</span></a>
+      <a href="/en/solutions/service-lifecycle.html" class="related-card reveal"><div class="r-ico">🛠</div><h4>Service &amp; Lifecycle</h4><p>Lifecycle packages available for every modular system — with preventive maintenance.</p><span class="r-link">Details →</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <div class="cta-band-inner reveal">
+      <h2>We'll put together the best combination for you.</h2>
+      <p>Tell us the product and the requirements — our engineers will assemble the optimal configuration module by module and price it.</p>
+      <div class="cta-band-actions">
+        <a href="/en/contact/" class="btn btn-light btn-lg">Request a configuration <span class="arrow">→</span></a>
+        <a href="/en/case-studies/" class="btn btn-outline-light">References</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div><div class="brand"><svg class="brand-logo" viewBox="0 0 48 48" fill="none" style="width:32px;height:32px"><rect x="2" y="2" width="44" height="44" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.15)"/><path d="M14 34V14l9 12V14" stroke="#7fa8c9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 14c4 4 4 12 0 16-2-3-2-9 0-16Z" fill="#c4511c"/></svg><span><span class="brand-name">NORDE<span style="color:#c4511c">XA</span></span><span class="brand-sub">Industrial Solutions</span></span></div><p class="foot-about">Advanced dosing and packaging systems — Székesfehérvár, since 1994.</p></div>
+      <div class="foot-col"><h5>Solutions</h5><a href="/en/solutions/custom-dosing.html">Custom Dosing Lines</a><a href="/en/solutions/standard-equipment.html">Standard Equipment</a><a href="/en/solutions/modular-systems.html">Modular Systems</a><a href="/en/solutions/service-lifecycle.html">Service &amp; Lifecycle</a></div>
+      <div class="foot-col"><h5>Company</h5><a href="/en/about/">About Us</a><a href="/en/industries/">Industries</a><a href="/en/case-studies/">Case Studies</a><a href="/en/contact/">Careers</a></div>
+      <div class="foot-col"><h5>Contact</h5><a href="mailto:sales@nordexa.hu">sales@nordexa.hu</a><a href="tel:+3622555100">+36 22 555 100</a><a href="/en/contact/">Request a Quote</a></div>
+    </div>
+    <div class="foot-bottom"><span>© 1994–2026 Nordexa Industrial Solutions Zrt.</span><span>Privacy Policy · ISO 9001 Certified Manufacturing</span></div>
+  </div>
+</footer>
+<script src="../../js/main.js"></script>
+</body>
+</html>
