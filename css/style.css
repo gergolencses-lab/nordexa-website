@@ -201,6 +201,7 @@ header.scrolled {
   align-items: center;
   gap: 5px;
   cursor: pointer;
+  white-space: nowrap;
 }
 .nav-link:hover, .nav-link.active { color: var(--headline); background: var(--line); }
 
