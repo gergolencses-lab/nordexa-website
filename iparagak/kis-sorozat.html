@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Egyedi és kis sorozatú gyártás — Nordexa Industrial Solutions</title>
+<meta name="description" content="Rugalmas adagoló- és csomagolórendszerek rövid sorozatú, gyakran változó gyártáshoz. Gyors átállás, vegyes termékek, kis tételek — a Nordexa komfortzónája." />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../css/style.css" />
+<style>
+  .page-hero{padding:140px 0 80px;background:var(--bg);border-bottom:1px solid var(--line)}
+  .page-hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .breadcrumb{font-family:var(--font-d);font-size:13px;color:var(--muted-2);margin-bottom:20px;display:flex;align-items:center;gap:8px}
+  .breadcrumb a{color:var(--muted);transition:color .2s}.breadcrumb a:hover{color:var(--steel)}.breadcrumb-sep{color:var(--line-strong)}
+  .page-hero h1{font-size:clamp(32px,4vw,56px);font-weight:700;margin:16px 0 20px}
+  .page-hero .lead{font-size:18px;color:var(--muted);margin-bottom:28px;line-height:1.7}
+  .spec-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+  .spec-tag{font-family:var(--font-d);font-size:12.5px;font-weight:600;padding:7px 14px;border-radius:999px;border:1.5px solid var(--line-strong);color:var(--text);background:var(--surface)}
+  .spec-tag.accent{border-color:var(--accent);color:var(--accent);background:var(--accent-bg)}
+  .page-hero-img{border-radius:var(--radius-l);overflow:hidden;aspect-ratio:4/3;background:var(--bg-2)}
+  .page-hero-img img{width:100%;height:100%;object-fit:cover}
+  .key-facts{background:var(--headline)}.key-facts-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+  .key-fact{padding:32px 28px;border-right:1px solid rgba(255,255,255,.08);text-align:center}.key-fact:last-child{border-right:0}
+  .key-fact .val{font-family:var(--font-d);font-weight:700;font-size:32px;color:var(--accent);line-height:1;margin-bottom:8px}
+  .key-fact .lbl{font-size:13px;color:rgba(255,255,255,.55)}
+  .challenges-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .challenge-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+  .challenge-card .c-ico{font-size:28px;margin-bottom:14px}
+  .challenge-card h4{font-size:18px;font-weight:700;margin-bottom:10px}
+  .challenge-card p{font-size:14.5px;color:var(--muted);line-height:1.6}
+  .solutions-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .sol-ref{display:flex;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;transition:border-color .2s,transform .2s}
+  .sol-ref:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .sol-ref-ico{font-size:24px;flex-shrink:0}
+  .sol-ref h4{font-size:16px;font-weight:700;margin-bottom:6px}
+  .sol-ref p{font-size:13px;color:var(--muted)}
+  .sol-ref-link{font-family:var(--font-d);font-size:13px;font-weight:600;color:var(--steel);margin-top:8px;display:inline-block}
+  .usecases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .usecase{background:var(--surface-2);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+  .usecase .uc-ico{font-size:24px;margin-bottom:10px}
+  .usecase h4{font-size:16px;font-weight:700;margin-bottom:6px}
+  .usecase p{font-size:13px;color:var(--muted)}
+  .ind-related{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .ind-ref{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;text-align:center;transition:border-color .2s,transform .2s}
+  .ind-ref:hover{border-color:var(--accent);transform:translateY(-3px)}
+  .ind-ref .ico{font-size:28px;margin-bottom:10px}
+  .ind-ref h4{font-size:15px;font-weight:700;margin-bottom:4px}
+  .ind-ref p{font-size:12.5px;color:var(--muted)}
+  @media(max-width:1024px){.page-hero-inner{grid-template-columns:1fr}.key-facts-grid{grid-template-columns:repeat(2,1fr)}.challenges-grid,.solutions-list,.usecases-grid{grid-template-columns:1fr}.ind-related{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<header id="hdr">
+  <div class="container nav-wrap">
+    <a href="../" class="brand"><svg class="brand-logo" viewBox="0 0 48 48" fill="none"><rect x="2" y="2" width="44" height="44" rx="10" fill="#f4f0e8" stroke="#c4c0b2"/><path d="M14 34V14l9 12V14" stroke="#2b4560" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 14c4 4 4 12 0 16-2-3-2-9 0-16Z" fill="#c4511c"/></svg><span><span class="brand-name">NORDE<span>XA</span></span><span class="brand-sub">Industrial Solutions</span></span></a>
+    <nav class="main-nav" id="mainNav">
+      <div class="nav-item has-mega"><button class="nav-link" aria-expanded="false">Megoldások <span class="chevron">▾</span></button><div class="mega-panel"><a href="../megoldasok/egyedi-adagolosorok.html" class="mega-item"><span class="mega-item-ico">⚙️</span><span class="mega-item-title">Egyedi adagolósorok</span><span class="mega-item-desc">Teljesen testreszabott</span></a><a href="../megoldasok/standard-berendezesek.html" class="mega-item"><span class="mega-item-ico">📦</span><span class="mega-item-title">Standard berendezések</span><span class="mega-item-desc">Katalógusból</span></a><a href="../megoldasok/modularis-rendszerek.html" class="mega-item"><span class="mega-item-ico">🔩</span><span class="mega-item-title">Moduláris rendszerek</span><span class="mega-item-desc">Rugalmas</span></a><a href="../megoldasok/szerviz-lifecycle.html" class="mega-item"><span class="mega-item-ico">🛠</span><span class="mega-item-title">Szerviz &amp; Lifecycle</span><span class="mega-item-desc">96% uptime</span></a></div></div>
+      <div class="nav-item has-mega"><button class="nav-link active" aria-expanded="false">Iparágak <span class="chevron">▾</span></button><div class="mega-panel wide"><a href="vegyipar.html" class="mega-item"><span class="mega-item-ico">⚗️</span><span class="mega-item-title">Vegyipar</span><span class="mega-item-desc">Reaktív anyagok</span></a><a href="kozmetika.html" class="mega-item"><span class="mega-item-ico">💄</span><span class="mega-item-title">Kozmetika</span><span class="mega-item-desc">Higiénikus töltés</span></a><a href="premium-elelmiszer.html" class="mega-item"><span class="mega-item-ico">🫙</span><span class="mega-item-title">Prémium élelmiszer</span><span class="mega-item-desc">Élelmiszer-biztos</span></a><a href="kis-sorozat.html" class="mega-item"><span class="mega-item-ico">🔄</span><span class="mega-item-title">Egyedi / kis sorozat</span><span class="mega-item-desc">Rugalmas átállás</span></a></div></div>
+      <a href="../esettanulmanyok/" class="nav-link">Esettanulmányok</a><a href="../szerviz/" class="nav-link">Szerviz</a><a href="../rolunk/" class="nav-link">Rólunk</a><a href="../kapcsolat/" class="nav-link">Kapcsolat</a>
+    </nav>
+    <div class="nav-actions"><div class="lang-switch"><button class="lang-btn active">HU</button><span class="lang-sep">|</span><button class="lang-btn">EN</button></div><a href="../kapcsolat/" class="btn btn-primary">Ajánlatkérés <span class="arrow">→</span></a><button class="burger" id="burger" aria-label="Menü"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button></div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <div class="reveal">
+      <div class="breadcrumb"><a href="../">Főoldal</a><span class="breadcrumb-sep">›</span><a href="../iparagak/">Iparágak</a><span class="breadcrumb-sep">›</span><span>Egyedi / kis sorozat</span></div>
+      <span class="eyebrow">Iparág</span>
+      <h1>Egyedi &amp; kis sorozatú gyártás</h1>
+      <p class="lead">Rövid sorozatok, gyakori receptúraváltás, vegyes termékek — ahol a rugalmasság éppoly fontos, mint a pontosság. A Nordexa 30 éve épít gépeket olyan üzemeknek, ahol a változatosság nem probléma, hanem üzleti modell.</p>
+      <div class="spec-tags">
+        <span class="spec-tag accent">&lt;15 perc átállás</span>
+        <span class="spec-tag">Recepta-könyvtár</span>
+        <span class="spec-tag">Vegyes tételméret</span>
+        <span class="spec-tag">Multi-termék</span>
+      </div>
+      <div class="hero-actions">
+        <a href="../kapcsolat/" class="btn btn-primary btn-lg">Rugalmas rendszer tervezése <span class="arrow">→</span></a>
+        <a href="../megoldasok/modularis-rendszerek.html" class="btn btn-ghost">Moduláris megoldások →</a>
+      </div>
+    </div>
+    <div class="page-hero-img reveal">
+      <img src="../images/ind-kissorozat.jpg" alt="Kis sorozatú rugalmas gyártósor"
+        onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\' style=\'height:100%\'><div class=\'img-placeholder-icon\'>🔄</div><span>Kis sorozatú gyártósor</span></div>'" />
+    </div>
+  </div>
+</section>
+
+<div class="key-facts">
+  <div class="container"><div class="key-facts-grid">
+    <div class="key-fact reveal"><div class="val">&lt;15'</div><div class="lbl">receptúraváltás ideje</div></div>
+    <div class="key-fact reveal"><div class="val">100+</div><div class="lbl">recept tárolható</div></div>
+    <div class="key-fact reveal"><div class="val">1–25 l</div><div class="lbl">tételméret-tartomány</div></div>
+    <div class="key-fact reveal"><div class="val">96%</div><div class="lbl">uptime garancia</div></div>
+  </div></div>
+</div>
+
+<section class="sec" style="background:var(--bg)">
+  <div class="container">
+    <div class="sec-head reveal"><span class="eyebrow">Kihívások</span><h2>Amit a kis sorozatú gyártás megkövetel</h2><p>A kis sorozatú, változó gyártás az egyik legnehezebb feladat adagolás- és csomagolástechnikailag. A rugalmassághoz komoly mérnöki befektetés kell — de a megtérülés is arányos.</p></div>
+    <div class="challenges-grid">
+      <div class="challenge-card reveal"><div class="c-ico">⚡</div><h4>Gyors, auditálható átállás</h4><p>Ha a gépen naponta 3-5 terméket futtatnak, az átállás ideje közvetlenül a kapacitást viszi. Automatikus méretváltó töltőfejek, egygombos recept-hívás, &lt;15 perces átállás a recepta-könyvtárból.</p></div>
+      <div class="challenge-card reveal"><div class="c-ico">📊</div><h4>Batch-dokumentáció és trace</h4><p>Kis sorozatoknál a trace-ability kritikus — ha egy batch rossz, pontosan tudni kell, melyik. Automatikus batch record minden futáshoz, tételnaplóval és operátori aláírással.</p></div>
+      <div class="challenge-card reveal"><div class="c-ico">🧩</div><h4>Vegyes anyag- és kiszerelés-portfolio</h4><p>Különböző viszkozitású anyagok, különböző palack- és tételméretek — ugyanazon a gépen. Moduláris töltőfej-csere, széles viszkozitás-tartomány, adapter-készlet a kiszerelésváltáshoz.</p></div>
+      <div class="challenge-card reveal"><div class="c-ico">📈</div><h4>Skálázhatóság a növekedéssel</h4><p>Ma 200 db/nap, jövőre talán 2000. A moduláris architektúra azt jelenti, hogy a gép bővíthető, nem cserélendő — a beruházás hosszú távon is értékálló.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--bg-2)">
+  <div class="container">
+    <div class="sec-head reveal"><span class="eyebrow">Tipikus felhasználási esetek</span><h2>Hol találkozunk leggyakrabban</h2></div>
+    <div class="usecases-grid">
+      <div class="usecase reveal"><div class="uc-ico">🏷</div><h4>Private label gyártás</h4><p>Több megbízó termékeit párhuzamosan, auditálható szeparációval és batch record-dal.</p></div>
+      <div class="usecase reveal"><div class="uc-ico">🎁</div><h4>Limitált kiadások</h4><p>Szezonális, prémium és együttműködéses termékek — kis mennyiség, de nagy elvárás a megjelenésre.</p></div>
+      <div class="usecase reveal"><div class="uc-ico">🧪</div><h4>Kísérleti sorozatok</h4><p>Fejlesztési batch, piaci tesztelés, receptúra-validálás — ahol a mennyiség kicsi, de a dokumentáció kritikus.</p></div>
+      <div class="usecase reveal"><div class="uc-ico">🌍</div><h4>Export-differenciálás</h4><p>Különböző piacokra különböző kiszerelés, cimke, receptúra — ugyanazon a gyártósoron.</p></div>
+      <div class="usecase reveal"><div class="uc-ico">⚗️</div><h4>Speciális anyagok</h4><p>Kis volumenű, különleges összetételű ipari vegyi anyagok és specialitások töltése.</p></div>
+      <div class="usecase reveal"><div class="uc-ico">🏭</div><h4>Bérgyártás / toll manufacturing</h4><p>Külső megbízók termékeit tölti, csomagolja — a gépnek az ő elvárásaikhoz is illeszkedni kell.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--bg)">
+  <div class="container">
+    <div class="sec-head reveal"><span class="eyebrow">Ajánlott megoldások</span><h2>Nordexa rendszerek rugalmas gyártóknak</h2></div>
+    <div class="solutions-list">
+      <a href="../megoldasok/modularis-rendszerek.html" class="sol-ref reveal"><div class="sol-ref-ico">🔩</div><div><h4>Moduláris rendszerek</h4><p>A kis sorozatú gyártás legjobb barátja — modulok cserélhetők, a gép bővíthető, az átállás tervezett.</p><span class="sol-ref-link">Részletek →</span></div></a>
+      <a href="../megoldasok/egyedi-adagolosorok.html" class="sol-ref reveal"><div class="sol-ref-ico">⚙️</div><div><h4>Egyedi adagolósorok</h4><p>Ha a portfolio olyan széles, hogy a modulkönyvtár sem elég — teljesen egyedi tervezés.</p><span class="sol-ref-link">Részletek →</span></div></a>
+      <a href="../megoldasok/standard-berendezesek.html" class="sol-ref reveal"><div class="sol-ref-ico">📦</div><div><h4>Standard berendezések</h4><p>Ha a termék homogén és a volumen kiszámítható — bevált platform gyorsan és megbízhatóan.</p><span class="sol-ref-link">Részletek →</span></div></a>
+      <a href="../megoldasok/szerviz-lifecycle.html" class="sol-ref reveal"><div class="sol-ref-ico">🛠</div><div><h4>Szerviz &amp; Lifecycle</h4><p>Kis sorozatnál nincs tartalékgép — a szerviz-garancia nem opció, hanem a termelési biztonsági háló.</p><span class="sol-ref-link">Részletek →</span></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--bg-2)">
+  <div class="container">
+    <div class="sec-head center reveal"><span class="eyebrow center">Kapcsolódó iparágak</span><h2>Más szektorok, ahol dolgozunk</h2></div>
+    <div class="ind-related">
+      <a href="vegyipar.html" class="ind-ref reveal"><div class="ico">⚗️</div><h4>Vegyipar</h4><p>ATEX, reaktív anyagok, REACH</p></a>
+      <a href="kozmetika.html" class="ind-ref reveal"><div class="ico">💄</div><h4>Kozmetika</h4><p>GMP, prémium kiszerelés</p></a>
+      <a href="premium-elelmiszer.html" class="ind-ref reveal"><div class="ico">🫙</div><h4>Prémium élelmiszer</h4><p>HACCP, szezonális sorozatok</p></a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band"><div class="container"><div class="cta-band-inner reveal">
+  <h2>A változatosság a mi komfortzónánk.</h2>
+  <p>Mondja el a termékeit, a tételméreteket és az átállási elvárásokat — mérnökeink megmutatják, hogyan oldható meg rugalmasan és kiszámíthatóan.</p>
+  <div class="cta-band-actions"><a href="../kapcsolat/" class="btn btn-light btn-lg">Projektbeszélgetés <span class="arrow">→</span></a><a href="../esettanulmanyok/" class="btn btn-outline-light">Referenciák</a></div>
+</div></div></section>
+
+<footer><div class="container">
+  <div class="foot-grid">
+    <div><div class="brand"><svg class="brand-logo" viewBox="0 0 48 48" fill="none" style="width:32px;height:32px"><rect x="2" y="2" width="44" height="44" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.15)"/><path d="M14 34V14l9 12V14" stroke="#7fa8c9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 14c4 4 4 12 0 16-2-3-2-9 0-16Z" fill="#c4511c"/></svg><span><span class="brand-name">NORDE<span style="color:#c4511c">XA</span></span><span class="brand-sub">Industrial Solutions</span></span></div><p class="foot-about">Fejlett adagoló- és csomagolórendszerek — Székesfehérvár, 1994 óta.</p></div>
+    <div class="foot-col"><h5>Megoldások</h5><a href="../megoldasok/egyedi-adagolosorok.html">Egyedi adagolósorok</a><a href="../megoldasok/standard-berendezesek.html">Standard berendezések</a><a href="../megoldasok/modularis-rendszerek.html">Moduláris rendszerek</a><a href="../megoldasok/szerviz-lifecycle.html">Szerviz &amp; Lifecycle</a></div>
+    <div class="foot-col"><h5>Iparágak</h5><a href="vegyipar.html">Vegyipar</a><a href="kozmetika.html">Kozmetika</a><a href="premium-elelmiszer.html">Prémium élelmiszer</a><a href="kis-sorozat.html">Egyedi / kis sorozat</a></div>
+    <div class="foot-col"><h5>Kapcsolat</h5><a href="mailto:sales@nordexa.hu">sales@nordexa.hu</a><a href="tel:+3622555100">+36 22 555 100</a><a href="../kapcsolat/">Ajánlatkérés</a></div>
+  </div>
+  <div class="foot-bottom"><span>© 1994–2026 Nordexa Industrial Solutions Zrt.</span><span>Adatvédelem · ISO 9001</span></div>
+</div></footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

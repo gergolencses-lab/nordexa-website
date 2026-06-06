@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Standard berendezések — Nordexa Industrial Solutions</title>
+<meta name="description" content="Katalógusból konfigurálható csomagoló- és adagológépek kisebb testreszabással, rövid szállítási idővel — bevált, megbízható platformokon." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../css/style.css" />
+<style>
+  .page-hero { padding: 140px 0 80px; background: var(--bg); border-bottom: 1px solid var(--line); }
+  .page-hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .breadcrumb { font-family: var(--font-d); font-size: 13px; color: var(--muted-2); margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
+  .breadcrumb a { color: var(--muted); transition: color .2s; }
+  .breadcrumb a:hover { color: var(--steel); }
+  .breadcrumb-sep { color: var(--line-strong); }
+  .page-hero h1 { font-size: clamp(32px, 4vw, 56px); font-weight: 700; margin: 16px 0 20px; }
+  .page-hero .lead { font-size: 18px; color: var(--muted); margin-bottom: 28px; line-height: 1.7; }
+  .spec-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+  .spec-tag { font-family: var(--font-d); font-size: 12.5px; font-weight: 600; padding: 7px 14px; border-radius: 999px; border: 1.5px solid var(--line-strong); color: var(--text); background: var(--surface); }
+  .spec-tag.accent { border-color: var(--accent); color: var(--accent); background: var(--accent-bg); }
+  .page-hero-img { border-radius: var(--radius-l); overflow: hidden; aspect-ratio: 4/3; background: var(--bg-2); }
+  .page-hero-img img { width: 100%; height: 100%; object-fit: cover; }
+  .key-facts { background: var(--headline); padding: 0; }
+  .key-facts-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .key-fact { padding: 32px 28px; border-right: 1px solid rgba(255,255,255,.08); text-align: center; }
+  .key-fact:last-child { border-right: 0; }
+  .key-fact .val { font-family: var(--font-d); font-weight: 700; font-size: 32px; color: var(--accent); line-height: 1; margin-bottom: 8px; }
+  .key-fact .lbl { font-size: 13px; color: rgba(255,255,255,.55); }
+  .catalog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .catalog-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; transition: transform .25s, box-shadow .25s, border-color .25s; }
+  .catalog-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(20,30,45,.10); border-color: var(--line-strong); }
+  .catalog-card-top { padding: 28px; display: flex; align-items: center; gap: 16px; border-bottom: 1px solid var(--line); }
+  .catalog-ico { font-size: 28px; }
+  .catalog-card-top h3 { font-size: 18px; font-weight: 700; }
+  .catalog-card-body { padding: 24px; }
+  .catalog-card-body p { font-size: 14px; color: var(--muted); margin-bottom: 16px; }
+  .catalog-spec { display: flex; justify-content: space-between; font-size: 12.5px; padding: 6px 0; border-bottom: 1px solid var(--line); }
+  .catalog-spec:last-child { border-bottom: 0; }
+  .catalog-spec .k { color: var(--muted); }
+  .catalog-spec .v { font-family: var(--font-d); font-weight: 600; color: var(--headline); }
+  .advantage-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .advantage-item { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; display: flex; gap: 16px; }
+  .advantage-ico { font-size: 28px; flex-shrink: 0; }
+  .advantage-item h4 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+  .advantage-item p { font-size: 14px; color: var(--muted); }
+  .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .related-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; transition: border-color .2s, box-shadow .2s; display: flex; flex-direction: column; gap: 10px; }
+  .related-card:hover { border-color: var(--steel); box-shadow: 0 6px 24px rgba(20,30,45,.08); }
+  .related-card .r-ico { font-size: 24px; }
+  .related-card h4 { font-size: 17px; font-weight: 700; }
+  .related-card p { font-size: 13.5px; color: var(--muted); flex: 1; }
+  .related-card .r-link { font-family: var(--font-d); font-size: 13.5px; font-weight: 600; color: var(--steel); display: flex; align-items: center; gap: 6px; transition: gap .2s; }
+  .related-card:hover .r-link { gap: 10px; }
+  @media (max-width: 1024px) {
+    .page-hero-inner { grid-template-columns: 1fr; }
+    .key-facts-grid { grid-template-columns: repeat(2, 1fr); }
+    .catalog-grid { grid-template-columns: 1fr 1fr; }
+    .advantage-grid { grid-template-columns: 1fr; }
+    .related-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 640px) {
+    .catalog-grid, .related-grid { grid-template-columns: 1fr; }
+    .key-facts-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="container nav-wrap">
+    <a href="../" class="brand">
+      <svg class="brand-logo" viewBox="0 0 48 48" fill="none">
+        <rect x="2" y="2" width="44" height="44" rx="10" fill="#f4f0e8" stroke="#c4c0b2"/>
+        <path d="M14 34V14l9 12V14" stroke="#2b4560" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M30 14c4 4 4 12 0 16-2-3-2-9 0-16Z" fill="#c4511c"/>
+      </svg>
+      <span>
+        <span class="brand-name">NORDE<span>XA</span></span>
+        <span class="brand-sub">Industrial Solutions</span>
+      </span>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <div class="nav-item has-mega">
+        <button class="nav-link active" aria-expanded="false" aria-haspopup="true">Megoldások <span class="chevron">▾</span></button>
+        <div class="mega-panel">
+          <a href="egyedi-adagolosorok.html" class="mega-item"><span class="mega-item-ico">⚙️</span><span class="mega-item-title">Egyedi adagolósorok</span><span class="mega-item-desc">Teljesen testreszabott rendszerek</span></a>
+          <a href="standard-berendezesek.html" class="mega-item"><span class="mega-item-ico">📦</span><span class="mega-item-title">Standard berendezések</span><span class="mega-item-desc">Katalógusból konfigurálható</span></a>
+          <a href="modularis-rendszerek.html" class="mega-item"><span class="mega-item-ico">🔩</span><span class="mega-item-title">Moduláris rendszerek</span><span class="mega-item-desc">Rugalmas testreszabás</span></a>
+          <a href="szerviz-lifecycle.html" class="mega-item"><span class="mega-item-ico">🛠</span><span class="mega-item-title">Szerviz &amp; Lifecycle</span><span class="mega-item-desc">96% uptime garancia</span></a>
+        </div>
+      </div>
+      <div class="nav-item has-mega">
+        <button class="nav-link" aria-expanded="false" aria-haspopup="true">Iparágak <span class="chevron">▾</span></button>
+        <div class="mega-panel wide">
+          <a href="../iparagak/vegyipar.html" class="mega-item"><span class="mega-item-ico">⚗️</span><span class="mega-item-title">Vegyipar</span><span class="mega-item-desc">Reaktív anyagok adagolása</span></a>
+          <a href="../iparagak/kozmetika.html" class="mega-item"><span class="mega-item-ico">💄</span><span class="mega-item-title">Kozmetika</span><span class="mega-item-desc">Higiénikus töltés</span></a>
+          <a href="../iparagak/premium-elelmiszer.html" class="mega-item"><span class="mega-item-ico">🫙</span><span class="mega-item-title">Prémium élelmiszer</span><span class="mega-item-desc">Élelmiszer-biztos rendszerek</span></a>
+          <a href="../iparagak/kis-sorozat.html" class="mega-item"><span class="mega-item-ico">🔄</span><span class="mega-item-title">Egyedi / kis sorozat</span><span class="mega-item-desc">Rugalmas átállás</span></a>
+        </div>
+      </div>
+      <a href="../esettanulmanyok/" class="nav-link">Esettanulmányok</a>
+      <a href="../szerviz/" class="nav-link">Szerviz</a>
+      <a href="../rolunk/" class="nav-link">Rólunk</a>
+      <a href="../kapcsolat/" class="nav-link">Kapcsolat</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="lang-switch"><button class="lang-btn active">HU</button><span class="lang-sep">|</span><button class="lang-btn">EN</button></div>
+      <a href="../kapcsolat/" class="btn btn-primary">Ajánlatkérés <span class="arrow">→</span></a>
+      <button class="burger" id="burger" aria-label="Menü"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <div class="reveal">
+      <div class="breadcrumb">
+        <a href="../">Főoldal</a><span class="breadcrumb-sep">›</span>
+        <a href="../megoldasok/">Megoldások</a><span class="breadcrumb-sep">›</span>
+        <span>Standard berendezések</span>
+      </div>
+      <span class="eyebrow">Megoldás</span>
+      <h1>Standard berendezések</h1>
+      <p class="lead">Katalógusból konfigurálható csomagoló- és adagológépek kisebb testreszabással, rövid szállítási idővel. Ha a termék illeszkedik a platformhoz — nincs szükség drága egyedi fejlesztésre.</p>
+      <div class="spec-tags">
+        <span class="spec-tag accent">Gyorsabb szállítás</span>
+        <span class="spec-tag">Bevált platformok</span>
+        <span class="spec-tag">Kisebb beruházás</span>
+        <span class="spec-tag">Konfigurálható opciók</span>
+      </div>
+      <div class="hero-actions">
+        <a href="../kapcsolat/" class="btn btn-primary btn-lg">Konfiguráljon most <span class="arrow">→</span></a>
+        <a href="#katalogus" class="btn btn-ghost">Katalógus megtekintése →</a>
+      </div>
+    </div>
+    <div class="page-hero-img reveal">
+      <img src="../images/sol-standard.jpg" alt="Standard csomagoló berendezés"
+        onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\' style=\'height:100%\'><div class=\'img-placeholder-icon\'>📦</div><span>Standard berendezés</span></div>'" />
+    </div>
+  </div>
+</section>
+
+<div class="key-facts">
+  <div class="container">
+    <div class="key-facts-grid">
+      <div class="key-fact reveal"><div class="val">4–16 hét</div><div class="lbl">tipikus szállítási idő</div></div>
+      <div class="key-fact reveal"><div class="val">50 e€–</div><div class="lbl">kezdőár konfigurációtól</div></div>
+      <div class="key-fact reveal"><div class="val">96%</div><div class="lbl">uptime garantálva</div></div>
+      <div class="key-fact reveal"><div class="val">24 hó</div><div class="lbl">alap garancia</div></div>
+    </div>
+  </div>
+</div>
+
+<section class="sec" id="katalogus" style="background:var(--bg)">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Katalógus</span>
+      <h2>Bevált platformjaink</h2>
+      <p>Minden platform évek óta termelő üzemekben dolgozik. Konfigurálható — de nem a nulláról tervezett. Ez a különbség a megbízhatóság és a kockázat között.</p>
+    </div>
+    <div class="catalog-grid">
+      <div class="catalog-card reveal">
+        <div class="catalog-card-top">
+          <div class="catalog-ico">🧴</div>
+          <h3>NX-Fill L sorozat</h3>
+        </div>
+        <div class="catalog-card-body">
+          <p>Folyadék- és krémtöltők stabil, alacsony viszkozitású termékekhez. Élelmiszer- és kozmetikai alkalmazásokhoz egyaránt.</p>
+          <div class="catalog-spec"><span class="k">Kapacitás</span><span class="v">500–3 000 db/h</span></div>
+          <div class="catalog-spec"><span class="k">Tételméret</span><span class="v">50 ml – 5 l</span></div>
+          <div class="catalog-spec"><span class="k">Töltőfejek</span><span class="v">2–12 db</span></div>
+          <div class="catalog-spec"><span class="k">Szállítás</span><span class="v">6–10 hét</span></div>
+        </div>
+      </div>
+      <div class="catalog-card reveal">
+        <div class="catalog-card-top">
+          <div class="catalog-ico">⚗️</div>
+          <h3>NX-Dose G sorozat</h3>
+        </div>
+        <div class="catalog-card-body">
+          <p>Gravimetrikus adagolók por és granulátum anyagokhoz. Pontosság és ismételhetőség vegyi és élelmiszeripari környezetben.</p>
+          <div class="catalog-spec"><span class="k">Pontosság</span><span class="v">± 0,3%</span></div>
+          <div class="catalog-spec"><span class="k">Adagméret</span><span class="v">10 g – 25 kg</span></div>
+          <div class="catalog-spec"><span class="k">Kapacitás</span><span class="v">300–1 800 db/h</span></div>
+          <div class="catalog-spec"><span class="k">Szállítás</span><span class="v">8–12 hét</span></div>
+        </div>
+      </div>
+      <div class="catalog-card reveal">
+        <div class="catalog-card-top">
+          <div class="catalog-ico">📦</div>
+          <h3>NX-Pack S sorozat</h3>
+        </div>
+        <div class="catalog-card-body">
+          <p>Félautomata és automata csomagológépek dobozos és zacskós kiszereléshez. Egyszerű üzemeltetés, alacsony karbantartási igény.</p>
+          <div class="catalog-spec"><span class="k">Kapacitás</span><span class="v">200–1 200 csomag/h</span></div>
+          <div class="catalog-spec"><span class="k">Formátum</span><span class="v">flow-wrap, box, bag</span></div>
+          <div class="catalog-spec"><span class="k">Vezérlés</span><span class="v">érintőpaneles HMI</span></div>
+          <div class="catalog-spec"><span class="k">Szállítás</span><span class="v">4–8 hét</span></div>
+        </div>
+      </div>
+      <div class="catalog-card reveal">
+        <div class="catalog-card-top">
+          <div class="catalog-ico">🏷</div>
+          <h3>NX-Label A sorozat</h3>
+        </div>
+        <div class="catalog-card-body">
+          <p>Önragasztós és hőre zsugorodó cimkézőgépek körkörös és sík felületekhez. Iparágfüggetlen, moduláris kialakítás.</p>
+          <div class="catalog-spec"><span class="k">Sebesség</span><span class="v">40–200 m/perc</span></div>
+          <div class="catalog-spec"><span class="k">Termékmag</span><span class="v">Ø 20–120 mm</span></div>
+          <div class="catalog-spec"><span class="k">Pontosság</span><span class="v">± 0,5 mm</span></div>
+          <div class="catalog-spec"><span class="k">Szállítás</span><span class="v">4–6 hét</span></div>
+        </div>
+      </div>
+      <div class="catalog-card reveal">
+        <div class="catalog-card-top">
+          <div class="catalog-ico">🔍</div>
+          <h3>NX-Check V sorozat</h3>
+        </div>
+        <div class="catalog-card-body">
+          <p>Gépi látás alapú minőség-ellenőrzők és checkweigherek — csomagoló sorok végére illesztve, minimális integrációs igénnyel.</p>
+          <div class="catalog-spec"><span class="k">Pontosság</span><span class="v">± 0,1 g</span></div>
+          <div class="catalog-spec"><span class="k">Sebesség</span><span class="v">max 400 db/perc</span></div>
+          <div class="catalog-spec"><span class="k">Interfész</span><span class="v">OPC-UA, Profinet</span></div>
+          <div class="catalog-spec"><span class="k">Szállítás</span><span class="v">6–8 hét</span></div>
+        </div>
+      </div>
+      <div class="catalog-card reveal">
+        <div class="catalog-card-top">
+          <div class="catalog-ico">🚿</div>
+          <h3>NX-Clean C sorozat</h3>
+        </div>
+        <div class="catalog-card-body">
+          <p>CIP/SIP tisztítóállomások meglévő töltő- és adagolósorokhoz. Csatlakoztatható külső vezérlőrendszerhez vagy önálló üzemben.</p>
+          <div class="catalog-spec"><span class="k">Médiumok</span><span class="v">víz, lúg, sav, gőz</span></div>
+          <div class="catalog-spec"><span class="k">Hőmérséklet</span><span class="v">max 140 °C</span></div>
+          <div class="catalog-spec"><span class="k">Nyomás</span><span class="v">max 6 bar</span></div>
+          <div class="catalog-spec"><span class="k">Szállítás</span><span class="v">8–14 hét</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--bg-2)">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow center">Előnyök</span>
+      <h2>Miért a standard platform?</h2>
+      <p>Nem minden projekt igényel egyedi fejlesztést. Ha a terméke illeszkedik a platformhoz, a standard berendezés gyorsabb, kiszámíthatóbb és kisebb kockázatú befektetés.</p>
+    </div>
+    <div class="advantage-grid">
+      <div class="advantage-item reveal">
+        <div class="advantage-ico">⚡</div>
+        <div>
+          <h4>Gyorsabb telepítés</h4>
+          <p>4–16 hetes szállítás az egyedi 6–14 hónaphoz képest. Ha az üzem most áll, ez a különbség elveszett termelés vagy megőrzött versenyképesség között.</p>
+        </div>
+      </div>
+      <div class="advantage-item reveal">
+        <div class="advantage-ico">🛡</div>
+        <div>
+          <h4>Bevizsgált megbízhatóság</h4>
+          <p>Minden platform élesben, termelő üzemekben fut évek óta. Az indulási hibák és a gyermekbetegségek már nem az Ön üzeme kísérleteznek ki.</p>
+        </div>
+      </div>
+      <div class="advantage-item reveal">
+        <div class="advantage-ico">💶</div>
+        <div>
+          <h4>Kiszámítható beruházás</h4>
+          <p>Listáron alapuló árazás, minimális scope-creep. A beruházás kalkulálható, az ROI tervezhető — nincs meglepetés a projekt végén.</p>
+        </div>
+      </div>
+      <div class="advantage-item reveal">
+        <div class="advantage-ico">🔧</div>
+        <div>
+          <h4>Egyszerűbb szerviz</h4>
+          <p>Szabványos alkatrészek, ismert szervizelési pontok, gyorsabb reakció. A lifecycle-költség is kiszámíthatóbb, mint egyedi gépeknél.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec related-sols" style="background:var(--bg)">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Kapcsolódó megoldások</span>
+      <h2>Ha a standard nem elég</h2>
+    </div>
+    <div class="related-grid">
+      <a href="egyedi-adagolosorok.html" class="related-card reveal">
+        <div class="r-ico">⚙️</div>
+        <h4>Egyedi adagolósorok</h4>
+        <p>Ha a termék nem illeszkedik a katalógushoz — teljes mértékben egyedi tervezés és gyártás.</p>
+        <span class="r-link">Részletek →</span>
+      </a>
+      <a href="modularis-rendszerek.html" class="related-card reveal">
+        <div class="r-ico">🔩</div>
+        <h4>Moduláris rendszerek</h4>
+        <p>A kettő között: bevált modulok, egyedi összeállítás — gyorsabb mint az egyedi, rugalmasabb mint a standard.</p>
+        <span class="r-link">Részletek →</span>
+      </a>
+      <a href="szerviz-lifecycle.html" class="related-card reveal">
+        <div class="r-ico">🛠</div>
+        <h4>Szerviz &amp; Lifecycle</h4>
+        <p>Minden standard berendezésünkhöz elérhető lifecycle-csomag — megelőző karbantartástól az alkatrész-ellátásig.</p>
+        <span class="r-link">Részletek →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <div class="cta-band-inner reveal">
+      <h2>Melyik platform illik az Ön termékéhez?</h2>
+      <p>Küldjön egy rövid leírást a termékről és a tételméretről — 48 órán belül jelzünk, melyik platform a legjobb kiindulópont.</p>
+      <div class="cta-band-actions">
+        <a href="../kapcsolat/" class="btn btn-light btn-lg">Ajánlatkérés indítása <span class="arrow">→</span></a>
+        <a href="../esettanulmanyok/" class="btn btn-outline-light">Referenciák</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="brand">
+          <svg class="brand-logo" viewBox="0 0 48 48" fill="none" style="width:32px;height:32px">
+            <rect x="2" y="2" width="44" height="44" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.15)"/>
+            <path d="M14 34V14l9 12V14" stroke="#7fa8c9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M30 14c4 4 4 12 0 16-2-3-2-9 0-16Z" fill="#c4511c"/>
+          </svg>
+          <span><span class="brand-name">NORDE<span style="color:#c4511c">XA</span></span><span class="brand-sub">Industrial Solutions</span></span>
+        </div>
+        <p class="foot-about">Fejlett adagoló- és csomagolórendszerek — Székesfehérvár, 1994 óta.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Megoldások</h5>
+        <a href="egyedi-adagolosorok.html">Egyedi adagolósorok</a>
+        <a href="standard-berendezesek.html">Standard berendezések</a>
+        <a href="modularis-rendszerek.html">Moduláris rendszerek</a>
+        <a href="szerviz-lifecycle.html">Szerviz &amp; Lifecycle</a>
+      </div>
+      <div class="foot-col">
+        <h5>Vállalat</h5>
+        <a href="../rolunk/">Rólunk</a>
+        <a href="../iparagak/">Iparágak</a>
+        <a href="../esettanulmanyok/">Esettanulmányok</a>
+        <a href="../kapcsolat/">Karrier</a>
+      </div>
+      <div class="foot-col">
+        <h5>Kapcsolat</h5>
+        <a href="mailto:sales@nordexa.hu">sales@nordexa.hu</a>
+        <a href="tel:+3622555100">+36 22 555 100</a>
+        <a href="../kapcsolat/">Ajánlatkérés</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 1994–2026 Nordexa Industrial Solutions Zrt.</span>
+      <span>Adatvédelem · ISO 9001 tanúsított gyártás</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

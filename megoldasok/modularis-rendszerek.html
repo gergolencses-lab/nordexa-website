@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Moduláris rendszerek — Nordexa Industrial Solutions</title>
+<meta name="description" content="Szabványosított modulokból gyorsan és kiszámíthatóan összeállított gépsorok. A testreszabás rugalmassága az egyedi gyártás kockázata nélkül." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../css/style.css" />
+<style>
+  .page-hero { padding: 140px 0 80px; background: var(--bg); border-bottom: 1px solid var(--line); }
+  .page-hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .breadcrumb { font-family: var(--font-d); font-size: 13px; color: var(--muted-2); margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
+  .breadcrumb a { color: var(--muted); transition: color .2s; }
+  .breadcrumb a:hover { color: var(--steel); }
+  .breadcrumb-sep { color: var(--line-strong); }
+  .page-hero h1 { font-size: clamp(32px, 4vw, 56px); font-weight: 700; margin: 16px 0 20px; }
+  .page-hero .lead { font-size: 18px; color: var(--muted); margin-bottom: 28px; line-height: 1.7; }
+  .spec-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+  .spec-tag { font-family: var(--font-d); font-size: 12.5px; font-weight: 600; padding: 7px 14px; border-radius: 999px; border: 1.5px solid var(--line-strong); color: var(--text); background: var(--surface); }
+  .spec-tag.accent { border-color: var(--accent); color: var(--accent); background: var(--accent-bg); }
+  .page-hero-img { border-radius: var(--radius-l); overflow: hidden; aspect-ratio: 4/3; background: var(--bg-2); }
+  .page-hero-img img { width: 100%; height: 100%; object-fit: cover; }
+  .key-facts { background: var(--headline); }
+  .key-facts-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .key-fact { padding: 32px 28px; border-right: 1px solid rgba(255,255,255,.08); text-align: center; }
+  .key-fact:last-child { border-right: 0; }
+  .key-fact .val { font-family: var(--font-d); font-weight: 700; font-size: 32px; color: var(--accent); line-height: 1; margin-bottom: 8px; }
+  .key-fact .lbl { font-size: 13px; color: rgba(255,255,255,.55); }
+  .modules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .module-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; position: relative; overflow: hidden; transition: border-color .25s, transform .25s; }
+  .module-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent), var(--steel)); transform: scaleX(0); transform-origin: left; transition: transform .3s; }
+  .module-card:hover { border-color: var(--line-strong); transform: translateY(-3px); }
+  .module-card:hover::before { transform: scaleX(1); }
+  .module-ico { font-size: 28px; margin-bottom: 12px; }
+  .module-card h4 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+  .module-card p { font-size: 13.5px; color: var(--muted); }
+  .comparison-table { width: 100%; border-collapse: collapse; }
+  .comparison-table th { font-family: var(--font-d); font-size: 13px; font-weight: 700; padding: 14px 20px; text-align: left; background: var(--bg-2); border-bottom: 2px solid var(--line-strong); }
+  .comparison-table td { padding: 14px 20px; font-size: 14px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+  .comparison-table tr:last-child td { border-bottom: 0; }
+  .comparison-table tr:hover td { background: var(--bg); }
+  .check { color: var(--green); font-weight: 700; font-size: 16px; }
+  .partial { color: var(--accent); font-weight: 600; }
+  .cross { color: var(--muted-2); font-size: 16px; }
+  .highlight-col { background: rgba(43,69,96,0.05); font-weight: 600; }
+  .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .related-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; transition: border-color .2s, box-shadow .2s; display: flex; flex-direction: column; gap: 10px; }
+  .related-card:hover { border-color: var(--steel); box-shadow: 0 6px 24px rgba(20,30,45,.08); }
+  .related-card .r-ico { font-size: 24px; }
+  .related-card h4 { font-size: 17px; font-weight: 700; }
+  .related-card p { font-size: 13.5px; color: var(--muted); flex: 1; }
+  .related-card .r-link { font-family: var(--font-d); font-size: 13.5px; font-weight: 600; color: var(--steel); display: flex; align-items: center; gap: 6px; transition: gap .2s; }
+  .related-card:hover .r-link { gap: 10px; }
+  @media (max-width: 1024px) {
+    .page-hero-inner { grid-template-columns: 1fr; }
+    .key-facts-grid { grid-template-columns: repeat(2, 1fr); }
+    .modules-grid { grid-template-columns: 1fr 1fr; }
+    .related-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 640px) {
+    .modules-grid, .related-grid { grid-template-columns: 1fr; }
+    .key-facts-grid { grid-template-columns: 1fr 1fr; }
+    .comparison-table { font-size: 12px; }
+    .comparison-table th, .comparison-table td { padding: 10px 12px; }
+  }
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="container nav-wrap">
+    <a href="../" class="brand">
+      <svg class="brand-logo" viewBox="0 0 48 48" fill="none">
+        <rect x="2" y="2" width="44" height="44" rx="10" fill="#f4f0e8" stroke="#c4c0b2"/>
+        <path d="M14 34V14l9 12V14" stroke="#2b4560" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M30 14c4 4 4 12 0 16-2-3-2-9 0-16Z" fill="#c4511c"/>
+      </svg>
+      <span><span class="brand-name">NORDE<span>XA</span></span><span class="brand-sub">Industrial Solutions</span></span>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <div class="nav-item has-mega">
+        <button class="nav-link active" aria-expanded="false" aria-haspopup="true">Megoldások <span class="chevron">▾</span></button>
+        <div class="mega-panel">
+          <a href="egyedi-adagolosorok.html" class="mega-item"><span class="mega-item-ico">⚙️</span><span class="mega-item-title">Egyedi adagolósorok</span><span class="mega-item-desc">Teljesen testreszabott rendszerek</span></a>
+          <a href="standard-berendezesek.html" class="mega-item"><span class="mega-item-ico">📦</span><span class="mega-item-title">Standard berendezések</span><span class="mega-item-desc">Katalógusból konfigurálható</span></a>
+          <a href="modularis-rendszerek.html" class="mega-item"><span class="mega-item-ico">🔩</span><span class="mega-item-title">Moduláris rendszerek</span><span class="mega-item-desc">Rugalmas testreszabás</span></a>
+          <a href="szerviz-lifecycle.html" class="mega-item"><span class="mega-item-ico">🛠</span><span class="mega-item-title">Szerviz &amp; Lifecycle</span><span class="mega-item-desc">96% uptime garancia</span></a>
+        </div>
+      </div>
+      <div class="nav-item has-mega">
+        <button class="nav-link" aria-expanded="false" aria-haspopup="true">Iparágak <span class="chevron">▾</span></button>
+        <div class="mega-panel wide">
+          <a href="../iparagak/vegyipar.html" class="mega-item"><span class="mega-item-ico">⚗️</span><span class="mega-item-title">Vegyipar</span><span class="mega-item-desc">Reaktív anyagok adagolása</span></a>
+          <a href="../iparagak/kozmetika.html" class="mega-item"><span class="mega-item-ico">💄</span><span class="mega-item-title">Kozmetika</span><span class="mega-item-desc">Higiénikus töltés</span></a>
+          <a href="../iparagak/premium-elelmiszer.html" class="mega-item"><span class="mega-item-ico">🫙</span><span class="mega-item-title">Prémium élelmiszer</span><span class="mega-item-desc">Élelmiszer-biztos rendszerek</span></a>
+          <a href="../iparagak/kis-sorozat.html" class="mega-item"><span class="mega-item-ico">🔄</span><span class="mega-item-title">Egyedi / kis sorozat</span><span class="mega-item-desc">Rugalmas átállás</span></a>
+        </div>
+      </div>
+      <a href="../esettanulmanyok/" class="nav-link">Esettanulmányok</a>
+      <a href="../szerviz/" class="nav-link">Szerviz</a>
+      <a href="../rolunk/" class="nav-link">Rólunk</a>
+      <a href="../kapcsolat/" class="nav-link">Kapcsolat</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="lang-switch"><button class="lang-btn active">HU</button><span class="lang-sep">|</span><button class="lang-btn">EN</button></div>
+      <a href="../kapcsolat/" class="btn btn-primary">Ajánlatkérés <span class="arrow">→</span></a>
+      <button class="burger" id="burger" aria-label="Menü"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <div class="reveal">
+      <div class="breadcrumb">
+        <a href="../">Főoldal</a><span class="breadcrumb-sep">›</span>
+        <a href="../megoldasok/">Megoldások</a><span class="breadcrumb-sep">›</span>
+        <span>Moduláris rendszerek</span>
+      </div>
+      <span class="eyebrow">Megoldás</span>
+      <h1>Moduláris rendszerek</h1>
+      <p class="lead">Szabványosított, bevizsgált modulokból gyorsan és kiszámíthatóan összeállított gépsorok. A testreszabás rugalmassága — az egyedi gyártás kockázata és átfutási ideje nélkül.</p>
+      <div class="spec-tags">
+        <span class="spec-tag accent">Rugalmas konfiguráció</span>
+        <span class="spec-tag">Rövidebb átfutás</span>
+        <span class="spec-tag">Bevált modulok</span>
+        <span class="spec-tag">Egyszerű bővíthetőség</span>
+      </div>
+      <div class="hero-actions">
+        <a href="../kapcsolat/" class="btn btn-primary btn-lg">Konfiguráljuk együtt <span class="arrow">→</span></a>
+        <a href="#modulok" class="btn btn-ghost">Modulkönyvtár →</a>
+      </div>
+    </div>
+    <div class="page-hero-img reveal">
+      <img src="../images/sol-modularis.jpg" alt="Moduláris gyártási rendszer"
+        onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\' style=\'height:100%\'><div class=\'img-placeholder-icon\'>🔩</div><span>Moduláris rendszer</span></div>'" />
+    </div>
+  </div>
+</section>
+
+<div class="key-facts">
+  <div class="container">
+    <div class="key-facts-grid">
+      <div class="key-fact reveal"><div class="val">3–9 hó</div><div class="lbl">tipikus átfutási idő</div></div>
+      <div class="key-fact reveal"><div class="val">30%</div><div class="lbl">gyorsabb mint egyedi</div></div>
+      <div class="key-fact reveal"><div class="val">96%</div><div class="lbl">uptime garantálva</div></div>
+      <div class="key-fact reveal"><div class="val">+∞</div><div class="lbl">bővíthetőség modulokkal</div></div>
+    </div>
+  </div>
+</div>
+
+<section class="sec" id="modulok" style="background:var(--bg)">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Modulkönyvtár</span>
+      <h2>Bevizsgált modulok — egyedi összeállítás</h2>
+      <p>Minden modult saját üzemeinkben fejlesztünk és vizsgálunk be. Az összeállítás egyedi — a komponensek megbízhatósága bizonyított.</p>
+    </div>
+    <div class="modules-grid">
+      <div class="module-card reveal"><div class="module-ico">🫗</div><h4>Töltőmodul — folyadék</h4><p>Volumetrikus és gravimetrikus kivitelben, 1–24 töltőfejjel. Cserélhető töltőfej-geometriák az anyag viszkozitásához.</p></div>
+      <div class="module-card reveal"><div class="module-ico">⚗️</div><h4>Töltőmodul — por/granulátum</h4><p>Csigás, vibrációs és ömlesztett adagoló változatok. Pontosság ± 0,3%, automatikus tara-korrekció.</p></div>
+      <div class="module-card reveal"><div class="module-ico">🏷</div><h4>Cimkézőmodul</h4><p>Önragasztós és hőre zsugorodó cimkék, körkörös és sík felületre. Plug-and-play integráció a szállítómodullal.</p></div>
+      <div class="module-card reveal"><div class="module-ico">📦</div><h4>Csomagolómodul</h4><p>Karton, zacskó, tálca és dobozos formátumok. Automatikus méretváltás recepta-hívással, &lt;5 perc átállás.</p></div>
+      <div class="module-card reveal"><div class="module-ico">🔍</div><h4>Ellenőrzőmodul</h4><p>Tömegmérés, gépi látás, metáldetektáló — egységes adatfolyammal a minőségirányítási rendszer felé.</p></div>
+      <div class="module-card reveal"><div class="module-ico">🖥</div><h4>Vezérlőmodul</h4><p>Egységes HMI az összes modulhoz. OPC-UA kimenet, receptakönyvtár, batch record — MES/ERP-ready.</p></div>
+      <div class="module-card reveal"><div class="module-ico">🚿</div><h4>CIP/SIP modul</h4><p>Automata helyszíni tisztítás — csatlakoztatható bármely érintett modulhoz. GMP és FDA-kompatibilis.</p></div>
+      <div class="module-card reveal"><div class="module-ico">🚂</div><h4>Szállítómodul</h4><p>Szalagos, görgős és aszinkron motor-meghajtású változatok. Akadályérzékelő, sebesség-szinkronizáció.</p></div>
+      <div class="module-card reveal"><div class="module-ico">🔌</div><h4>Integrációs modul</h4><p>Meglévő gépsorra illesztés — Nordexa és harmadik féltől származó berendezések közé egyaránt.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--bg-2)">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow center">Összehasonlítás</span>
+      <h2>Melyik megoldás az Ön esetére?</h2>
+      <p>A moduláris architektúra a legtöbb esetben az optimális kompromisszum — de nem minden projektre.</p>
+    </div>
+    <div class="reveal" style="overflow-x:auto">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Szempont</th>
+            <th>Standard</th>
+            <th class="highlight-col" style="background:rgba(43,69,96,0.10)">Moduláris ✦</th>
+            <th>Egyedi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Átfutási idő</td><td>4–16 hét</td><td class="highlight-col">3–9 hónap</td><td>6–14 hónap</td></tr>
+          <tr><td>Testreszabhatóság</td><td><span class="partial">Korlátozott</span></td><td class="highlight-col"><span class="check">✓ Magas</span></td><td><span class="check">✓ Teljes</span></td></tr>
+          <tr><td>Indítási kockázat</td><td><span class="check">✓ Alacsony</span></td><td class="highlight-col"><span class="check">✓ Alacsony</span></td><td><span class="partial">Közepes</span></td></tr>
+          <tr><td>Bővíthetőség</td><td><span class="partial">Korlátozott</span></td><td class="highlight-col"><span class="check">✓ Modulonként</span></td><td><span class="partial">Egyedileg</span></td></tr>
+          <tr><td>Beruházás</td><td><span class="check">✓ Legkisebb</span></td><td class="highlight-col">Közepes</td><td>Legnagyobb</td></tr>
+          <tr><td>Egyedi anyag/folyamat</td><td><span class="cross">✗</span></td><td class="highlight-col"><span class="check">✓ Igen</span></td><td><span class="check">✓ Igen</span></td></tr>
+          <tr><td>Szerviz egyszerűsége</td><td><span class="check">✓ Egyszerű</span></td><td class="highlight-col"><span class="check">✓ Egyszerű</span></td><td><span class="partial">Változó</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="sec related-sols" style="background:var(--bg)">
+  <div class="container">
+    <div class="sec-head reveal"><span class="eyebrow">Kapcsolódó megoldások</span><h2>Más megoldások</h2></div>
+    <div class="related-grid">
+      <a href="egyedi-adagolosorok.html" class="related-card reveal"><div class="r-ico">⚙️</div><h4>Egyedi adagolósorok</h4><p>Ha a modulkönyvtár sem elég — teljes mértékű egyedi tervezés és gyártás.</p><span class="r-link">Részletek →</span></a>
+      <a href="standard-berendezesek.html" class="related-card reveal"><div class="r-ico">📦</div><h4>Standard berendezések</h4><p>Ha a termék illeszkedik a katalógushoz — a leggyorsabb és legkiszámíthatóbb út.</p><span class="r-link">Részletek →</span></a>
+      <a href="szerviz-lifecycle.html" class="related-card reveal"><div class="r-ico">🛠</div><h4>Szerviz &amp; Lifecycle</h4><p>Minden moduláris rendszerünkhöz elérhető lifecycle-csomag — megelőző karbantartással.</p><span class="r-link">Részletek →</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <div class="cta-band-inner reveal">
+      <h2>Összerakjuk önnek a legjobb kombinációt.</h2>
+      <p>Mondja el a terméket és az igényt — mérnökeink modult-modulra összerakják az optimális konfigurációt és beárazják.</p>
+      <div class="cta-band-actions">
+        <a href="../kapcsolat/" class="btn btn-light btn-lg">Konfiguráció kérése <span class="arrow">→</span></a>
+        <a href="../esettanulmanyok/" class="btn btn-outline-light">Referenciák</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="brand">
+          <svg class="brand-logo" viewBox="0 0 48 48" fill="none" style="width:32px;height:32px">
+            <rect x="2" y="2" width="44" height="44" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.15)"/>
+            <path d="M14 34V14l9 12V14" stroke="#7fa8c9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M30 14c4 4 4 12 0 16-2-3-2-9 0-16Z" fill="#c4511c"/>
+          </svg>
+          <span><span class="brand-name">NORDE<span style="color:#c4511c">XA</span></span><span class="brand-sub">Industrial Solutions</span></span>
+        </div>
+        <p class="foot-about">Fejlett adagoló- és csomagolórendszerek — Székesfehérvár, 1994 óta.</p>
+      </div>
+      <div class="foot-col"><h5>Megoldások</h5><a href="egyedi-adagolosorok.html">Egyedi adagolósorok</a><a href="standard-berendezesek.html">Standard berendezések</a><a href="modularis-rendszerek.html">Moduláris rendszerek</a><a href="szerviz-lifecycle.html">Szerviz &amp; Lifecycle</a></div>
+      <div class="foot-col"><h5>Vállalat</h5><a href="../rolunk/">Rólunk</a><a href="../iparagak/">Iparágak</a><a href="../esettanulmanyok/">Esettanulmányok</a><a href="../kapcsolat/">Karrier</a></div>
+      <div class="foot-col"><h5>Kapcsolat</h5><a href="mailto:sales@nordexa.hu">sales@nordexa.hu</a><a href="tel:+3622555100">+36 22 555 100</a><a href="../kapcsolat/">Ajánlatkérés</a></div>
+    </div>
+    <div class="foot-bottom"><span>© 1994–2026 Nordexa Industrial Solutions Zrt.</span><span>Adatvédelem · ISO 9001 tanúsított gyártás</span></div>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

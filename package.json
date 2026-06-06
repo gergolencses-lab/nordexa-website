@@ -1,0 +1,7 @@
+{
+  "name": "nordexa-website",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "npx serve . -p 5175 --no-clipboard"
+  }
+}

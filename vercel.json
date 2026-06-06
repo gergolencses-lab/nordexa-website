@@ -1,0 +1,26 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/megoldasok", "destination": "/megoldasok/index.html" },
+    { "source": "/iparagak", "destination": "/iparagak/index.html" },
+    { "source": "/esettanulmanyok", "destination": "/esettanulmanyok/index.html" },
+    { "source": "/rolunk", "destination": "/rolunk/index.html" },
+    { "source": "/szerviz", "destination": "/szerviz/index.html" },
+    { "source": "/kapcsolat", "destination": "/kapcsolat/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/images/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    },
+    {
+      "source": "/css/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }]
+    },
+    {
+      "source": "/js/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }]
+    }
+  ]
+}
