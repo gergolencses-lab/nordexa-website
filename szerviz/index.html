@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Szerviz &amp; Lifecycle — Nordexa Industrial Solutions</title>
+<meta name="description" content="Nordexa szerviz: megelőző karbantartás, alkatrész-ellátás, 24/7 ügyelet. 96% uptime garancia, 8 h válaszidő, 6 CEE-ország lefedettség." />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../css/style.css" />
+<style>
+  .page-hero{padding:140px 0 80px;background:var(--bg);border-bottom:1px solid var(--line)}
+  .page-hero h1{font-size:clamp(32px,4.5vw,56px);font-weight:700;margin:16px 0 16px;max-width:720px}
+  .page-hero h1 em{font-style:normal;color:var(--accent)}
+  .page-hero .lead{font-size:18px;color:var(--muted);max-width:600px;line-height:1.7;margin-bottom:28px}
+  .breadcrumb{font-family:var(--font-d);font-size:13px;color:var(--muted-2);margin-bottom:20px;display:flex;align-items:center;gap:8px}
+  .breadcrumb a{color:var(--muted)}.breadcrumb-sep{color:var(--line-strong)}
+
+  /* Stats */
+  .szerviz-stats{background:var(--headline);display:grid;grid-template-columns:repeat(4,1fr)}
+  .sz-stat{padding:36px 28px;border-right:1px solid rgba(255,255,255,.08);text-align:center}
+  .sz-stat:last-child{border-right:0}
+  .sz-stat .val{font-family:var(--font-d);font-weight:700;font-size:44px;color:var(--accent);line-height:1;margin-bottom:8px}
+  .sz-stat .lbl{font-size:13px;color:rgba(255,255,255,.6)}
+
+  /* Why preventive */
+  .preventive-split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .preventive-img{border-radius:var(--radius-l);overflow:hidden;aspect-ratio:4/3;background:var(--bg-2)}
+  .preventive-img img{width:100%;height:100%;object-fit:cover}
+  .cost-compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
+  .cost-card{border-radius:var(--radius);padding:20px;text-align:center}
+  .cost-card.bad{background:rgba(192,50,30,.06);border:1.5px solid rgba(192,50,30,.2)}
+  .cost-card.good{background:var(--green-bg);border:1.5px solid rgba(45,110,72,.25)}
+  .cost-card .cv{font-family:var(--font-d);font-weight:700;font-size:28px;line-height:1;margin-bottom:6px}
+  .cost-card.bad .cv{color:#c0321e}
+  .cost-card.good .cv{color:var(--green)}
+  .cost-card .cl{font-size:13px;color:var(--muted)}
+
+  /* Services list */
+  .services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .service-item{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;gap:20px;align-items:flex-start;transition:border-color .2s,transform .2s}
+  .service-item:hover{border-color:var(--line-strong);transform:translateY(-3px)}
+  .service-ico{font-size:28px;flex-shrink:0;width:52px;height:52px;background:var(--accent-bg);border-radius:12px;display:flex;align-items:center;justify-content:center}
+  .service-item h3{font-size:18px;font-weight:700;margin-bottom:8px}
+  .service-item p{font-size:14.5px;color:var(--muted);line-height:1.6}
+
+  /* Packages */
+  .packages-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .pkg{background:var(--surface);border:2px solid var(--line);border-radius:var(--radius);padding:32px;display:flex;flex-direction:column;gap:14px;transition:border-color .2s,box-shadow .2s}
+  .pkg.featured{border-color:var(--steel);box-shadow:0 8px 32px rgba(43,69,96,.12)}
+  .pkg-badge{font-family:var(--font-d);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 12px;border-radius:999px;display:inline-block;width:fit-content}
+  .badge-basic{background:var(--bg-2);color:var(--muted)}
+  .badge-pro{background:var(--steel-bg);color:var(--steel)}
+  .badge-premium{background:var(--accent-bg);color:var(--accent)}
+  .pkg h3{font-size:22px;font-weight:700}
+  .pkg .pkg-price{font-family:var(--font-d);font-size:14px;color:var(--muted)}
+  .pkg hr{border:0;border-top:1px solid var(--line)}
+  .pkg-features{display:flex;flex-direction:column;gap:9px;flex:1}
+  .pf{display:flex;gap:10px;font-size:14px;align-items:flex-start}
+  .pf-check{color:var(--green);font-weight:700;flex-shrink:0;margin-top:1px}
+  .pf-na{color:var(--muted-2);flex-shrink:0}
+
+  /* Process */
+  .process-v{display:flex;flex-direction:column;gap:0;max-width:680px;margin:0 auto}
+  .pv-item{display:grid;grid-template-columns:64px 1fr;gap:20px;padding-bottom:28px;position:relative}
+  .pv-item::before{content:"";position:absolute;left:31px;top:28px;bottom:0;width:2px;background:var(--line)}
+  .pv-item:last-child::before{display:none}.pv-item:last-child{padding-bottom:0}
+  .pv-num{width:40px;height:40px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-weight:700;font-size:14px;flex-shrink:0}
+  .pv-body{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px}
+  .pv-body h4{font-size:16px;font-weight:700;margin-bottom:5px}
+  .pv-body p{font-size:13.5px;color:var(--muted)}
+
+  /* Response map */
+  .response-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .resp-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;text-align:center}
+  .resp-flag{font-size:28px;margin-bottom:8px}
+  .resp-card h4{font-size:15px;font-weight:700;margin-bottom:4px}
+  .resp-card p{font-size:13px;color:var(--muted)}
+  .resp-time{font-family:var(--font-d);font-weight:700;font-size:22px;color:var(--accent);display:block;margin-top:8px}
+
+  /* Emergency CTA */
+  .emergency-bar{background:var(--accent);padding:20px 0}
+  .emergency-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  .emergency-text{color:#fff}
+  .emergency-text strong{font-family:var(--font-d);font-size:18px;font-weight:700;display:block;margin-bottom:4px}
+  .emergency-text span{font-size:14px;opacity:.85}
+  .emergency-actions{display:flex;gap:12px;flex-wrap:wrap}
+
+  @media(max-width:1024px){
+    .szerviz-stats{grid-template-columns:repeat(2,1fr)}.sz-stat:nth-child(2){border-right:0}.sz-stat:nth-child(3){border-top:1px solid rgba(255,255,255,.08)}
+    .preventive-split{grid-template-columns:1fr}
+    .services-grid{grid-template-columns:1fr}
+    .packages-grid{grid-template-columns:1fr;max-width:480px;margin:0 auto}
+    .response-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:640px){
+    .szerviz-stats{grid-template-columns:1fr 1fr}
+    .cost-compare{grid-template-columns:1fr}
+    .response-grid{grid-template-columns:1fr}
+    .emergency-inner{flex-direction:column;text-align:center}
+  }
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="container nav-wrap">
+    <a href="../" class="brand"><svg class="brand-logo" viewBox="0 0 48 48" fill="none"><rect x="2" y="2" width="44" height="44" rx="10" fill="#f4f0e8" stroke="#c4c0b2"/><path d="M14 34V14l9 12V14" stroke="#2b4560" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 14c4 4 4 12 0 16-2-3-2-9 0-16Z" fill="#c4511c"/></svg><span><span class="brand-name">NORDE<span>XA</span></span><span class="brand-sub">Industrial Solutions</span></span></a>
+    <nav class="main-nav" id="mainNav">
+      <div class="nav-item has-mega"><button class="nav-link" aria-expanded="false">Megoldások <span class="chevron">▾</span></button><div class="mega-panel"><a href="../megoldasok/egyedi-adagolosorok.html" class="mega-item"><span class="mega-item-ico">⚙️</span><span class="mega-item-title">Egyedi adagolósorok</span><span class="mega-item-desc">Teljesen testreszabott</span></a><a href="../megoldasok/standard-berendezesek.html" class="mega-item"><span class="mega-item-ico">📦</span><span class="mega-item-title">Standard berendezések</span><span class="mega-item-desc">Katalógusból</span></a><a href="../megoldasok/modularis-rendszerek.html" class="mega-item"><span class="mega-item-ico">🔩</span><span class="mega-item-title">Moduláris rendszerek</span><span class="mega-item-desc">Rugalmas</span></a><a href="../megoldasok/szerviz-lifecycle.html" class="mega-item"><span class="mega-item-ico">🛠</span><span class="mega-item-title">Szerviz &amp; Lifecycle</span><span class="mega-item-desc">96% uptime</span></a></div></div>
+      <div class="nav-item has-mega"><button class="nav-link" aria-expanded="false">Iparágak <span class="chevron">▾</span></button><div class="mega-panel wide"><a href="../iparagak/vegyipar.html" class="mega-item"><span class="mega-item-ico">⚗️</span><span class="mega-item-title">Vegyipar</span><span class="mega-item-desc">Reaktív anyagok</span></a><a href="../iparagak/kozmetika.html" class="mega-item"><span class="mega-item-ico">💄</span><span class="mega-item-title">Kozmetika</span><span class="mega-item-desc">Higiénikus töltés</span></a><a href="../iparagak/premium-elelmiszer.html" class="mega-item"><span class="mega-item-ico">🫙</span><span class="mega-item-title">Prémium élelmiszer</span><span class="mega-item-desc">Élelmiszer-biztos</span></a><a href="../iparagak/kis-sorozat.html" class="mega-item"><span class="mega-item-ico">🔄</span><span class="mega-item-title">Kis sorozat</span><span class="mega-item-desc">Rugalmas átállás</span></a></div></div>
+      <a href="../esettanulmanyok/" class="nav-link">Esettanulmányok</a>
+      <a href="index.html" class="nav-link active">Szerviz</a>
+      <a href="../rolunk/" class="nav-link">Rólunk</a>
+      <a href="../kapcsolat/" class="nav-link">Kapcsolat</a>
+    </nav>
+    <div class="nav-actions"><div class="lang-switch"><button class="lang-btn active">HU</button><span class="lang-sep">|</span><button class="lang-btn">EN</button></div><a href="../kapcsolat/" class="btn btn-primary">Ajánlatkérés <span class="arrow">→</span></a><button class="burger" id="burger" aria-label="Menü"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button></div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="../">Főoldal</a><span class="breadcrumb-sep">›</span><span>Szerviz &amp; Lifecycle</span></div>
+    <span class="eyebrow">Szerviz &amp; Lifecycle</span>
+    <h1>A leszállítás <em>csak a kezdet.</em></h1>
+    <p class="lead">Megelőző karbantartás, gyors alkatrész-ellátás és rendelkezésre állási szerződések gondoskodnak róla, hogy a beruházása évtizedeken át a legjobb formáját hozza — nem csak az első naptól.</p>
+    <div class="hero-actions">
+      <a href="../kapcsolat/" class="btn btn-primary btn-lg">Lifecycle-szerződés igénylése <span class="arrow">→</span></a>
+      <a href="tel:+3622555199" class="btn btn-ghost">📞 Szerviz-ügyelet: +36 22 555 199</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="szerviz-stats">
+  <div class="sz-stat reveal"><div class="val">96%</div><div class="lbl">rendszer-rendelkezésre állás (garantált)</div></div>
+  <div class="sz-stat reveal"><div class="val">8 h</div><div class="lbl">átlagos helyszíni válaszidő</div></div>
+  <div class="sz-stat reveal"><div class="val">24/7</div><div class="lbl">telefonos szerviz-ügyelet</div></div>
+  <div class="sz-stat reveal"><div class="val">6</div><div class="lbl">CEE-ország helyszíni lefedettség</div></div>
+</div>
+
+<!-- EMERGENCY BAR -->
+<div class="emergency-bar">
+  <div class="container">
+    <div class="emergency-inner">
+      <div class="emergency-text">
+        <strong>🚨 Azonnali szerviz-ügyelet</strong>
+        <span>Gépleállás esetén: hívja a 24/7-es szervizszámot — 8 órán belül helyszínen vagyunk.</span>
+      </div>
+      <div class="emergency-actions">
+        <a href="tel:+3622555199" class="btn btn-light">📞 +36 22 555 199</a>
+        <a href="mailto:szerviz@nordexa.hu" class="btn btn-outline-light">szerviz@nordexa.hu</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY PREVENTIVE -->
+<section class="sec" style="background:var(--bg)">
+  <div class="container">
+    <div class="preventive-split">
+      <div class="preventive-img reveal">
+        <img src="../images/sol-szerviz.jpg" alt="Szervizmérnök munkában"
+          onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\' style=\'height:100%\'><div class=\'img-placeholder-icon\'>🛠</div></div>'"/>
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">Megelőző vs. reaktív</span>
+        <h2 style="font-size:clamp(26px,3vw,36px);font-weight:700;margin:16px 0 18px">A megelőzés nem kerül többe — a leállás kerül többe</h2>
+        <p style="font-size:16px;color:var(--muted);line-height:1.75;margin-bottom:16px">Egy nem tervezett leállás egy prémium élelmiszerüzemben nem csak karbantartást jelent: elveszett gyártási idő, reklamáció, sürgős szállítási pótlás, operátori túlóra — és a megbízó türelme, amelyből véges van.</p>
+        <p style="font-size:16px;color:var(--muted);line-height:1.75;margin-bottom:24px">A megelőző szerviz nem luxus — ez az az összeg, amelyet az üzem a tervezett leállásra költ, nem a váratlanra.</p>
+        <div class="cost-compare">
+          <div class="cost-card bad">
+            <div class="cv">4–8×</div>
+            <div class="cl">Váratlan leállás költsége vs. megelőző szerviz éves díja (iparági átlag)</div>
+          </div>
+          <div class="cost-card good">
+            <div class="cv">96%</div>
+            <div class="cl">Garantált uptime Priority Shield és Uptime Guarantee csomagban</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec" style="background:var(--bg-2)">
+  <div class="container">
+    <div class="sec-head reveal"><span class="eyebrow">Szolgáltatások</span><h2>Mit tartalmaz a Nordexa lifecycle?</h2><p>Nem egyszerű javítás — komplex életciklus-kezelés, amelyet a gép típusára és az ügyfél iparágára igazítunk.</p></div>
+    <div class="services-grid">
+      <div class="service-item reveal">
+        <div class="service-ico">🔍</div>
+        <div>
+          <h3>Megelőző karbantartás</h3>
+          <p>Tervezett, időszakos műszaki ellenőrzés: kopó alkatrészek előzetes cseréje, kenési pontok kezelése, kalibrálás-ellenőrzés. Minden beavatkozás dokumentálva — auditálható.</p>
+        </div>
+      </div>
+      <div class="service-item reveal">
+        <div class="service-ico">⚡</div>
+        <div>
+          <h3>Sürgős beavatkozás (SLA)</h3>
+          <p>Gépleállás esetén garantált válaszidő — csomagonként 4 h vagy 8 h. Elsőként telefonos diagnosztika, majd helyszíni mérnök. Nincs „várakozós" megoldás.</p>
+        </div>
+      </div>
+      <div class="service-item reveal">
+        <div class="service-ico">🔩</div>
+        <div>
+          <h3>Alkatrész-ellátás &amp; raktárkészlet</h3>
+          <p>Kritikus kopóalkatrészek (tömítések, szivattyú-membrán, töltőfej-betétek) garantált raktárkészlete az ügyfél üzemében vagy a Nordexa raktárában — 24 h szállítással.</p>
+        </div>
+      </div>
+      <div class="service-item reveal">
+        <div class="service-ico">📊</div>
+        <div>
+          <h3>Prediktív diagnosztika (IoT)</h3>
+          <p>Beépített szenzoros rendszer: rezgés, hőmérséklet, nyomásesés, üzemóra monitorozás. Anomália esetén automatikus riasztás — a hiba megtörténte előtt avatkozunk be.</p>
+        </div>
+      </div>
+      <div class="service-item reveal">
+        <div class="service-ico">🎓</div>
+        <div>
+          <h3>Kezelői és karbantartói képzés</h3>
+          <p>Operátor-betanítás az átadáskor és frissítő tréning szükség szerint. Az Ön csapata is legyen képes az első szintű karbantartásra — ez csökkenti a szervizigényt.</p>
+        </div>
+      </div>
+      <div class="service-item reveal">
+        <div class="service-ico">📋</div>
+        <div>
+          <h3>Teljesítmény-riport és audit-dokumentáció</h3>
+          <p>Éves OEE-riport, karbantartási napló és auditálható dokumentációcsomag — amelyet közvetlenül az Ön minőségbiztosítási rendszerébe lehet integrálni.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="sec" style="background:var(--bg)">
+  <div class="container">
+    <div class="sec-head center reveal"><span class="eyebrow center">Lifecycle-csomagok</span><h2>Válasszon az igényéhez</h2><p>Minden csomag az átadástól érvényes, előre rögzített díjjal. Nincs meglepetésszámla leálláskor.</p></div>
+    <div class="packages-grid">
+
+      <div class="pkg reveal">
+        <span class="pkg-badge badge-basic">Essential Care</span>
+        <h3>Essential Care</h3>
+        <p class="pkg-price">Éves szerződéssel · árajánlatra</p>
+        <hr>
+        <div class="pkg-features">
+          <div class="pf"><span class="pf-check">✓</span><span>Évi 2 megelőző karbantartási látogatás</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>Kritikus alkatrészek raktárkészlete (Nordexa raktár)</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>Telefonos szerviz-ügyelet H–P 7:00–17:00</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>Szoftver-frissítések és dokumentáció</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>Éves karbantartási összefoglaló</span></div>
+          <div class="pf"><span class="pf-na">—</span><span style="color:var(--muted-2)">24/7 telefonos ügyelet</span></div>
+          <div class="pf"><span class="pf-na">—</span><span style="color:var(--muted-2)">Garantált SLA válaszidő</span></div>
+          <div class="pf"><span class="pf-na">—</span><span style="color:var(--muted-2)">Prediktív IoT diagnosztika</span></div>
+        </div>
+        <a href="../kapcsolat/" class="btn btn-ghost" style="justify-content:center">Ajánlatkérés →</a>
+      </div>
+
+      <div class="pkg featured reveal">
+        <span class="pkg-badge badge-pro">Priority Shield · Ajánlott</span>
+        <h3>Priority Shield</h3>
+        <p class="pkg-price">Éves szerződéssel · árajánlatra</p>
+        <hr>
+        <div class="pkg-features">
+          <div class="pf"><span class="pf-check">✓</span><span>Évi 4 megelőző karbantartási látogatás</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>Bővített alkatrész-raktárkészlet (ügyfél üzemében)</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>24/7 telefonos és online szerviz-ügyelet</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span><strong>Garantált 8 h helyszíni válaszidő SLA</strong></span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>Szoftver-frissítések és dokumentáció</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>Éves OEE-riport és teljesítmény-elemzés</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>Audit-kész karbantartási dokumentáció</span></div>
+          <div class="pf"><span class="pf-na">—</span><span style="color:var(--muted-2)">Prediktív IoT diagnosztika</span></div>
+        </div>
+        <a href="../kapcsolat/" class="btn btn-steel" style="justify-content:center">Ajánlatkérés →</a>
+      </div>
+
+      <div class="pkg reveal">
+        <span class="pkg-badge badge-premium">Uptime Guarantee · Prémium</span>
+        <h3>Uptime Guarantee</h3>
+        <p class="pkg-price">Éves szerződéssel · árajánlatra</p>
+        <hr>
+        <div class="pkg-features">
+          <div class="pf"><span class="pf-check">✓</span><span>Havi megelőző karbantartás (12×/év)</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>Teljes alkatrész-készlet az ügyfél üzemében</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>24/7 ügyelet + dedikált szervizmérnök</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span><strong>Garantált 4 h helyszíni válaszidő SLA</strong></span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>Szoftver-frissítések és dokumentáció</span></div>
+          <div class="pf"><span class="pf-check">✓</span><span><strong>Prediktív IoT diagnosztika (szenzoros)</strong></span></div>
+          <div class="pf"><span class="pf-check">✓</span><span><strong>96% uptime pénzügyi garancia</strong></span></div>
+          <div class="pf"><span class="pf-check">✓</span><span>Negyedéves OEE-riport és javaslatok</span></div>
+        </div>
+        <a href="../kapcsolat/" class="btn btn-primary" style="justify-content:center">Ajánlatkérés →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sec" style="background:var(--bg-2)">
+  <div class="container">
+    <div class="sec-head center reveal"><span class="eyebrow center">Hogyan működik</span><h2>A lifecycle-szerződés folyamata</h2></div>
+    <div class="process-v reveal">
+      <div class="pv-item">
+        <div class="pv-num">01</div>
+        <div class="pv-body"><h4>Igényfelmérés és csomag-választás</h4><p>Megbeszéljük a gép típusát, az iparágat, az uptime-követelményt és a CEE-elérhetőséget. Meghatározzuk a megfelelő csomagot.</p></div>
+      </div>
+      <div class="pv-item">
+        <div class="pv-num">02</div>
+        <div class="pv-body"><h4>Átadási állapot-felvétel</h4><p>Az átadáskor vagy a szerződés indulásakor mérnökeink rögzítik a gép állapotát — ez az SLA-számítás és a garancia alapja.</p></div>
+      </div>
+      <div class="pv-item">
+        <div class="pv-num">03</div>
+        <div class="pv-body"><h4>Ütemezett megelőző karbantartás</h4><p>Az éves karbantartási naptár az Ön termelési menetrendjéhez igazodik — nem véletlenszerűen jövünk, hanem tervezett ablakokban.</p></div>
+      </div>
+      <div class="pv-item">
+        <div class="pv-num">04</div>
+        <div class="pv-body"><h4>Folyamatos monitoring és riasztás (Uptime csomagnál)</h4><p>IoT szenzoros rendszer valós idejű adatokat küld a Nordexa szervizközpontjába — anomália esetén már azelőtt riasztunk, hogy hiba lenne.</p></div>
+      </div>
+      <div class="pv-item">
+        <div class="pv-num">05</div>
+        <div class="pv-body"><h4>Éves teljesítmény-riport és megújítás</h4><p>Év végén összefoglaló riport: elvégzett beavatkozások, alkatrészcsere, OEE-trend, javaslatok a következő évre. Szerződésmegújítás átlátható feltételekkel.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESPONSE MAP -->
+<section class="sec" style="background:var(--bg)">
+  <div class="container">
+    <div class="sec-head center reveal"><span class="eyebrow center">CEE lefedettség</span><h2>Helyszíni szerviz hat országban</h2><p>A válaszidő-garancia nem csak Magyarországra vonatkozik. Minden célpiacon van szervizpartnerünk.</p></div>
+    <div class="response-grid">
+      <div class="resp-card reveal"><div class="resp-flag">🇭🇺</div><h4>Magyarország</h4><p>Saját csapat Székesfehérváron</p><span class="resp-time">4 h SLA</span></div>
+      <div class="resp-card reveal"><div class="resp-flag">🇦🇹</div><h4>Ausztria</h4><p>TechServ GmbH, Bécs + Graz</p><span class="resp-time">8 h SLA</span></div>
+      <div class="resp-card reveal"><div class="resp-flag">🇸🇰</div><h4>Szlovákia</h4><p>ProTech s.r.o., Pozsony + Kassa</p><span class="resp-time">8 h SLA</span></div>
+      <div class="resp-card reveal"><div class="resp-flag">🇨🇿</div><h4>Csehország</h4><p>IndusTech s.r.o., Prága + Brno</p><span class="resp-time">8 h SLA</span></div>
+      <div class="resp-card reveal"><div class="resp-flag">🇵🇱</div><h4>Lengyelország</h4><p>PolMech Sp. z o.o., Varsó + Krakkó</p><span class="resp-time">12 h SLA</span></div>
+      <div class="resp-card reveal"><div class="resp-flag">🇷🇴</div><h4>Románia</h4><p>TehnoServ S.R.L., Kolozsvár + Temesvár</p><span class="resp-time">12 h SLA</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="container"><div class="cta-band-inner reveal">
+    <h2>Ne várjon az első leállásig.</h2>
+    <p>A megelőző szerviz befektetés, nem költség. Kérjen ajánlatot lifecycle-szerződésre — megmutatjuk a megtérülési számítást is.</p>
+    <div class="cta-band-actions">
+      <a href="../kapcsolat/" class="btn btn-light btn-lg">Lifecycle-ajánlat igénylése <span class="arrow">→</span></a>
+      <a href="tel:+3622555199" class="btn btn-outline-light">📞 Szerviz-ügyelet: +36 22 555 199</a>
+    </div>
+  </div></div>
+</section>
+
+<footer><div class="container">
+  <div class="foot-grid">
+    <div><div class="brand"><svg class="brand-logo" viewBox="0 0 48 48" fill="none" style="width:32px;height:32px"><rect x="2" y="2" width="44" height="44" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.15)"/><path d="M14 34V14l9 12V14" stroke="#7fa8c9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 14c4 4 4 12 0 16-2-3-2-9 0-16Z" fill="#c4511c"/></svg><span><span class="brand-name">NORDE<span style="color:#c4511c">XA</span></span><span class="brand-sub">Industrial Solutions</span></span></div><p class="foot-about">Fejlett adagoló- és csomagolórendszerek — Székesfehérvár, 1994 óta.</p></div>
+    <div class="foot-col"><h5>Szerviz</h5><a href="index.html">Szerviz áttekintés</a><a href="../megoldasok/szerviz-lifecycle.html">Lifecycle-csomagok</a><a href="mailto:szerviz@nordexa.hu">szerviz@nordexa.hu</a><a href="tel:+3622555199">Szerviz-ügyelet 24/7</a></div>
+    <div class="foot-col"><h5>Megoldások</h5><a href="../megoldasok/egyedi-adagolosorok.html">Egyedi adagolósorok</a><a href="../megoldasok/modularis-rendszerek.html">Moduláris rendszerek</a><a href="../megoldasok/standard-berendezesek.html">Standard berendezések</a></div>
+    <div class="foot-col"><h5>Kapcsolat</h5><a href="mailto:sales@nordexa.hu">sales@nordexa.hu</a><a href="tel:+3622555100">+36 22 555 100</a><a href="../kapcsolat/">Ajánlatkérés</a></div>
+  </div>
+  <div class="foot-bottom"><span>© 1994–2026 Nordexa Industrial Solutions Zrt.</span><span>ISO 9001 · Adatvédelem</span></div>
+</div></footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

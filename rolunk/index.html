@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rólunk — Nordexa Industrial Solutions</title>
+<meta name="description" content="A Nordexa Industrial Solutions 1994 óta tervez és gyárt adagoló- és csomagolórendszereket Székesfehérváron. Megismerjük a csapatot, a történetet és az értékeinket." />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../css/style.css" />
+<style>
+  /* ── Page hero ── */
+  .page-hero{padding:140px 0 80px;background:var(--bg);border-bottom:1px solid var(--line)}
+  .page-hero h1{font-size:clamp(34px,4.5vw,60px);font-weight:700;margin:16px 0 18px;max-width:760px}
+  .page-hero h1 em{font-style:normal;color:var(--accent)}
+  .page-hero .lead{font-size:19px;color:var(--muted);max-width:640px;line-height:1.7}
+  .breadcrumb{font-family:var(--font-d);font-size:13px;color:var(--muted-2);margin-bottom:20px;display:flex;align-items:center;gap:8px}
+  .breadcrumb a{color:var(--muted);transition:color .2s}.breadcrumb a:hover{color:var(--steel)}.breadcrumb-sep{color:var(--line-strong)}
+
+  /* ── Story ── */
+  .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+  .story-text p{font-size:17px;color:var(--text);line-height:1.8;margin-bottom:20px}
+  .story-text p strong{color:var(--headline);font-weight:600}
+  .story-img{border-radius:var(--radius-l);overflow:hidden;aspect-ratio:4/3;background:var(--bg-2)}
+  .story-img img{width:100%;height:100%;object-fit:cover}
+
+  /* ── Milestones ── */
+  .milestones{background:var(--bg-2)}
+  .milestone-row{display:flex;gap:0;overflow-x:auto;padding-bottom:8px}
+  .milestone{min-width:180px;flex:1;padding:28px 20px;border-right:1px solid var(--line);text-align:center}
+  .milestone:last-child{border-right:0}
+  .milestone .year{font-family:var(--font-d);font-weight:700;font-size:28px;color:var(--accent);margin-bottom:8px}
+  .milestone .event{font-size:13.5px;color:var(--muted);line-height:1.4}
+
+  /* ── Values ── */
+  .values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .value-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:32px;position:relative;overflow:hidden}
+  .value-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--steel))}
+  .value-ico{font-size:32px;margin-bottom:16px}
+  .value-card h3{font-size:19px;font-weight:700;margin-bottom:10px}
+  .value-card p{font-size:14.5px;color:var(--muted);line-height:1.6}
+
+  /* ── Numbers ── */
+  .numbers-strip{background:var(--headline);padding:56px 0}
+  .numbers-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0}
+  .number-item{text-align:center;padding:24px 16px;border-right:1px solid rgba(255,255,255,.08)}
+  .number-item:last-child{border-right:0}
+  .number-item .n{font-family:var(--font-d);font-weight:700;font-size:42px;color:var(--accent);line-height:1;margin-bottom:8px}
+  .number-item .l{font-size:13px;color:rgba(255,255,255,.55)}
+
+  /* ── Team ── */
+  .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .team-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform .25s,box-shadow .25s}
+  .team-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(20,30,45,.10)}
+  .team-photo{aspect-ratio:1;overflow:hidden;background:var(--bg-2)}
+  .team-photo img{width:100%;height:100%;object-fit:cover;object-position:top center}
+  .team-photo-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--bg-2),var(--steel-bg));font-family:var(--font-d);font-size:42px;font-weight:700;color:var(--steel);letter-spacing:.02em}
+  .team-body{padding:24px}
+  .team-name{font-family:var(--font-d);font-size:18px;font-weight:700;color:var(--headline);margin-bottom:4px}
+  .team-title{font-family:var(--font-d);font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  .team-cv{font-size:14px;color:var(--muted);line-height:1.65}
+  .team-cv p{margin-bottom:8px}.team-cv p:last-child{margin-bottom:0}
+  .team-edu{font-size:12.5px;color:var(--muted-2);border-top:1px solid var(--line);padding-top:12px;margin-top:12px;display:flex;align-items:flex-start;gap:8px}
+  .team-edu::before{content:"🎓";flex-shrink:0}
+
+  /* ── Facility ── */
+  .facility-split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .facility-img{border-radius:var(--radius-l);overflow:hidden;aspect-ratio:16/9;background:var(--bg-2)}
+  .facility-img img{width:100%;height:100%;object-fit:cover}
+  .facility-body h2{font-size:clamp(26px,3vw,38px);font-weight:700;margin-bottom:18px}
+  .facility-body p{font-size:16px;color:var(--muted);line-height:1.75;margin-bottom:16px}
+  .facility-specs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
+  .fspec{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius-s);padding:14px 16px}
+  .fspec .fv{font-family:var(--font-d);font-weight:700;font-size:20px;color:var(--steel);margin-bottom:4px}
+  .fspec .fl{font-size:12.5px;color:var(--muted)}
+
+  /* ── Certs ── */
+  .certs-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+  .cert{font-family:var(--font-d);font-size:13px;font-weight:700;padding:10px 20px;border:2px solid var(--line-strong);border-radius:10px;background:var(--surface);color:var(--steel);display:flex;align-items:center;gap:8px}
+  .cert::before{content:"✓";color:var(--green);font-size:14px}
+
+  @media(max-width:1024px){
+    .story-grid,.facility-split{grid-template-columns:1fr}
+    .team-grid{grid-template-columns:1fr 1fr}
+    .values-grid{grid-template-columns:1fr 1fr}
+    .numbers-grid{grid-template-columns:repeat(3,1fr)}
+    .number-item:nth-child(3){border-right:0}
+    .number-item:nth-child(4){border-top:1px solid rgba(255,255,255,.08)}
+  }
+  @media(max-width:640px){
+    .team-grid,.values-grid{grid-template-columns:1fr}
+    .numbers-grid{grid-template-columns:1fr 1fr}
+    .milestone-row{flex-wrap:wrap}
+    .facility-specs{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="container nav-wrap">
+    <a href="../" class="brand"><svg class="brand-logo" viewBox="0 0 48 48" fill="none"><rect x="2" y="2" width="44" height="44" rx="10" fill="#f4f0e8" stroke="#c4c0b2"/><path d="M14 34V14l9 12V14" stroke="#2b4560" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 14c4 4 4 12 0 16-2-3-2-9 0-16Z" fill="#c4511c"/></svg><span><span class="brand-name">NORDE<span>XA</span></span><span class="brand-sub">Industrial Solutions</span></span></a>
+    <nav class="main-nav" id="mainNav">
+      <div class="nav-item has-mega"><button class="nav-link" aria-expanded="false">Megoldások <span class="chevron">▾</span></button><div class="mega-panel"><a href="../megoldasok/egyedi-adagolosorok.html" class="mega-item"><span class="mega-item-ico">⚙️</span><span class="mega-item-title">Egyedi adagolósorok</span><span class="mega-item-desc">Teljesen testreszabott</span></a><a href="../megoldasok/standard-berendezesek.html" class="mega-item"><span class="mega-item-ico">📦</span><span class="mega-item-title">Standard berendezések</span><span class="mega-item-desc">Katalógusból</span></a><a href="../megoldasok/modularis-rendszerek.html" class="mega-item"><span class="mega-item-ico">🔩</span><span class="mega-item-title">Moduláris rendszerek</span><span class="mega-item-desc">Rugalmas</span></a><a href="../megoldasok/szerviz-lifecycle.html" class="mega-item"><span class="mega-item-ico">🛠</span><span class="mega-item-title">Szerviz &amp; Lifecycle</span><span class="mega-item-desc">96% uptime</span></a></div></div>
+      <div class="nav-item has-mega"><button class="nav-link" aria-expanded="false">Iparágak <span class="chevron">▾</span></button><div class="mega-panel wide"><a href="../iparagak/vegyipar.html" class="mega-item"><span class="mega-item-ico">⚗️</span><span class="mega-item-title">Vegyipar</span><span class="mega-item-desc">Reaktív anyagok</span></a><a href="../iparagak/kozmetika.html" class="mega-item"><span class="mega-item-ico">💄</span><span class="mega-item-title">Kozmetika</span><span class="mega-item-desc">Higiénikus töltés</span></a><a href="../iparagak/premium-elelmiszer.html" class="mega-item"><span class="mega-item-ico">🫙</span><span class="mega-item-title">Prémium élelmiszer</span><span class="mega-item-desc">Élelmiszer-biztos</span></a><a href="../iparagak/kis-sorozat.html" class="mega-item"><span class="mega-item-ico">🔄</span><span class="mega-item-title">Kis sorozat</span><span class="mega-item-desc">Rugalmas átállás</span></a></div></div>
+      <a href="../esettanulmanyok/" class="nav-link">Esettanulmányok</a>
+      <a href="../szerviz/" class="nav-link">Szerviz</a>
+      <a href="index.html" class="nav-link active">Rólunk</a>
+      <a href="../kapcsolat/" class="nav-link">Kapcsolat</a>
+    </nav>
+    <div class="nav-actions"><div class="lang-switch"><button class="lang-btn active">HU</button><span class="lang-sep">|</span><button class="lang-btn">EN</button></div><a href="../kapcsolat/" class="btn btn-primary">Ajánlatkérés <span class="arrow">→</span></a><button class="burger" id="burger" aria-label="Menü"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button></div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="../">Főoldal</a><span class="breadcrumb-sep">›</span><span>Rólunk</span></div>
+    <span class="eyebrow">Nordexa Industrial Solutions</span>
+    <h1>Harminc éve <em>mérnöki megoldásokat</em> gyártunk — ott, ahol a standard katalógus nem elég.</h1>
+    <p class="lead">1994-ben egy székesfehérvári gépműhelyben indultunk, tizenegy emberrel és egyetlen ügyféllel. Ma 480+ szakembert foglalkoztatunk, hat CEE-ország üzemeibe szállítunk, és az egyetlen dolog, ami nem változott: a megközelítésünk.</p>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="sec" style="background:var(--bg)">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-text reveal">
+        <span class="eyebrow">A történet</span>
+        <h2 style="font-size:clamp(26px,3vw,36px);font-weight:700;margin:16px 0 22px">Az alapítástól a régió vezető adagológép-gyártójáig</h2>
+        <p>Horváth Gábor 1994-ben hagyta ott a szocialista iparvállalat kényelmes állását, és <strong>alapított egy gépszerelő kisvállalatot</strong> a felesége garázsában. Az első gép egy csomagolósor volt — egy fél évet vett igénybe, és egy helyi vegyipari vállalat rendelelte. Fizette is. Ez volt a Nordexa.</p>
+        <p>Az első évtizedben organikusan nőttünk: nem azért, mert aggresszívan piacra mentünk, hanem azért, mert <strong>az ügyfeleinket az ajánlásaik terjesztették</strong>. Egy jó gép évekig dolgozik — és a termelési vezető, aki megelégedett a munkánkkal, két évre rá egy másik üzemben is elmondta, hogy „a Nordexát hívja".</p>
+        <p>2003-ban nyitottuk meg az első önálló gyártócsarnokot Székesfehérváron. 2008-ra megkaptuk az ISO 9001 tanúsítást. 2012-re az export aránya elérte a 40%-ot. Ma a <strong>hat CEE-ország</strong> ügyfélköre a megrendelések több mint felét adja — de a gépeink ugyanott készülnek, ahol harminc éve: Székesfehérváron.</p>
+        <p>Közepes méretű cégek vagyunk — szándékosan. Elég nagyok vagyunk ahhoz, hogy komoly projekteket teljesítsünk; elég kicsik ahhoz, hogy a vezérigazgató telefonszáma nyilvános legyen és amikor hív, mi felvesszük.</p>
+      </div>
+      <div class="reveal">
+        <div class="story-img">
+          <img src="../images/hero-packaging-line.jpg" alt="Nordexa székesfehérvári gyártócsarnok"
+            onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\' style=\'height:100%\'><div class=\'img-placeholder-icon\'>🏭</div><span>Székesfehérvári üzem</span></div>'"/>
+        </div>
+        <div style="margin-top:20px;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:0 var(--radius) var(--radius) 0;padding:20px 24px">
+          <p style="font-family:var(--font-d);font-size:16px;font-weight:500;color:var(--headline);line-height:1.5;font-style:italic">"Sosem akartam nagy vállalatot építeni. Akartam egy olyat, ahol én is büszke lennék arra, amit kiszállítunk."</p>
+          <p style="font-size:13px;color:var(--muted);margin-top:10px">— Horváth Gábor, alapító és elnök-vezérigazgató</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MILESTONES -->
+<section class="milestones sec-xs">
+  <div class="container">
+    <div class="sec-head center reveal"><span class="eyebrow center">Mérföldkövek</span><h2>Harminc év, lépésről lépésre</h2></div>
+    <div class="milestone-row reveal">
+      <div class="milestone"><div class="year">1994</div><div class="event">Alapítás Székesfehérváron — 11 fő, 1 ügyfél, 1 garázs</div></div>
+      <div class="milestone"><div class="year">1998</div><div class="event">Első külföldi szállítás (Ausztria) — az első export-gép</div></div>
+      <div class="milestone"><div class="year">2003</div><div class="event">Önálló gyártócsarnok — 1 200 m² Székesfehérváron</div></div>
+      <div class="milestone"><div class="year">2008</div><div class="event">ISO 9001 tanúsítás és első ATEX-minősítésű gép</div></div>
+      <div class="milestone"><div class="year">2012</div><div class="event">Első lengyel és cseh referencia — CEE terjeszkedés</div></div>
+      <div class="milestone"><div class="year">2016</div><div class="event">Gyárbővítés 4 400 m²-re, 300+ munkavállaló</div></div>
+      <div class="milestone"><div class="year">2019</div><div class="event">NX-Moduláris platform bevezetése — első saját termékplatform</div></div>
+      <div class="milestone"><div class="year">2024</div><div class="event">480+ munkavállaló, 98 M€ árbevétel, 6 CEE-ország</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- NUMBERS -->
+<div class="numbers-strip">
+  <div class="container">
+    <div class="numbers-grid">
+      <div class="number-item reveal"><div class="n">30+</div><div class="l">év tapasztalat (1994 óta)</div></div>
+      <div class="number-item reveal"><div class="n">480+</div><div class="l">mérnök és szakember</div></div>
+      <div class="number-item reveal"><div class="n">98 M€</div><div class="l">éves árbevétel (2024)</div></div>
+      <div class="number-item reveal"><div class="n">6</div><div class="l">CEE-ország ügyfélköre</div></div>
+      <div class="number-item reveal"><div class="n">60%</div><div class="l">export arány</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- VALUES -->
+<section class="sec" style="background:var(--bg-2)">
+  <div class="container">
+    <div class="sec-head center reveal"><span class="eyebrow center">Értékeink</span><h2>Ami 30 éve nem változott</h2><p>Nem falra akasztott szlogenek — ezek azok az elvek, amelyeken valóban mérjük a döntéseinket.</p></div>
+    <div class="values-grid">
+      <div class="value-card reveal"><div class="value-ico">🔧</div><h3>Mérnöki becsület</h3><p>Csak olyat ígérünk, amit teljesíteni tudunk. Ha egy projekt túl összetett a kapacitásunkhoz, inkább nem vállaljuk — minthogy fél eredményt szállítsunk.</p></div>
+      <div class="value-card reveal"><div class="value-ico">🕰</div><h3>Hosszú táv gondolkodás</h3><p>Minden gépünket úgy tervezzük, hogy 15–20 évig dolgozzon. Ez drágább az olcsó opciónál — de az ügyfeleink visszajönnek, mert tudják, hogy ez igaz.</p></div>
+      <div class="value-card reveal"><div class="value-ico">🤝</div><h3>Partner, nem szállító</h3><p>Nem tűnünk el az átadás után. Az életciklus-szerződés nem csak ajánlat — az a módja, ahogy felelősséget vállalunk azért, amit legyártottunk.</p></div>
+      <div class="value-card reveal"><div class="value-ico">🧩</div><h3>Az egyedi kihívás a komfortzónánk</h3><p>Más gyártók katalógust mutatnak. Mi igényfelmérést végzünk. Az a legjobb megoldás, amelyik az Ön üzeméhez illeszkedik — nem amelyik a legkönnyebben legyártható.</p></div>
+      <div class="value-card reveal"><div class="value-ico">🏡</div><h3>Magyar gyártás</h3><p>Minden gép Székesfehérváron készül. Nincs alvállalkozói lánc, nincs kiszervezett összeszerelés. A minőség a mi kezünkben marad — és ez látszik a referenciáinkon.</p></div>
+      <div class="value-card reveal"><div class="value-ico">📐</div><h3>Kiszámítható bevezetés</h3><p>Standard mérföldkövek, rendszeres státusz-riportok, rögzített határidők. Ha csúszunk, szólunk — nem a leszállítás napján derül ki.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section class="sec" style="background:var(--bg)" id="vezetoseg">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Vezetőség</span>
+      <h2>Az emberek, akik a Nordexát csinálják</h2>
+      <p>Nincs névtelen holding-struktúra a hátunk mögött. Azt, hogy ki hoz döntést, pontosan tudja — és el is érheti.</p>
+    </div>
+    <div class="team-grid">
+
+      <!-- CEO -->
+      <div class="team-card reveal">
+        <div class="team-photo">
+          <img src="../images/team-horvath-gabor.png" alt="Horváth Gábor — alapító, elnök-vezérigazgató"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+          <div class="team-photo-placeholder" style="display:none">HG</div>
+        </div>
+        <div class="team-body">
+          <div class="team-name">Horváth Gábor</div>
+          <div class="team-title">Alapító · Elnök-vezérigazgató</div>
+          <div class="team-cv">
+            <p>A Nordexa alapítója és 30 éve vezérigazgatója. 1994-ben hagyta ott a szocialista nagyvállalati karriert, hogy saját gépgyártó céget alapítson — azóta 11 főből 480+-ra nőtt a csapat.</p>
+            <p>Mielőtt a Nordexát alapította, az akkori Ikarus Busz gépészeti főmérnökeként szerzett tapasztalatot tömeggyártási folyamatokban. Meggyőződése: <em>„A jó gép nem szorul magyarázatra — dolgozik."</em></p>
+          </div>
+          <div class="team-edu">BME Gépészmérnöki Kar, 1986 · Mechatronikai szakmérnök, 1994</div>
+        </div>
+      </div>
+
+      <!-- COO -->
+      <div class="team-card reveal">
+        <div class="team-photo">
+          <img src="../images/team-kovacs-zsuzsanna.png" alt="Dr. Kovács Zsuzsanna — operatív igazgató"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+          <div class="team-photo-placeholder" style="display:none">KZs</div>
+        </div>
+        <div class="team-body">
+          <div class="team-name">Dr. Kovács Zsuzsanna</div>
+          <div class="team-title">Operatív igazgató (COO)</div>
+          <div class="team-cv">
+            <p>2003 óta a Nordexa operatív gerince. Felelős a gyártásirányításért, a minőségbiztosításért és a beszállítói hálózatért. Vezetése alatt kapta meg a Nordexa az ISO 9001-et — és tartja azóta is, minden auditot simán.</p>
+            <p>Korábban a Mol Nyrt. finomítói részlegén töltötte el a karrierje első tíz évét folyamatmérnöki pozíciókban. Ő hozta be a Nordexába a kémiai ipar minőségszemléletét.</p>
+          </div>
+          <div class="team-edu">Miskolci Egyetem Vegyészmérnöki Kar, PhD 2001 · Lean Manufacturing, Cardiff University, 2006</div>
+        </div>
+      </div>
+
+      <!-- Sales Director -->
+      <div class="team-card reveal">
+        <div class="team-photo">
+          <img src="../images/team-szilagyi-csaba.png" alt="Szilágyi Csaba — értékesítési igazgató"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+          <div class="team-photo-placeholder" style="display:none">SzCs</div>
+        </div>
+        <div class="team-body">
+          <div class="team-name">Szilágyi Csaba</div>
+          <div class="team-title">Értékesítési igazgató · CEE</div>
+          <div class="team-cv">
+            <p>2008 óta a Nordexa CEE értékesítési és üzletfejlesztési igazgatója. A lengyel, cseh, szlovák, osztrák és román piacokat ő nyitotta meg — ma a megrendelések 60%-a tőle és a csapatától jön.</p>
+            <p>Megközelítése: <em>„Nem adunk el gépet. Helyszíni igényfelmérést végzünk, és ha tud segíteni a Nordexa, akkor ajánlunk — ha nem, megmondjuk."</em> Ez az oka, hogy visszajönnek.</p>
+          </div>
+          <div class="team-edu">Pécsi Tudományegyetem, Közgazdaságtudományi Kar, 2001 · MBA, Corvinus Egyetem, 2009</div>
+        </div>
+      </div>
+
+      <!-- Chief Engineer -->
+      <div class="team-card reveal">
+        <div class="team-photo">
+          <img src="../images/team-fekete-balazs.png" alt="Dr. Fekete Balázs — főmérnök"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+          <div class="team-photo-placeholder" style="display:none">FB</div>
+        </div>
+        <div class="team-body">
+          <div class="team-name">Dr. Fekete Balázs</div>
+          <div class="team-title">Főmérnök · Chief Engineer</div>
+          <div class="team-cv">
+            <p>2012 óta a Nordexa mérnöki divíziójának vezetője. Felelős az összes egyedi projekt tervezéséért, a modulkönyvtár fejlesztéséért és az új technológiák bevezetéséért. A jelenlegi NX-Moduláris platform az ő munkájának eredménye.</p>
+            <p>PhD-jét folyamatautomatizálásból szerezte, a BKK-val (Berliner Kinetik Kraftwerk) közösen folytatott kutatás eredményeként. Öt iparági szabadalma van adagolástechnikában.</p>
+          </div>
+          <div class="team-edu">BME Gépészmérnöki Kar, MSc 2005 · PhD folyamatautomatizálás, 2009</div>
+        </div>
+      </div>
+
+      <!-- Service Director -->
+      <div class="team-card reveal">
+        <div class="team-photo">
+          <img src="../images/team-molnar-attila.png" alt="Molnár Attila — szerviz és lifecycle vezető"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+          <div class="team-photo-placeholder" style="display:none">MA</div>
+        </div>
+        <div class="team-body">
+          <div class="team-name">Molnár Attila</div>
+          <div class="team-title">Szerviz &amp; Lifecycle igazgató</div>
+          <div class="team-cv">
+            <p>2005 óta a Nordexa szerviz- és lifecycle-divíziójának vezetője. 25 éves ipari szerviz tapasztalattal — Siemens és ABB előélettel — ő volt az, aki a Nordexa szervizét reaktív beavatkozásból preventív rendszerré alakította.</p>
+            <p>Az Ő nevéhez fűződik a 96%-os uptime-garancia bevezetése, és az a 6 ország × 3 szervizpartner lefedettség, amely ma az SLA-k alapja.</p>
+          </div>
+          <div class="team-edu">Dunaújvárosi Főiskola, Műszaki Kar, 1997 · Siemens Certified Service Engineer, 2002</div>
+        </div>
+      </div>
+
+      <!-- HR / Culture placeholder -->
+      <div class="team-card reveal" style="background:var(--bg-2);border-style:dashed;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px;gap:12px;min-height:320px">
+        <div style="font-size:36px">👥</div>
+        <h3 style="font-size:18px">480+ szakember</h3>
+        <p style="font-size:14px;color:var(--muted)">Gépész- és vegyészmérnökök, automatizálási specialisták, termelési technikusok és szervizmérnökök — mind Székesfehérváron és a régióban.</p>
+        <a href="../kapcsolat/" class="btn btn-ghost" style="margin-top:8px">Karrier lehetőségek →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FACILITY -->
+<section class="sec" style="background:var(--bg-2)">
+  <div class="container">
+    <div class="facility-split">
+      <div class="facility-img reveal">
+        <img src="../images/ind-elelmiszer.jpg" alt="Nordexa székesfehérvári gyártóüzem"
+          onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\' style=\'height:100%\'><div class=\'img-placeholder-icon\'>🏗</div><span>Gyártóüzem</span></div>'"/>
+      </div>
+      <div class="facility-body reveal">
+        <span class="eyebrow">Telephely</span>
+        <h2>Székesfehérvár, Ipari Park — ahol a gépek születnek</h2>
+        <p>A Nordexa teljes gyártókapacitása Székesfehérváron összpontosul. Ez nem véletlen: a város ipari hagyományai, a BME közelségéből eredő mérnöki tehetség és a logisztikai adottságok (M7 autópálya, 65 km Budapesttől) a legjobb helyszínt kínálják.</p>
+        <p>A gyárban nincs külső alvállalkozói lánc — az összetevők beérkezésétől a FAT-tesztig mindent saját csapat végez. Ez lassabb lehet, mint a kiszervezett modell — de pontosan emiatt tudjuk garantálni a minőséget.</p>
+        <div class="facility-specs">
+          <div class="fspec"><div class="fv">4 400 m²</div><div class="fl">teljes gyárterület</div></div>
+          <div class="fspec"><div class="fv">3 csarnok</div><div class="fl">tervezés, gyártás, összeszerelés</div></div>
+          <div class="fspec"><div class="fv">CNC + robotika</div><div class="fl">precíziós megmunkálás</div></div>
+          <div class="fspec"><div class="fv">FAT szoba</div><div class="fl">ügyfél jelenlétével tesztelés</div></div>
+        </div>
+        <div class="certs-row">
+          <span class="cert">ISO 9001:2015</span>
+          <span class="cert">ATEX tanúsított</span>
+          <span class="cert">CE jelölés</span>
+          <span class="cert">PED 2014/68/EU</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="container"><div class="cta-band-inner reveal">
+    <h2>Legyen a következő partner.</h2>
+    <p>Az első konzultáció ingyenes és kötelezettségmentes — mérnökeink felkeresik az üzemet és valódi megoldást hoznak, nem sablonajánlatot.</p>
+    <div class="cta-band-actions">
+      <a href="../kapcsolat/" class="btn btn-light btn-lg">Projektbeszélgetés indítása <span class="arrow">→</span></a>
+      <a href="../esettanulmanyok/" class="btn btn-outline-light">Referenciáink</a>
+    </div>
+  </div></div>
+</section>
+
+<footer><div class="container">
+  <div class="foot-grid">
+    <div><div class="brand"><svg class="brand-logo" viewBox="0 0 48 48" fill="none" style="width:32px;height:32px"><rect x="2" y="2" width="44" height="44" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.15)"/><path d="M14 34V14l9 12V14" stroke="#7fa8c9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 14c4 4 4 12 0 16-2-3-2-9 0-16Z" fill="#c4511c"/></svg><span><span class="brand-name">NORDE<span style="color:#c4511c">XA</span></span><span class="brand-sub">Industrial Solutions</span></span></div><p class="foot-about">Fejlett adagoló- és csomagolórendszerek — Székesfehérvár, 1994 óta.</p></div>
+    <div class="foot-col"><h5>Megoldások</h5><a href="../megoldasok/egyedi-adagolosorok.html">Egyedi adagolósorok</a><a href="../megoldasok/standard-berendezesek.html">Standard berendezések</a><a href="../megoldasok/modularis-rendszerek.html">Moduláris rendszerek</a><a href="../megoldasok/szerviz-lifecycle.html">Szerviz &amp; Lifecycle</a></div>
+    <div class="foot-col"><h5>Vállalat</h5><a href="index.html">Rólunk</a><a href="#vezetoseg">Vezetőség</a><a href="../esettanulmanyok/">Esettanulmányok</a><a href="../kapcsolat/">Karrier</a></div>
+    <div class="foot-col"><h5>Kapcsolat</h5><a href="mailto:sales@nordexa.hu">sales@nordexa.hu</a><a href="tel:+3622555100">+36 22 555 100</a><a href="../kapcsolat/">Ajánlatkérés</a></div>
+  </div>
+  <div class="foot-bottom"><span>© 1994–2026 Nordexa Industrial Solutions Zrt.</span><span>Adatvédelem · ISO 9001</span></div>
+</div></footer>
+<script src="../js/main.js"></script>
+</body>
+</html>
